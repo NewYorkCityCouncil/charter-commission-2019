@@ -1,0 +1,104 @@
+<%= render partial: "header-banner" %>
+
+  <div class="row" style="margin:0">
+    <div id="banner" class="col-12">
+      <nav class="navbar navbar-expand-md" style="padding: 0;">
+        <button id="hamburger-toggler" class="navbar-toggler"  onclick="iconChange(this)" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span id="hamburger-text">Menu</span>
+          <span id="hamburger" class="navbar-toggler-icon">
+            <div class="bars bar1"></div>
+            <div class="bars bar2"></div>
+            <div class="bars bar3"></div>
+          </span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                About
+              </a>
+              <div class="nav-item dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="nav-link dropdown-item" href="/charter">About the Charter</a>
+                <div class="dropdown-divider"></div>
+                <a class="nav-link dropdown-item" href="/jobs">Jobs</a>
+                <div class="dropdown-divider"></div>
+                <a class="nav-link dropdown-item" href="/members">Commission Members</a>
+                <div class="dropdown-divider"></div>
+                <a class="nav-link dropdown-item" href="/staff">Staff</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact">Contact the Commission</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="contactDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Hearings
+              </a>
+              <div class="nav-item dropdown-menu" aria-labelledby="contactDropdown">
+                <a class="nav-link dropdown-item" href="/upcoming">Upcoming</a>
+                <div class="dropdown-divider"></div>
+                <a class="nav-link dropdown-item" href="/archived">Archived</a>
+              </div>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link disabled">News <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/reports">Reports</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="page-title">News</h1>
+        <div style="margin-left:30px">
+          <% if @all_news.length == 0 %>
+            <p>Stay tuned for the latest on our work!</p>
+          <% else %>
+            <% if @press_releases.length > 0 %>
+              <h2 class="underline">Press Releases</h2>
+              <% @press_releases.each do |press_release| %>
+                <p>
+                  <%= link_to press_release.title, show_news_path(press_release.order,press_release.title) %><br>
+                  <small><%= press_release.publication_date %></small>
+                  <% if press_release.news_attachments.length > 0 %>
+                    <ul>
+                      <% press_release.news_attachments.each do |attachment| %>
+                        <li><a href="<%= attachment.url %>"><%= attachment.url.split("/").last.split("_").join(" ").split(".").first %></a></li>
+                      <% end %>
+                    </ul>
+                  <% end %>
+                </p>
+              <% end %>
+            <% end %>
+
+            <% if @newsletters.length > 0 %>
+              <h2 class="underline">Newsletters</h2>
+              <% @newsletters.each do |newsletter| %>
+                <p>
+                  <%= link_to newsletter.title, show_news_path(newsletter.order,newsletter.title) %><br>
+                  <small><%= newsletter.publication_date %></small>
+                  <% if newsletter.news_attachments.length > 0 %>
+                    <ul>
+                      <% newsletter.news_attachments.each do |attachment| %>
+                        <li><a href="<%= attachment.url %>"><%= attachment.url.split("/").last.split("_").join(" ").split(".").first %></a></li>
+                      <% end %>
+                    </ul>
+                  <% end %>
+                  </p>
+              <% end %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%= render partial: "footer" %>

@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <%= link_to 'Home', admin_path %>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-12">
+      <h2 style="text-decoration:underline;">All Hearings</h2>
+    </div>
+  </div>
+  <% @hearings.each do |hearing| %>
+    <div class="row">
+      <div class="col-12">
+        <%= link_to "#{hearing.location_of_hearing} - #{hearing.date_of_hearing.in_time_zone('Eastern Time (US & Canada)').strftime("%m-%d-%Y %H:%M %Z")}", edit_hearing_path(hearing.id) %>
+      </div>
+    </div>
+  <% end %>
+</div>

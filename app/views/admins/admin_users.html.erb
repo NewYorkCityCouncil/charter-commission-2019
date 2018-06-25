@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <%= link_to 'Home', admin_path %>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-12">
+      <h2 style="text-decoration:underline;">All Users</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <table style="width:100%">
+      <tr>
+        <th>Email</th>
+        <th>Current Sign In</th>
+        <th>Last Sign In</th>
+        <th>Current Sign In IP</th>
+        <th>Last Sign In IP</th>
+        <th style="text-align:center;">Delete</th>
+      </tr>
+        <% @users.each do |user| %>
+          <tr>
+            <td><%=user.email%></td>
+            <td><%=user.current_sign_in_at%></td>
+            <td><%=user.last_sign_in_at%></td>
+            <td><%=user.current_sign_in_ip%></td>
+            <td><%=user.last_sign_in_ip%></td>
+            <td style="text-align:center;"><a data-confirm="You are about to delete this user. Are you sure?" rel="nofollow" data-method="delete" href="/admin/users/<%=user.id%>"><i class="far fa-trash-alt"></i></a></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>

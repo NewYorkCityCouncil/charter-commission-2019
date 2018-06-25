@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <br><br><br>
+      <table class="col-sm-12 col-lg-8 offset-lg-2">
+        <tr>
+          <td><a class="full-width btn btn-secondary" href="/admin/jobs">View All Jobs</a></td>
+          <td><a class="full-width btn btn-primary" href="/admin/jobs/new">Add New Job</a></td>
+        </tr>
+        <tr>
+          <td><a class="full-width btn btn-secondary" href="/admin/members">View All Members</a></td>
+          <td><a class="full-width btn btn-primary" href="/admin/members/new">Add New Member</a></td>
+        </tr>
+        <tr>
+          <td><a class="full-width btn btn-secondary" href="/admin/staff">View All Staff</a></td>
+          <td><a class="full-width btn btn-primary" href="/admin/staff/new">Add New Staff</a></td>
+        </tr>
+        <tr>
+         <td><a class="full-width btn btn-secondary" href="/admin/messages">View All Messages</a></td>
+         <td><%= link_to "Generate Report", generate_report_path(:format => :csv), data: { confirm: 'This will generate and download a new CSV file. Continue?' }, class: "full-width btn btn-warning" %></td>
+        </tr>
+        <tr>
+          <td><a class="full-width btn btn-secondary" href="/admin/hearings">View All Hearings</a></td>
+          <td><a class="full-width btn btn-primary" href="/admin/hearings/new">Add New Hearing</a></td>
+        </tr>
+        <tr>
+          <td><a class="full-width btn btn-secondary" href="/admin/news">View All News</a></td>
+          <td><a class="full-width btn btn-primary" href="/admin/news/new">Add New News</a></td>
+        </tr>
+        <tr>
+          <td><a class="full-width btn btn-secondary" href="/admin/reports">View All Reports</a></td>
+          <td><a class="full-width btn btn-primary" href="/admin/reports/new">Add New Report</a></td>
+        </tr>
+        <tr><td><br><br><br></td></tr>
+        <tr><td colspan=2><%= link_to 'Manage Admin Users', manage_users_path, class: "btn btn-outline-info full-width" %></td></tr>
+        <tr><td colspan=2><%= link_to 'Back to Main Page', root_path, class: "btn btn-outline-success full-width" %></td></tr>
+        <tr><td colspan=2><%= link_to "Sign Out", destroy_user_session_path, method: :delete, data: { confirm: 'You are about to sign out. Continue?' }, class: "btn btn-outline-danger full-width"%></td></tr>
+        
+      </table>
+    </div>
+  </div>
+</div>

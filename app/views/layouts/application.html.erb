@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%= csrf_meta_tags %>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Place this data between the <head> tags of your website -->
+    <!-- <meta name="description" content="Page description. No longer than 155 characters." /> -->
+
+    <!-- Twitter Card data -->
+    <!-- <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@publisher_handle">
+    <meta name="twitter:title" content="Independent Charter Revision Commission - <%= @page %>">
+    <meta name="twitter:description" content="Page description less than 200 characters">
+    <meta name="twitter:creator" content="@author_handle">-->
+    <!-- Twitter summary card with large image must be at least 280x150px -->
+    <!-- <meta name="twitter:image:src" content="http://www.example.com/image.jpg">-->
+
+    <!-- Open Graph data -->
+    <!-- <meta property="og:title" content="Independent Charter Revision Commission - <%= @page %>" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.chartercommission.nyc" />
+    <meta property="og:image" content="http://example.com/image.jpg" />
+    <meta property="og:description" content="Description Here" />
+    <meta property="og:site_name" content="Independent Charter Revision Commission" />
+    <meta property="article:section" content="Article Section" />
+    <meta property="article:tag" content="Article Tag" />
+    <meta property="fb:admins" content="Facebook numberic ID" />-->
+
+    <link rel="shortcut icon" href="<%=image_url("misc/favicon.ico")%>">
+    <title>Charter Revision Commission 2019 - <%= @page %></title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <%= link_to 'Home', admin_path %> | <%= link_to 'All News', admin_news_path %>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-12">
+      <%= form_for @news, url: admin_news_new_path(@news), html: { method: :post } do |f| %>
+        <p>
+          <%= f.label :title %><br>
+          <%= f.text_field :title %>
+        </p>
+    
+        <p>
+          <%= f.label :publication_date %><br>
+          <%= f.text_field :publication_date %>
+        </p> 
+
+        <p>
+          <%= f.label :publication %><br>
+          <%= f.text_field :publication %>
+        </p> 
+
+        <p>
+          <%= f.label :contact_info %><br>
+          <%= f.text_field :contact_info, placeholder: "Please use HTML tags" %>
+        </p> 
+    
+        <p>
+          <%= f.label :news_content %><br>
+          <%= f.text_area :news_content, placeholder: "Please use HTML tags" %>
+        </p>
+
+        <p>
+          <%= f.label :order %><br>
+          <%= f.select :order, options_for_select(0..News.all.length,News.all.length) %>
+        </p> 
+
+        <p>
+          <%= f.label :news_type %><br>
+          <%= f.select :news_type, options_for_select({"Press Release" => "press_release", "Newsletter" => "news_letter"}) %>
+        </p> 
+
+        <p>
+          <%= f.label :news_attachments %><br>
+          <%= f.file_field :news_attachments, multiple: true %>
+        </p>
+
+        <p>
+          <%= f.submit :class => "btn btn-success" %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+</div>

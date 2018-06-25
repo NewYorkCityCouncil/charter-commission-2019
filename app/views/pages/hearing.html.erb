@@ -1,0 +1,85 @@
+<%= render partial: "header-banner" %>
+
+  <div class="row" style="margin:0">
+    <div id="banner" class="col-12">
+      <nav class="navbar navbar-expand-md" style="padding: 0;">
+        <button id="hamburger-toggler" class="navbar-toggler"  onclick="iconChange(this)" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span id="hamburger-text">Menu</span>
+          <span id="hamburger" class="navbar-toggler-icon">
+            <div class="bars bar1"></div>
+            <div class="bars bar2"></div>
+            <div class="bars bar3"></div>
+          </span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item active-pointer dropdown">
+              <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                About
+              </a>
+              <div class="nav-item dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="nav-link dropdown-item" href="/charter">About the Charter</a>
+                <div class="dropdown-divider"></div>
+                <a class="nav-link dropdown-item" href="/jobs">Jobs</a>
+                <div class="dropdown-divider"></div>
+                <a class="nav-link dropdown-item" href="/members">Commission Members</a>
+                <div class="dropdown-divider"></div>
+                <a class="nav-link dropdown-item" href="/staff">Staff</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact">Contact the Commission</a>
+            </li>
+            <li class="nav-item active dropdown">
+              <a class="nav-link dropdown-toggle" id="contactDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Hearings <span class="sr-only">(current)</span>
+              </a>
+              <div class="nav-item dropdown-menu" aria-labelledby="contactDropdown">
+                <a class="nav-link dropdown-item" href="/upcoming">Upcoming</a>
+                <div class="dropdown-divider"></div>
+                <a class="nav-link dropdown-item" href="/archived">Archived</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/news">News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/reports">Reports</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <span><%= link_to "Back to Upcoming", upcoming_path %> | <%= link_to "Back to Archived", archived_path %></span>
+        <br><br>
+        <h1><%= @hearing.date_of_hearing.strftime("%A, %B %d, %Y") %></h1>
+        <h3><%= @hearing.location_of_hearing.html_safe %></h3>
+        <hr>
+        <p><%= @hearing.hearing_content.html_safe %><br></p>
+        <% if @hearing.youtube_url || @hearing.livestream_embed %>
+          <h3 class="underline">Watch</h3>
+          <%= @hearing.youtube_url.html_safe %>
+        <% end %>
+        <% if @hearing.hearing_attachments.length > 0 %>
+          <p class="underline"><strong>Downloadable Files</strong></p>
+          <ul>
+            <% @hearing.hearing_attachments.each do |attachment| %>
+              <li><a href="<%= attachment.url %>"><%= attachment.url.split("/").last.split("_").join(" ").split(".").first %> (<%= attachment.url.split(".").last.upcase %>)</a></li>
+            <% end%>
+          </ul>
+        <% end %>
+      </div>
+      <div class="col-12">
+        <%= @hearing.google_maps_url.html_safe %>
+      </div>
+    </div>
+  </div>
+
+<%= render partial: "footer" %>
