@@ -1,0 +1,19 @@
+<%= render partial: "header-banner" %>
+  <script>$("#google_translate_element").remove();</script>
+  <div class="container center">
+    <div class="row">
+      <div class="col-12">
+        <br>
+        <h1 class="page-title">Upcoming Hearings</h1>
+        <br>
+        <% if @hearings.length > 0 %>
+          <% @hearings.each do |hearing| %>
+            <!--<p><%= link_to "#{hearing.location_of_hearing} - #{hearing.date_of_hearing.in_time_zone('Eastern Time (US & Canada)').strftime("%m/%d/%Y %I:%M %p %Z")}", show_hearing_path(hearing.date_of_hearing) %>-->
+            <p><strong><%="#{hearing.location_of_hearing}"%></strong> - <%="#{hearing.date_of_hearing.in_time_zone('Eastern Time (US & Canada)').strftime("%m/%d/%Y %I:%M %p %Z")}"%></p>
+          <% end %>
+        <% else %>
+          <p>The Commission will be holding hearings in all five boroughs. Stay tuned for more details.</p>
+        <% end %>
+      </div>
+    </div>
+  </div>

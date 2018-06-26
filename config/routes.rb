@@ -21,7 +21,8 @@ Rails.application.routes.draw do
   get '/news', to: 'pages#news'
   get '/news/:order/:title', to: 'pages#news_article', as: "show_news"
 
-  
+  get '/kiosk', to: 'pages#kiosk'
+
   get '/admin', to: 'admins#index'
 
   get '/admin/users/', to: 'admins#admin_users', as: "manage_users"

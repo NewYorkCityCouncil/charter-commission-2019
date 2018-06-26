@@ -88,6 +88,11 @@ class PagesController < ApplicationController
     @hearings = Hearing.where("date_of_hearing > ?", Time.now).order(date_of_hearing: :asc)
   end
 
+  def kiosk
+    @page = "Upcoming Hearings"
+    @hearings = Hearing.where("date_of_hearing > ?", Time.now).order(date_of_hearing: :asc)
+  end
+
   def archived
     @page = "Archived Hearings"
     @hearings = Hearing.where("date_of_hearing < ?", Time.now).order(date_of_hearing: :asc)

@@ -11,7 +11,7 @@ class Comment < ApplicationRecord
   # validates_integrity_of :comment_attachment, file_size: { less_than: 7.megabytes }
 
   def self.to_csv
-    attributes = %w{Name Email Message Comment_Attachment Address Cell Phone}
+    attributes = %w{Name Email Message Comment_Attachment}
 
     CSV.generate(headers: true) do |csv|
       csv << attributes
