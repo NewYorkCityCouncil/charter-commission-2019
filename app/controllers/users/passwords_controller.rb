@@ -33,6 +33,7 @@ class Users::PasswordsController < Devise::PasswordsController
   #   super(resource_name)
   # end
   def block_foreign_hosts
+    redirect_to root_path
     if ["205.247.140.193", "127.0.0.1"].include?(request.remote_ip) then return false else redirect_to root_path end
   end
 end

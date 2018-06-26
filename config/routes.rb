@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { sessions: 'users/sessions' }
+  devise_for :users, controllers: { 
+    sessions: 'users/sessions', 
+    registrations: 'users/registrations', 
+    passwords: 'users/passwords', 
+    unlocks: 'users/unlocks', 
+    confirmations: 'users/confirmations', 
+    omniauthable: 'users/omniauthable' 
+  }
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'pages#main' 
   get '/charter', to: 'pages#charter'
