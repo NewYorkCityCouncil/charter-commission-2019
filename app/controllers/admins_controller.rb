@@ -214,6 +214,15 @@ class AdminsController < ApplicationController
     redirect_to admin_reports_path
   end
 
+  # Admin
+  def create_new_admin_user
+    @user = User.new
+  end
+
+  def save_new_admin_user
+    @user = User.create(user_params)
+  end
+
   private
     def page_title
       @page = "Admin"
@@ -281,5 +290,9 @@ class AdminsController < ApplicationController
 
     def report_params
       params.require(:report).permit(:title,:language,:file_url,:month,:order,{report_attachments: []})
+    end
+
+    def user_params
+      params.require(:user).permit(:email,:password,:password_confirmation)
     end
 end

@@ -34,6 +34,8 @@ Rails.application.routes.draw do
   get '/admin', to: 'admins#index'
 
   get '/admin/users/', to: 'admins#admin_users', as: "manage_users"
+  get '/admin/users/create_new', to: 'admins#create_new_admin_user', as: "new_admin"
+  post '/admin/users/create_new', to: 'admins#save_new_admin_user', as: "save_admin"
   delete '/admin/users/:id', to: 'admins#delete_user', as: "delete_user"
 
   get '/admin/messages', to: 'admins#all_messages'
