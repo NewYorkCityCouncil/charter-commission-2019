@@ -53,7 +53,7 @@ class PagesController < ApplicationController
           to = Email.new(email: 'jchei@council.nyc.gov')
           subject = 'New message from Charter Revision Site'
           formatted_message = @new_comment.message.split("\r\n").join("</p><p>")
-          content = Content.new(type: 'text/html', value: '<p><b style="text-decouration:underline;">Sender:</b></p><p>'+@new_comment.name+' (Reply To: <a href="mailto:'+@new_comment.email+'">'+@new_comment.email+'</a>)</p><p><b style="text-decouration:underline;">Message:</b></p><p>'+formatted_message+'</p>')
+          content = Content.new(type: 'text/html', value: '<p><b class="underline">Sender:</b></p><p>'+@new_comment.name+' (Reply To: <a href="mailto:'+@new_comment.email+'">'+@new_comment.email+'</a>)</p><p><b style="text-decouration:underline;">Message:</b></p><p>'+formatted_message+'</p>')
           mail = Mail.new(from, subject, to, content)
           # Adding a BCC because not every email goes through to Council email
           mail.personalizations[0]["bcc"] = [{"email"=>"jc.nycc.122018@gmail.com"}]

@@ -56,9 +56,9 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-12 col-md-7">
-        <div id="home-image-carousel">
+        <div id="home-image-carousel" class="round-border">
           <% if @hearings.length > 0 %>
-            <div>
+            <div class="round-border">
               <h1>THERES A HEARING TODAY!</h1>
               <p>
                 <%= @hearings[0].location_of_hearing %> @
@@ -68,9 +68,9 @@
               </p>
             </div>
           <% end %>
-          <div class="home-image" style='background-image: url(<%=image_url("misc/group.jpg")%>);'></div>
-          <div class="home-image" style='background-image: url(<%=image_url("misc/group.jpg")%>);'></div>
-          <div class="home-image" style='background-image: url(<%=image_url("misc/group.jpg")%>);'></div>
+          <div class="home-image round-border" style='background-image: url(<%=image_url("misc/group.jpg")%>);'></div>
+          <div class="home-image round-border" style='background-image: url(<%=image_url("misc/group.jpg")%>);'></div>
+          <div class="home-image round-border" style='background-image: url(<%=image_url("misc/group.jpg")%>);'></div>
         </div>
         <script>
           $("#home-image-carousel").slick({
@@ -81,7 +81,7 @@
           });
         </script>
         <% if @hearings.length > 0 %>
-          <div id="mobile-hearing-show">
+          <div class="round-border" id="mobile-hearing-show">
             <h2>
               <span class="underline">HEARING TODAY!</span><br>
               <small>
@@ -96,20 +96,20 @@
         <p style="text-indent:25px;">The Commission—made up of Members appointed by the Mayor, the Speaker of the City Council, all five Borough Presidents, the Public Advocate, and the Comptroller—is charged with looking at the whole picture and bringing its recommendations to the people at the November 2019 general election. </p>
       </div>
       <div class="col-sm-12 col-md-4 offset-md-1">
-        <div style="padding:5px; background-color:#E6E6E6;">
-          <h3 class="underline" style="color:#23417D;">Twitter Feed</h3>
-          <div style="border:1px solid #CACACA;height:500px;overflow:scroll;">
+        <div class="round-border sidebar">
+          <!-- <h3 class="underline" style="color:#23417D;">Twitter Feed</h3> -->
+          <div class="round-border" style="border:1px solid #CACACA; height:500px;overflow:scroll;">
             <a class="twitter-timeline" href="https://twitter.com/NYCCouncil">Tweets by NYCCouncil</a>
             <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
           </div>
           </div>
         <hr>
-        <div style="padding:5px; background-color:#E6E6E6;">
+        <div class="round-border sidebar">
           <h3 class="underline" style="color: #23417D; word-wrap: break-word;">Additional Resources</h3>
-          <div style="padding:5px; background-color:white;">
-            <a href="#">Test Doc (PDF)</a><br>
-            <a href="#">Test Doc 1 (PDF)</a><br>
-            <a href="#">Test Doc 2 (PDF)</a>
+          <div class="round-border sidebar" style="background-color:white;">
+            <p style="margin-top:1rem;"><a href="#">Test Doc (PDF)</a></p>
+            <p><a href="#">Test Doc 1 (PDF)</a></p>
+            <p><a href="#">Test Doc 2 (PDF)</a></p>
           </div>
         </div>
       </div>
