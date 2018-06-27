@@ -8,7 +8,7 @@
         <br>
         <% if @hearings.length > 0 %>
           <% @hearings.each do |hearing| %>
-            <p><strong><%="#{hearing.location_of_hearing}"%></strong> - <%="#{hearing.date_of_hearing.in_time_zone('Eastern Time (US & Canada)').strftime("%m/%d/%Y @ %I:%M %p %Z")}"%></p>
+            <p><strong><%="#{hearing.location_of_hearing}"%></strong> - <%="#{hearing.date_of_hearing.in_time_zone('Eastern Time (US & Canada)').strftime("%A, %B %d, %Y @ %I:%M %p %Z")}"%></p>
           <% end %>
         <% else %>
           <p>The Commission will be holding hearings in all five boroughs. Stay tuned for more details.</p>

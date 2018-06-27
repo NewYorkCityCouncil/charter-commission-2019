@@ -34,6 +34,7 @@ gem "recaptcha", require: "recaptcha/rails"
 gem 'sendgrid-ruby'
 gem 'carrierwave', '~> 1.0'
 gem 'fog-aws'
+gem 'sprockets', '>= 3.7.2'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
