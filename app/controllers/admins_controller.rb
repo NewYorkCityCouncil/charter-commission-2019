@@ -226,6 +226,7 @@ class AdminsController < ApplicationController
   private
     def page_title
       @page = "Admin"
+      @meta_site_title = "Charter Revision Commission 2019"
     end
 
     def block_foreign_hosts
