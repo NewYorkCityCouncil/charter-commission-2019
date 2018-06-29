@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
-  skip_before_action :verify_authenticity_token  
+  skip_before_action :verify_authenticity_token
+  before_action :meta_data  
   include Recaptcha::ClientHelper
   include Recaptcha::Verify
   require 'sendgrid-ruby'
@@ -128,5 +129,11 @@ class PagesController < ApplicationController
   private
     def message_params
       params.require(:comment).permit(:email,:name,:message,:comment_attachment)
+    end
+
+    def meta_data
+      @meta_description = ""
+      @meta_image_url = ""
+      @meta_site_title = "Charter Revision Commission 2019"
     end
 end

@@ -7,30 +7,27 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- Place this data between the <head> tags of your website -->
-    <!-- <meta name="description" content="Page description. No longer than 155 characters." /> -->
+    <meta name="description" content="<%= @meta_description %>" />
 
     <!-- Twitter Card data -->
-    <!-- <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="<%= @meta_image_url %>">
     <meta name="twitter:site" content="@publisher_handle">
-    <meta name="twitter:title" content="Independent Charter Revision Commission - <%= @page %>">
-    <meta name="twitter:description" content="Page description less than 200 characters">
-    <meta name="twitter:creator" content="@author_handle">-->
+    <meta name="twitter:title" content="<%= @meta_site_title %> - <%= @page %>">
+    <meta name="twitter:description" content="<%= @meta_description %>">
+    <meta name="twitter:creator" content="@author_handle">
     <!-- Twitter summary card with large image must be at least 280x150px -->
-    <!-- <meta name="twitter:image:src" content="http://www.example.com/image.jpg">-->
+    <meta name="twitter:image:src" content="<%= @meta_image_url %>">
 
     <!-- Open Graph data -->
-    <!-- <meta property="og:title" content="Independent Charter Revision Commission - <%= @page %>" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://www.charter2019.nyc" />
-    <meta property="og:image" content="http://example.com/image.jpg" />
-    <meta property="og:description" content="Description Here" />
-    <meta property="og:site_name" content="Independent Charter Revision Commission" />
-    <meta property="article:section" content="Article Section" />
-    <meta property="article:tag" content="Article Tag" />
-    <meta property="fb:admins" content="Facebook numberic ID" />-->
-    <meta property="og:url" content="<%=request.original_url%>" />
+    <meta property="og:title" content="<%= @meta_site_title %> - <%= @page %>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:image" content="<%= @meta_image_url %>" />
+    <meta property="og:description" content="<%= @meta_description %>" />
+    <meta property="og:site_name" content="<%= @meta_site_title %>" />
+    <meta property="fb:admins" content="Facebook numberic ID" />
     <link rel="shortcut icon" href="<%=image_url("misc/favicon.ico")%>">
-    <title>Charter Revision Commission 2019 - <%= @page %></title>
+    <title><%= @meta_site_title %> - <%= @page %></title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
