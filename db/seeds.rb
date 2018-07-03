@@ -100,7 +100,7 @@ Member.create([
         bio: "<p></p>",
         # role: "",
         # image_url: ".png",
-        profile_pic: Rails.root.join('public/images/headshots/.png').open,
+        # profile_pic: Rails.root.join('public/images/headshots/.png').open,
         order: 11
     },
     {
