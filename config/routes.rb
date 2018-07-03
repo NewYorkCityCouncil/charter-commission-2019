@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get '/jobs/:position', to: 'pages#job', as: "show_job"
   get '/members', to: 'pages#members'
   get '/staff', to: 'pages#staff'
+  get '/resources', to: 'pages#resources'
 
   get '/contact', to: 'pages#contact'
   post '/contact', to: 'pages#submit_comment', as: "send_comment"

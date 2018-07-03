@@ -16,7 +16,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/">Home</a>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item active active-pointer dropdown">
               <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 About
               </a>
@@ -25,9 +25,9 @@
                 <div class="dropdown-divider"></div>
                 <a class="nav-link dropdown-item" href="/members">Meet the Commissioners</a>
                 <div class="dropdown-divider"></div>
-                <a class="nav-link dropdown-item" href="/staff">Staff</a>
+                <a class="nav-link dropdown-item disabled active-dropdown">Staff</a>
                 <div class="dropdown-divider"></div>
-                <a class="nav-link dropdown-item" href="/resources">Resources</a>
+                <a class="nav-link dropdown-item disabled active-dropdown">Resources <span class="sr-only">(current)</span></a>
                 <div class="dropdown-divider"></div>
                 <a class="nav-link dropdown-item" href="/jobs">Jobs</a>
               </div>
@@ -48,8 +48,8 @@
                 <a class="nav-link dropdown-item" href="/archived">Past Hearings & Meetings</a>
               </div>
             </li>-->
-            <li class="nav-item active">
-              <a class="nav-link disabled">News <span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+              <a class="nav-link" href="/news">News</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/reports">Reports</a>
@@ -62,48 +62,8 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h2 class="page-title">News</h2>
-        <div style="margin-left:30px">
-          <% if @all_news.length == 0 %>
-            <p>Stay tuned for the latest on our work!</p>
-          <% else %>
-            <% if @press_releases.length > 0 %>
-              <h3 class="underline">Press Releases</h3>
-              <% @press_releases.each do |press_release| %>
-                <p>
-                  <%= link_to press_release.title, show_news_path(press_release.order,press_release.title) %><br>
-                  <small><%= press_release.publication_date %></small>
-                  <% if press_release.news_attachments.length > 0 %>
-                    <ul>
-                      <% press_release.news_attachments.each do |attachment| %>
-                        <li><a href="<%= attachment.url %>"><%= attachment.url.split("/").last.split("_").join(" ").split(".").first %></a></li>
-                      <% end %>
-                    </ul>
-                  <% end %>
-                </p>
-              <% end %>
-            <% end %>
-
-            <% if @newsletters.length > 0 %>
-              <h3 class="underline">Newsletters</h3>
-              <% @newsletters.each do |newsletter| %>
-                <p>
-                  <%= link_to newsletter.title, show_news_path(newsletter.order,newsletter.title) %><br>
-                  <small><%= newsletter.publication_date %></small>
-                  <% if newsletter.news_attachments.length > 0 %>
-                    <ul>
-                      <% newsletter.news_attachments.each do |attachment| %>
-                        <li><a href="<%= attachment.url %>"><%= attachment.url.split("/").last.split("_").join(" ").split(".").first %></a></li>
-                      <% end %>
-                    </ul>
-                  <% end %>
-                  </p>
-              <% end %>
-            <% end %>
-          <% end %>
-        </div>
+        <h2 class="page-title">Resources</h2>
       </div>
     </div>
   </div>
-
   <%= render partial: "footer" %>

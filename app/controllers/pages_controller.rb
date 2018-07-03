@@ -21,20 +21,24 @@ class PagesController < ApplicationController
     @page = "Jobs"
     @jobs = Job.all.order(:order => "asc")
   end
-
-  def job
-    @page = "Jobs - #{params[:position]}"
-    @job = Job.find_by(:position => params[:position])
-  end
-
+  
   def members
     @page = "Commission Members"
     @members = Member.all.order(:order => "asc")
   end
-
+  
   def staff
     @page = "Staff"
     @staff = Staff.all.order(:order => "asc")
+  end
+  
+  def resources
+    @page = "Resources"
+  end
+
+  def job
+    @page = "Jobs - #{params[:position]}"
+    @job = Job.find_by(:position => params[:position])
   end
 
   def contact
