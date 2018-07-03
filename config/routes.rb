@@ -19,8 +19,8 @@ Rails.application.routes.draw do
   get '/contact', to: 'pages#contact'
   post '/contact', to: 'pages#submit_comment', as: "send_comment"
   
-  get '/upcoming', to: 'pages#upcoming'
-  get '/archived', to: 'pages#archived'
+  get '/hearings', to: 'pages#hearings'
+  # get '/archived', to: 'pages#archived'
   get '/hearings/:date_of_hearing', to: 'pages#hearing', as: "show_hearing"
 
   get '/reports', to: 'pages#reports'

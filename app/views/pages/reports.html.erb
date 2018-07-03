@@ -23,26 +23,29 @@
               <div class="nav-item dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="nav-link dropdown-item" href="/charter">About the Charter</a>
                 <div class="dropdown-divider"></div>
-                <a class="nav-link dropdown-item" href="/jobs">Jobs</a>
-                <div class="dropdown-divider"></div>
-                <a class="nav-link dropdown-item" href="/members">Commission Members</a>
+                <a class="nav-link dropdown-item" href="/members">Meet the Commissioners</a>
                 <div class="dropdown-divider"></div>
                 <a class="nav-link dropdown-item" href="/staff">Staff</a>
+                <div class="dropdown-divider"></div>
+                <a class="nav-link dropdown-item" href="/jobs">Jobs</a>
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/contact">Contact the Commission</a>
+              <a class="nav-link" href="/contact">Submit Your Ideas</a>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item">
+              <a class="nav-link" href="/hearings">Hearings & Meetings</a>
+            </li>
+            <!--<li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" id="contactDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Hearings
               </a>
               <div class="nav-item dropdown-menu" aria-labelledby="contactDropdown">
-                <a class="nav-link dropdown-item" href="/upcoming">Upcoming</a>
+                <a class="nav-link dropdown-item" href="/upcoming">Upcoming Hearings & Meetings</a>
                 <div class="dropdown-divider"></div>
-                <a class="nav-link dropdown-item" href="/archived">Archived</a>
+                <a class="nav-link dropdown-item" href="/archived">Past Hearings & Meetings</a>
               </div>
-            </li>
+            </li>-->
             <li class="nav-item">
               <a class="nav-link" href="/news">News</a>
             </li>
@@ -57,7 +60,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h1 class="page-title">Reports</h1>
+        <h2 class="page-title">Reports</h2>
          <div style="margin-left:30px">
           <% if @reports.length > 0 %>
             <% @reports.each do |report| %>

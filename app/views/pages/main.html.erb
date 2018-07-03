@@ -22,26 +22,29 @@
               <div class="nav-item dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="nav-link dropdown-item" href="/charter">About the Charter</a>
                 <div class="dropdown-divider"></div>
-                <a class="nav-link dropdown-item" href="/jobs">Jobs</a>
-                <div class="dropdown-divider"></div>
-                <a class="nav-link dropdown-item" href="/members">Commission Members</a>
+                <a class="nav-link dropdown-item" href="/members">Meet the Commissioners</a>
                 <div class="dropdown-divider"></div>
                 <a class="nav-link dropdown-item" href="/staff">Staff</a>
+                <div class="dropdown-divider"></div>
+                <a class="nav-link dropdown-item" href="/jobs">Jobs</a>
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/contact">Contact the Commission</a>
+              <a class="nav-link" href="/contact">Submit Your Ideas</a>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item">
+              <a class="nav-link" href="/hearings">Hearings & Meetings</a>
+            </li>            
+            <!--<li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" id="contactDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Hearings
               </a>
               <div class="nav-item dropdown-menu" aria-labelledby="contactDropdown">
-                <a class="nav-link dropdown-item" href="/upcoming">Upcoming</a>
+                <a class="nav-link dropdown-item" href="/upcoming">Upcoming Hearings & Meetings</a>
                 <div class="dropdown-divider"></div>
-                <a class="nav-link dropdown-item" href="/archived">Archived</a>
+                <a class="nav-link dropdown-item" href="/archived">Past Hearings & Meetings</a>
               </div>
-            </li>
+            </li>-->
             <li class="nav-item">
               <a class="nav-link" href="/news">News</a>
             </li>
@@ -68,9 +71,10 @@
               </p>
             </div>
           <% end %>
-          <div class="home-image round-border" style='background-image: url(<%=image_url("misc/group.jpg")%>);'></div>
-          <div class="home-image round-border" style='background-image: url(<%=image_url("misc/group.jpg")%>);'></div>
-          <div class="home-image round-border" style='background-image: url(<%=image_url("misc/group.jpg")%>);'></div>
+          <div class="home-image round-border" style='background-image: url(<%=image_url("misc/front_header1.jpg")%>);'></div>
+          <div class="home-image round-border" style='background-image: url(<%=image_url("misc/front_header2.jpg")%>);'></div>
+          <div class="home-image round-border" style='background-image: url(<%=image_url("misc/front_header3.jpg")%>);'></div>
+          <div class="home-image round-border" style='background-image: url(<%=image_url("misc/front_header4.jpg")%>);'></div>
         </div>
         <script>
           $("#home-image-carousel").slick({
@@ -92,17 +96,24 @@
             <p>Click <a href="#" target="_blank">here</a> to view the live stream!</p>
           </div>
         <% end %>
-        <p style="text-indent:25px;">The New York City Charter creates the framework for City government, it is our constitution. The Charter controls how the City spends your tax dollars, how decisions are made about changes to your neighborhood, and the powers of your elected officials. Nearly thirty years ago, a Charter Revision Commission overhauled the City’s government after a top-to-bottom review with an eye towards real reform. It’s time for a fresh look.</p>
-        <p style="text-indent:25px;">The Commission—made up of Members appointed by the Mayor, the Speaker of the City Council, all five Borough Presidents, the Public Advocate, and the Comptroller—is charged with looking at the whole picture and bringing its recommendations to the people at the November 2019 general election. </p>
+        <p style="text-align:justify;text-indent:25px;">The New York City Charter creates the framework for City government; it is our constitution. The Charter controls how the City spends your tax dollars, how decisions are made about changes to your neighborhood, and the powers of your elected officials. Nearly 30 years ago, a Charter Revision Commission overhauled the City’s government after a top-to-bottom review, with an eye towards real reform. It’s time for a fresh look.</p>
+        <p style="text-align:justify;text-indent:25px;">The Commission—made up of Members appointed by the Mayor, the Speaker of the City Council, all five Borough Presidents, the Public Advocate, and the Comptroller—is tasked with looking at the whole picture and bringing its recommendations to the people of the City at the November 2019 general election.</p>
       </div>
       <div class="col-sm-12 col-md-4 offset-md-1">
         <div class="round-border sidebar">
           <!-- <h3 class="underline" style="color:#23417D;">Twitter Feed</h3> -->
-          <div class="round-border" style="border:1px solid #CACACA; height:500px;overflow:scroll;">
-            <a class="twitter-timeline" href="https://twitter.com/NYCCouncil">Tweets by NYCCouncil</a>
+          <div id="twitter-container" class="round-border" style="border:1px solid #CACACA;overflow:scroll;">
+            <a class="twitter-timeline" href="https://twitter.com/charter2019NYC">Tweets by Independent Charter Commission</a>
             <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
           </div>
-          </div>
+          <script>
+            $(document).ready(function(){
+              if ($("#twitter-container").height() >= 500){
+                $("#twitter-container").height("500px")
+              }
+            });
+          </script>
+        </div>
         <hr>
         <div class="round-border sidebar">
           <h3 class="underline" style="color: #23417D; word-wrap: break-word;">Additional Resources</h3>

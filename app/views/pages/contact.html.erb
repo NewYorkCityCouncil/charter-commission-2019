@@ -23,26 +23,29 @@
               <div class="nav-item dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="nav-link dropdown-item" href="/charter">About the Charter</a>
                 <div class="dropdown-divider"></div>
-                <a class="nav-link dropdown-item" href="/jobs">Jobs</a>
-                <div class="dropdown-divider"></div>
-                <a class="nav-link dropdown-item" href="/members">Commission Members</a>
+                <a class="nav-link dropdown-item" href="/members">Meet the Commissioners</a>
                 <div class="dropdown-divider"></div>
                 <a class="nav-link dropdown-item" href="/staff">Staff</a>
+                <div class="dropdown-divider"></div>
+                <a class="nav-link dropdown-item" href="/jobs">Jobs</a>
               </div>
             </li>
             <li class="nav-item active">
-              <a class="nav-link disabled">Contact the Commission <span class="sr-only">(current)</span></a>
+              <a class="nav-link disabled">Submit Your Ideas <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item">
+              <a class="nav-link" href="/hearings">Hearings & Meetings</a>
+            </li>
+            <!--<li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" id="contactDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Hearings
               </a>
               <div class="nav-item dropdown-menu" aria-labelledby="contactDropdown">
-                <a class="nav-link dropdown-item" href="/upcoming">Upcoming</a>
+                <a class="nav-link dropdown-item" href="/upcoming">Upcoming Hearings & Meetings</a>
                 <div class="dropdown-divider"></div>
-                <a class="nav-link dropdown-item" href="/archived">Archived</a>
+                <a class="nav-link dropdown-item" href="/archived">Past Hearings & Meetings</a>
               </div>
-            </li>
+            </li>-->
             <li class="nav-item">
               <a class="nav-link" href="/news">News</a>
             </li>
@@ -57,7 +60,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h1 class="page-title">Contact the Commission</h1>
+        <h2 class="page-title">Submit Your Ideas</h2>
         <p>We’d love to hear from you. If you can’t make it to a public meeting, you can still help with Commission by submitting your ideas and comments through our site.</p>
         <div id="status" class="center"><%=@status%></div>
       </div>
@@ -73,12 +76,16 @@
         </div>
         <br><br>
         <div class="col-12">
+          <%= f.select(:borough, options_for_select(["Bronx","Brooklyn","Manhattan","Staten Island","Queen"]), {}, { class: "form-inputs"})%>
+        </div>
+        <br><br>
+        <div class="col-12">
           <%= f.text_field :address, class: "not-required", placeholder: "Address" %>
           <%= f.text_field :cell, class: "not-required", placeholder: "Mobile Phone" %>
           <%= f.text_field :phone, class: "not-required", placeholder: "Phone" %>
         </div>
         <div class="col-12">
-          <%= f.text_area :message, class: "comments", row: 10, placeholder: "Your comments and feedback", required: true %>
+          <%= f.text_area :message, class: "comments", row: 10, placeholder: "Your ideas for the charter", required: true %>
         </div>
         <div class="col-12">
           <%= f.file_field :comment_attachment %>

@@ -23,26 +23,29 @@
               <div class="nav-item dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="nav-link dropdown-item" href="/charter">About the Charter</a>
                 <div class="dropdown-divider"></div>
-                <a class="nav-link dropdown-item" href="/jobs">Jobs</a>
-                <div class="dropdown-divider"></div>
-                <a class="nav-link dropdown-item" href="/members">Commission Members</a>
+                <a class="nav-link dropdown-item" href="/members">Meet the Commissioners</a>
                 <div class="dropdown-divider"></div>
                 <a class="nav-link dropdown-item" href="/staff">Staff</a>
+                <div class="dropdown-divider"></div>
+                <a class="nav-link dropdown-item" href="/jobs">Jobs</a>
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/contact">Contact the Commission</a>
+              <a class="nav-link" href="/contact">Submit Your Ideas</a>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item">
+              <a class="nav-link" href="/hearings">Hearings & Meetings</a>
+            </li>
+            <!--<li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" id="contactDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Hearings
               </a>
               <div class="nav-item dropdown-menu" aria-labelledby="contactDropdown">
-                <a class="nav-link dropdown-item" href="/upcoming">Upcoming</a>
+                <a class="nav-link dropdown-item" href="/upcoming">Upcoming Hearings & Meetings</a>
                 <div class="dropdown-divider"></div>
-                <a class="nav-link dropdown-item" href="/archived">Archived</a>
+                <a class="nav-link dropdown-item" href="/archived">Past Hearings & Meetings</a>
               </div>
-            </li>
+            </li>-->
             <li class="nav-item active">
               <a class="nav-link disabled">News <span class="sr-only">(current)</span></a>
             </li>
@@ -57,13 +60,13 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h1 class="page-title">News</h1>
+        <h2 class="page-title">News</h2>
         <div style="margin-left:30px">
           <% if @all_news.length == 0 %>
             <p>Stay tuned for the latest on our work!</p>
           <% else %>
             <% if @press_releases.length > 0 %>
-              <h2 class="underline">Press Releases</h2>
+              <h3 class="underline">Press Releases</h3>
               <% @press_releases.each do |press_release| %>
                 <p>
                   <%= link_to press_release.title, show_news_path(press_release.order,press_release.title) %><br>
@@ -80,7 +83,7 @@
             <% end %>
 
             <% if @newsletters.length > 0 %>
-              <h2 class="underline">Newsletters</h2>
+              <h3 class="underline">Newsletters</h3>
               <% @newsletters.each do |newsletter| %>
                 <p>
                   <%= link_to newsletter.title, show_news_path(newsletter.order,newsletter.title) %><br>

@@ -23,26 +23,29 @@
               <div class="nav-item dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="nav-link dropdown-item" href="/charter">About the Charter</a>
                 <div class="dropdown-divider"></div>
-                <a class="nav-link dropdown-item" href="/jobs">Jobs</a>
-                <div class="dropdown-divider"></div>
-                <a class="nav-link dropdown-item disabled active-dropdown">Commission Members <span class="sr-only">(current)</span></a>
+                <a class="nav-link dropdown-item disabled active-dropdown">Meet the Commissioners <span class="sr-only">(current)</span></a>
                 <div class="dropdown-divider"></div>
                 <a class="nav-link dropdown-item" href="/staff">Staff</a>
+                <div class="dropdown-divider"></div>
+                <a class="nav-link dropdown-item" href="/jobs">Jobs</a>
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/contact">Contact the Commission</a>
+              <a class="nav-link" href="/contact">Submit Your Ideas</a>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item">
+              <a class="nav-link" href="/hearings">Hearings & Meetings</a>
+            </li>
+            <!--<li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" id="contactDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Hearings
               </a>
               <div class="nav-item dropdown-menu" aria-labelledby="contactDropdown">
-                <a class="nav-link dropdown-item" href="/upcoming">Upcoming</a>
+                <a class="nav-link dropdown-item" href="/upcoming">Upcoming Hearings & Meetings</a>
                 <div class="dropdown-divider"></div>
-                <a class="nav-link dropdown-item" href="/archived">Archived</a>
+                <a class="nav-link dropdown-item" href="/archived">Past Hearings & Meetings</a>
               </div>
-            </li>
+            </li>-->
             <li class="nav-item">
               <a class="nav-link" href="/news">News</a>
             </li>
@@ -57,7 +60,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h1 class="page-title">Commission Members</h1>
+        <h2 class="page-title">Meet the Commissioners</h2>
         <p>The Commission includes Members appointed by a diverse array of elected officials representing all parts of City.</p>
       </div>
     </div>
@@ -72,6 +75,10 @@
                 <p style="text-decoration:underline;"><small>Click for bio</small></p>
               </div>
             </div>
+          </div>
+          <div style="text-align:center">
+            <h5 style="margin-bottom:0;"><%= member.name %></h5>
+            <p><em><%= member.role %></em></p>
           </div>
         </div>
       <% end %>

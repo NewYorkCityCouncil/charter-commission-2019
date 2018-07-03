@@ -52,9 +52,10 @@ class PagesController < ApplicationController
           @new_comment.save
           from = Email.new(email: 'no-reply@charter2019.nyc.gov')
           to = Email.new(email: 'jchei@council.nyc.gov')
+          # to = Email.new(email: 'proposals@charter2019.gnyc')
           subject = 'New message from Charter Revision Site'
           formatted_message = @new_comment.message.split("\r\n").join("</p><p>")
-          content = Content.new(type: 'text/html', value: '<p><b class="underline">Sender:</b></p><p>'+@new_comment.name+' (Reply To: <a href="mailto:'+@new_comment.email+'">'+@new_comment.email+'</a>)</p><p><b style="text-decouration:underline;">Message:</b></p><p>'+formatted_message+'</p>')
+          content = Content.new(type: 'text/html', value: '<p><b class="underline">Sender:</b></p><p>'+@new_comment.name+' (Reply To: <a href="mailto:'+@new_comment.email+'">'+@new_comment.email+'</a>)</p><p><b style="text-decouration:underline;">From</b>'+@new_comment.borough+'</p><p><b style="text-decouration:underline;">Message:</b></p><p>'+formatted_message+'</p>')
           mail = Mail.new(from, subject, to, content)
           # Adding a BCC because not every email goes through to Council email
           mail.personalizations[0]["bcc"] = [{"email"=>"jc.nycc.122018@gmail.com"}]
@@ -84,9 +85,15 @@ class PagesController < ApplicationController
     redirect_to contact_path
   end
 
-  def upcoming
-    @page = "Upcoming Hearings"
-    @hearings = Hearing.where("date_of_hearing > ?", Time.now).order(date_of_hearing: :asc)
+  def hearings
+    @page = "Hearings and Meetings"
+    @upcoming_hearings = Hearing.where("date_of_hearing > ?", Time.now).order(date_of_hearing: :asc)
+    @past_hearings = Hearing.where("date_of_hearing < ?", Time.now).order(date_of_hearing: :asc)
+  end
+
+  def hearing
+    @hearing = Hearing.find_by(:date_of_hearing => params[:date_of_hearing].to_datetime)
+    @page = @hearing.date_of_hearing.strftime("%A, %B %d, %Y")
   end
 
   def kiosk
@@ -94,15 +101,10 @@ class PagesController < ApplicationController
     @hearings = Hearing.where("date_of_hearing > ?", Time.now).order(date_of_hearing: :asc)
   end
 
-  def archived
-    @page = "Archived Hearings"
-    @hearings = Hearing.where("date_of_hearing < ?", Time.now).order(date_of_hearing: :asc)
-  end
-
-  def hearing
-    @hearing = Hearing.find_by(:date_of_hearing => params[:date_of_hearing].to_datetime)
-    @page = @hearing.date_of_hearing.strftime("%A, %B %d, %Y")
-  end
+  # def archived
+  #   @page = "Archived Hearings"
+  #   @hearings = Hearing.where("date_of_hearing < ?", Time.now).order(date_of_hearing: :asc)
+  # end
 
   def reports
     @page = "Reports"
@@ -128,7 +130,7 @@ class PagesController < ApplicationController
 
   private
     def message_params
-      params.require(:comment).permit(:email,:name,:message,:comment_attachment)
+      params.require(:comment).permit(:email,:name,:message,:borough,:comment_attachment)
     end
 
     def meta_data
