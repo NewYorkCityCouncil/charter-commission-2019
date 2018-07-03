@@ -35,7 +35,7 @@ Member.create([
         bio: "<p>Lisette brings an extensive background in City service, having served most recently as the Director of the Mayor’s Office of Contract Services. Prior to being named Director of MOCS, Lisette served as MOCS’s Acting General Counsel, and as Special Counsel and Assistant Director of the Vendor Programs Unit. From 2007 to 2011, Lisette was Counsel to the New York City Council’s Committees on Contracts, Juvenile Justice and General Welfare at the New York City Council. Before beginning her career in public service, Lisette was an Associate at the law firm Pollack, Pollack, Isaac & de Cicco, where she practiced immigration law. She also served as General Counsel of UNITE HERE, Local 100 from 2002 to 2005.</p><p>Born and raised in Washington Heights by parents from the Dominican Republic, Lisette received her law degree from The George Washington University Law School and her undergraduate degree from Columbia College.</p><p>Lisette, a Bronx resident, serves as a Board Member of the Double Discovery Center at Columbia College, which works with low-income and first-generation college-bound Manhattan youth to ensure success beyond high school.</p>",
         # role: "",
         # image_url: "",
-        profile_pic: Rails.root.join('public/images/headshots/.png').open,
+        # profile_pic: Rails.root.join('public/images/headshots/.png').open,
         order: 3
     },
     {
@@ -44,7 +44,7 @@ Member.create([
         </p>",
         # role: "",
         # image_url: "",
-        profile_pic: Rails.root.join('public/images/headshots/.png').open,
+        # profile_pic: Rails.root.join('public/images/headshots/.png').open,
         order: 4
     },
     {
