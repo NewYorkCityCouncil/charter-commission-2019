@@ -7,128 +7,126 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Member.create([
     {
-        name: "Cesar Perales",
-        bio: "<p>Perales' appointment follows a 50-year career in public service and advocacy. Most recently, he served as New York State's Secretary of State, where he was directly involved in the state's economic development, government efficiency, local government services and anti-poverty efforts. He was also the co-founder of the Puerto Rican Legal Defense Fund (PRLDEF). In 1981, as President and General Counsel of PRLDEF, he initiated successful litigation against the City Council redistricting that was found to be in violation of the Voting Rights Act. Previously, Perales successfully sued to require New York City to provide language assistance at the ballot box - a requirement that was subsequently made an amendment to the national Voting Rights Act. He was also a Deputy Mayor under Mayor David Dinkins and had previously served as Assistant Secretary for the United States Department of Health and Human Services.</p>",
+        name: "Gail Benjamin",
+        bio: "<p>Gail (retired) has 36 years of experience dealing with land use matters, during the last 25 of which she served as the Director of the New York City Council Land Use Division. In that capacity, she provided advice, analysis, and expertise to the Speaker of the Council, the Chairs of the Land Use Committee and Subcommittee, and the 51 members of the Council on land use policy and practice as well as on projects that were subject to review by the Council. Prior to her time at the Council, Gail served as Co-Director of the City Environmental Review Procedure and as a Representative to the now-defunct NYC Board of Estimate. She continues to be actively involved in land use and serves on a variety of committees and boards.</p>",
         role: "Chair",
-        image_url: "Cesar-Perales.jpg",
-        profile_pic: File.open(File.join(Rails.root, 'app/assets/images/headshots/Cesar-Perales.jpg')),
+        image_url: "gail-benjamin.png",
+        profile_pic: File.open(File.join(Rails.root, 'app/assets/images/headshots/gail-benjamin.png')),
         order: 0
     },
     {
-        name: "Rachel Godsil",
-        bio: "<p>Godsil, a Professor of Law and Chancellor's Scholar at Rutgers Law School, is the co-founder and director of research for the Perception Institute, a national consortium of social scientists, law professors, and advocates focusing on the role of the mind sciences in law, policy, and institutional practices. She collaborates with social scientists on empirical research to identify the efficacy of interventions to address implicit bias and racial anxiety. She is also a former Chair of the Rent Guidelines Board, worked previously as an Assistant United States Attorney for the Southern District of New York, and as an Associate Counsel at the NAACP Legal Defense and Educational Fund.</p>",
-        role: "Vice-Chair",
-        image_url: "Rachel-Godsil.jpg",
-        profile_pic: File.open(File.join(Rails.root, 'app/assets/images/headshots/Rachel-Godsil.jpg')),
-        order: 1
-    },
-])
-
-Staff.create([
-    {
-        name: "Carlo A. Scissura",
-        bio: "<p>Carlo A. Scissura, a lifelong New Yorker and President and CEO of the New York Building Congress, will be the Secretary of the Commission. Before his time at the Building Congress, Scissura spent years as a dedicated public servant in Brooklyn – working as the President and CEO of the Brooklyn Chamber of Commerce and as Chief of Staff and General Counsel to Brooklyn Borough President Marty Markowitz.</p>",
-        role: "Staff",
-        image_url: "default.jpg",
-        profile_pic: File.open(File.join(Rails.root, 'app/assets/images/headshots/default.jpg')),
-        order: 0
-    },
-    {
-        name: "Larian Angelo",
-        bio: "<p>Larian Angelo is a Senior Fellow at the CUNY Institute for State and Local Governance (ISLG). Prior to joining the ISLG, she served in city government for 27 years as first deputy director at the NYC Office of Management and Budget (OMB), Vice-President for Administration at Guttman Community College, deputy director for education and intergovernmental relations at OMB and Finance Director at the New York City Council. Angelo holds a Ph.D in economics.</p>",
-        role: "Staff",
-        image_url: "default.jpg",
-        profile_pic: File.open(File.join(Rails.root, 'app/assets/images/headshots/default.jpg')),
+        name: "Sal Albanese",
+        bio: "<p>Sal was a New York City public school teacher for eleven years. In 1982, at the urging of community residents, he ran for City Council and defeated a 21-year incumbent and Republican-Conservative Minority Leader. Sal won re-election four times, representing the people of southwestern Brooklyn until 1997 when he became a candidate for Mayor of New York City.</p><p>As a Council Member, Sal was a member of the Public Safety, Education, and Transportation committees. An expert on police issues, he successfully worked with community leaders to put more officers on patrol and improve community-police relations.</p><p>His other legislation and advocacy includes introducing the pioneering New York City Living Wage Bill; being a leading advocate for public school accountability and fighting to transform a struggling high school in his district into the successful High School of Telecommunications Arts and Technology; and being the original sponsor of a campaign finance reform bill that would permanently remove big money from the political process. Sal also helped pass one of the first bills in the nation that prohibited housing and employment discrimination based on sexual orientation.</p><p>For the past 19 years, Sal has worked in the private sector in the legal and financial fields. He received his B.A. in Education from CUNY’s York College, earned an M.A. in Health Science from NYU, and received his law degree from Brooklyn Law School in 1990.</p>",
+        # role: "",
+        image_url: "sal_albanese.png",
+        profile_pic: File.open(File.join(Rails.root, 'app/assets/images/headshots/sal_albanese.png')),
         order: 1
     },
     {
-        name: "Deborah N. Archer",
-        bio: "<p>Deborah N. Archer is an Associate Professor of Clinical Law at NYU Law. She was previously an Assistant Counsel at the NAACP Legal Defense and Educational Fund where she litigated at the trial and appellate levels in cases involving affirmative action in higher education, employment discrimination, school desegregation, and voting rights. Archer additionally served as a Marvin H. Karpatkin Fellow with the American Civil Liberties Union where she was involved in federal and state litigation on issues of race and poverty. Archer previously served as a mayoral appointee to the New York City Civilian Complaint Review Board.</p>",
-        role: "Staff",
-        image_url: "default.jpg",
-        profile_pic: File.open(File.join(Rails.root, 'app/assets/images/headshots/default.jpg')),
+        name: "Dr. Lilliam Barrios-Paoli",
+        bio: "<p>Lilliam serves as a Senior Advisor to the President of Hunter College with a focus on special projects and community partnerships. Previously, Lilliam was appointed by Mayor Bill de Blasio as Chair of the New York City Health + Hospitals Board and served from 2015-2016; NYC Health + Hospitals is the largest municipal healthcare system in the nation. Lilliam was also appointed Deputy Mayor for Health and Human Services by Mayor Bill de Blasio, serving from 2014-2015 and overseeing nine agencies.</p><p>In December of 2008, Lilliam was appointed Commissioner of the New York City Department for the Aging (DFTA) by Mayor Bloomberg, following a long career in both City government and the nonprofit sector.  More recently, she was President and CEO of Safe Space NYC, Inc., a non-profit organization serving over 25,000 children and families in New York City.  Before joining Safe Space, she served as Senior Vice President and Chief Executive for Agency Services at United Way of New York City. Lilliam’s prior government service includes appointments as Commissioner at four agencies during the Koch and Giuliani administrations – the Department of Employment, the Department of Personnel (now DCAS), the Department of Housing Preservation and Development, and the Human Resources Administration – and an appointment as Executive Director of Lincoln Hospital in the South Bronx.</p> <p>A graduate of the School of Anthropology of Universidad Iberoamericana in Mexico City, Lilliam also holds a Masters degree and a PhD from the New School for Social Research.  She is a former Trustee of the New School. Additionally, Lilliam serves on the JPB Foundation Poverty Advisory Committee and as a member of the SEEDCO Board, whose mission is to advance economic opportunity for people, businesses, and communities in need. She also serves on the Good Shepherd Services Board of Directors.</p>",
+        # role: "",
+        image_url: "lilliam_barrios-paoli.png",
+        profile_pic: File.open(File.join(Rails.root, 'app/assets/images/headshots/lilliam_barrios-paoli.png')),
         order: 2
     },
     {
-        name: "Kyle Bragg",
-        bio: "<p>Kyle Bragg is 32BJ SEIU’s Secretary-Treasurer. A member of the 165,000 member 32BJ for more than 30 years, Kyle serves as trustee of several 32BJ funds and as chair of the union’s social and economic justice committee. He is a member of the executive board of the two million-member national Service Employee International Union, the National African-American Caucus of SEIU and serves on the international union’s first Racial Justice Task Force.  Bragg also serves as a board member of Community Board 13 in Queens.</p>",
-        role: "Staff",
-        image_url: "default.jpg",
-        profile_pic: File.open(File.join(Rails.root, 'app/assets/images/headshots/default.jpg')),
+        name: "Lisette Camilo",
+        bio: "<p>Lisette brings an extensive background in City service, having served most recently as the Director of the Mayor’s Office of Contract Services. Prior to being named Director of MOCS, Lisette served as MOCS’s Acting General Counsel, and as Special Counsel and Assistant Director of the Vendor Programs Unit. From 2007 to 2011, Lisette was Counsel to the New York City Council’s Committees on Contracts, Juvenile Justice and General Welfare at the New York City Council. Before beginning her career in public service, Lisette was an Associate at the law firm Pollack, Pollack, Isaac & de Cicco, where she practiced immigration law. She also served as General Counsel of UNITE HERE, Local 100 from 2002 to 2005.</p><p>Born and raised in Washington Heights by parents from the Dominican Republic, Lisette received her law degree from The George Washington University Law School and her undergraduate degree from Columbia College.</p><p>Lisette, a Bronx resident, serves as a Board Member of the Double Discovery Center at Columbia College, which works with low-income and first-generation college-bound Manhattan youth to ensure success beyond high school.</p>",
+        # role: "",
+        # image_url: "",
+        # profile_pic: File.open(File.join(Rails.root, 'app/assets/images/headshots/.png')),
         order: 3
     },
     {
-        name: "Marco A. Carrión",
-        bio: "<p>Marco A. Carrión is the Commissioner of the Mayor’s Community Affairs Unit, working to connect City Hall to communities across the city, especially in the outer boroughs. Before his role as Commissioner, Marco was the Political and Legislative Director for the New York City Central Labor Council, Chief of Staff to New York State Senator Gustavo Rivera, Director of New York City Intergovernmental Affairs to Governor David Paterson, and worked for the AFL CIO in Washington D.C.</p>",
-        role: "Staff",
-        image_url: "default.jpg",
-        profile_pic: File.open(File.join(Rails.root, 'app/assets/images/headshots/default.jpg')),
+        name: "James Caras",
+        bio: "<p>James is General Counsel and Land Use Director for the Manhattan Borough President’s Office. Previously, he worked for more than two decades in the New York City Council in multiple roles, rising to the positions of Finance Counsel, Acting Director of the Finance Division, and finally Deputy General Counsel with responsibility for all legislation.</p><p>James’s work includes two published articles on the functioning of city government: “Twenty-Five Years of the Council-Mayor Governance of New York City: A History of the Council’s Powers, the Separation of Powers and Issues for Future Resolution,” Elizabeth Fine and James Caras, 58 N.Y.L. Sch. L. Rev. 119 (2013-2014) and “The New York City Council’s Approach to Ensure Compliance with Conflicts of Interest Laws in the Discretionary Funding Process,” Elizabeth Fine and James Caras, 24 Municipal Lawyer 13 (Winter 2010).</p><p>Prior to his government service, James practiced law at the law firms of Simpson Thacher & Bartlett and Akin Gump Strauss Hauer & Feld. He received a J.D. from Harvard Law School in 1988 and a B.A. from Dartmouth College in 1985.
+        </p>",
+        # role: "",
+        # image_url: "",
+        # profile_pic: File.open(File.join(Rails.root, 'app/assets/images/headshots/.png')),
         order: 4
     },
     {
-        name: "Una Clarke",
-        bio: "<p>Una Clarke serves as President of Una Clarke Associates, a consulting firm specializing primarily in education management, political consulting, and small business services. Previously, Clarke served as a New York City Councilwoman, representing Brooklyn’s 40th Council District for 10 years starting in 1991. Clarke sponsored more than 300 pieces of legislation on issues including child welfare, education, health and mental health, economic development, public safety and transportation. Clarke is currently a CUNY trustee, appointed by Mayor de Blasio.</p>",
-        role: "Staff",
-        image_url: "default.jpg",
-        profile_pic: File.open(File.join(Rails.root, 'app/assets/images/headshots/default.jpg')),
+        name: "Eduardo Cordero, Sr.",
+        bio: "<p>Eduardo spent over 25 years as a union activist and member of the United Food & Commercial Workers International Union (UFCW). Eduardo organized and represented workers for 18 years with UFCW Local 1500, where he served as Vice President, Assistant Political Director, and Director of Organizing. During his tenure, Eduardo represented members at employee and labor-management meetings, arbitration hearings, and unfair labor practice hearings.</p><p>While at UFCW Local 2013, formerly Local 348-S, Eduardo served as Union Representative and Political Director; he identified, recruited, and developed worksite leaders, assisted members with contract negotiation, and served as a liaison for UFCW during the local union’s transition from Local 348-S.</p><p>Eduardo was also an Executive Board Member for the Labor Council for Latin American Advancement and the United Latinos of the UFCW, and for over 30 years he was a member and officer of the Hispanic Labor Committee, an advisory committee of the AFL-CIO New York City Central Labor Council.</p>",
+        # role: "",
+        image_url: "eduardo_cordero_sr",
+        profile_pic: File.open(File.join(Rails.root, 'app/assets/images/headshots/eduardo_cordero_sr.png')),
         order: 5
     },
     {
-        name: "Angela Fernandez",
-        bio: "<p>Angela Fernandez is the Executive Director and Supervising Attorney of Northern Manhattan Coalition for Immigrant Rights, a leading community-based legal services and advocacy organization for low-income immigrants. She brings to the Board 20 years of experience in law, media, non-profit management, government, policy development, and advocacy. Her prior government experience includes working as District Chief of Staff to U.S. Representative José  Serrano and as a staff aide to U.S. Senator Bill Bradley.</p>",
-        role: "Staff",
-        image_url: "default.jpg",
-        profile_pic: File.open(File.join(Rails.root, 'app/assets/images/headshots/default.jpg')),
+        name: "Hon. Stephen J. Fiala",
+        bio: "<p>Stephen serves as the 40th County Clerk and Commissioner of Jurors for Richmond County. Under Stephen’s leadership, the Richmond County Clerk’s office has collected more than $2 billion in revenue and provides various services. In 2001, Stephen launched his “Think Performance Excellence” initiative aimed at restructuring the office’s organization and revolutionizing its business practices. Stephen also holds the titles of Clerk of the Supreme Court and County Register.</p><p>In 2004, Mayor Michael Bloomberg appointed Stephen to serve on the City Charter Revision Commission; Stephen served as the Secretary. In 2010, Stephen was tapped by the Mayor to serve on the Goldstein Charter Revision Commission. In 2013, Staten Island Borough President-Elect James Oddo tapped Stephen to serve as Chairman of his Transition Committee, which sought to organize the structure and staffing of the Staten Island Borough President’s office.</p><p>Stephen is a former New York City Council Member and served as Minority Whip within the Council. Mr. Fiala was the ranking Council Member on the Consumer Affairs, Contracts, Environmental Protection, Education, and Governmental Operations Committees. While serving in the Council, Stephen became a recognized leader in the fight to safeguard the environment and developed a strong record in advancing needed reforms in the City’s educational system.</p><p>Stephen has served on the boards of not-for-profit groups, including American Humanics, Inc., the Staten Island Historical Society, and Turn Around Friends, Inc. He has also served as a member of the President’s Advisory Council for Pace University. Stephen currently serves on the Advisory Board for the Court Families Assistance Fund to address the needs of the people of Puerto Rico following Hurricane Maria. </p>",
+        # role: "",
+        image_url: "stephen_j_fiala.png",
+        profile_pic: File.open(File.join(Rails.root, 'app/assets/images/headshots/stephen_j_fiala.png')),
         order: 6
     },
     {
-        name: "Sharon Greenberger",
-        bio: "<p>Sharon Greenberger is the 10th President and CEO of the YMCA of Greater New York, a leading New York City non-profit organization serving over 500,000 children, adults and seniors annually through programs and services focused on empowering youth, improving health, and strengthening community. Prior to joining the YMCA in July 2015, Sharon served as the Senior Vice President, Facilities and Real Estate at New York-Presbyterian Hospital and the Chief Operating Officer for the New York City Department of Education.</p>",
-        role: "Staff",
-        image_url: "default.jpg",
-        profile_pic: File.open(File.join(Rails.root, 'app/assets/images/headshots/default.jpg')),
+        name: "Paula Gavin",
+        bio: "<p>Paula serves as the New York City Chief Service Officer responsible for NYC Service, a division of the Office of the Mayor that promotes volunteerism and engages New Yorkers in service to address the city’s greatest needs.</p><p>From 2012 to 2013, Paula served as the Executive Director of New York City’s Fund for Public Advocacy, a nonprofit organization affiliated with the Office of the Public Advocate. From 2007 to 2012, Paula served as President of National Urban Fellows, a leadership development and diversity organization. During Paula’s tenure as President, National Urban Fellows created America’s Leaders of Change program and the Public Service Leadership Diversity Initiative. From 2004-2007, Paula served as the founding Executive Director of the New York City Center for Charter School Excellence.</p><p>Paula was President and CEO of the YMCA of Greater New York from 1990-2004. During her tenure, annual fundraising grew fivefold. In her capacity, she focused the YMCA mission on education, recreation, and health programs with an emphasis on youth. Prior to her position with the YMCA, Paula held multiple executive positions in operations, marketing, sales, and human resources with AT&T, culminating her 20-year AT&T career as Vice President of Network Operations.</p><p>Paula is a graduate of the University of Delaware. She has served as an adjunct professor at the NYU Wagner School of Public Service and previously taught Master’s level nonprofit management courses at the New School and Columbia University. Paula has been a volunteer for the YMCA d’Haiti; the YMCA of Bogota, Colombia; and multiple civic organizations in the city.</p>",
+        # role: "",
+        image_url: "paula_gavin.png",
+        profile_pic: File.open(File.join(Rails.root, 'app/assets/images/headshots/paula_gavin.png')),
         order: 7
     },
     {
-        name: "Dale Ho",
-        bio: "<p>Dale Ho is the Director of the ACLU's Voting Rights Project where he supervises the ACLU’s voting rights litigation and advocacy work nationwide. Ho has active cases in over a dozen states throughout the country. He has litigated cases under the federal Voting Rights Act and the National Voter Registration Act. Ho is also an adjunct professor of law at NYU School of Law.</p>",
-        role: "Staff",
-        image_url: "default.jpg",
-        profile_pic: File.open(File.join(Rails.root, 'app/assets/images/headshots/default.jpg')),
+        name: "Lindsay Greene",
+        bio: "<p>Lindsay currently serves as a Senior Advisor to the Deputy Mayor for Housing & Economic Development in the New York City Mayor’s office. She works closely with the New York City Economic Development Corporation, the Brooklyn Navy Yard Development Corporation, the Department of Consumer Affairs, and the Department of Small Business Services. Lindsay has worked on projects including the launch of the City’s new ferry transit system, establishment of the Office of Nightlife, and new developments in the Brooklyn Army Terminal and Bush Terminal in Sunset Park, Brooklyn.</p><p>Prior to her role in the NYC Mayor’s Office, Lindsay served as Director of Sales and Sales Operations at The Chia Company, a small all-natural consumer food brand. Before joining The Chia Company, Lindsay was the Category Merchant for the $40M prepared foods department at NYC’s online grocer FreshDirect. In her early career, Lindsay spent six years at Goldman Sachs in real estate private equity and investment banking. Lindsay holds a BA in economics from Harvard and an MBA from Yale School of Management.</p><p>Outside of work, Lindsay serves on the Advisory Boards of several fresh food consumer product brands, is a mentor through AccelFoods, and has been a presenter and panelist at BevNet/Project Nosh. She has also served as an inaugural board member of SlowMoneyNYC and since college has been a one-on-one mentor to assist young women of color in navigating high school and early college years.</p>",
+        # role: "",
+        image_url: "lindsay_greene.png",
+        profile_pic: File.open(File.join(Rails.root, 'app/assets/images/headshots/lindsay_greene.png')),
         order: 8
     },
     {
-        name: "Mendy Mirocznik",
-        bio: "<p>Mendy Mirocznik is the president of C.O.J.O of Staten Island, a borough wide civic organization dedicated to providing services to those less fortunate, including housing and a food pantry which provides hundreds of hot meals to our fixed income seniors. Mirocznik is also a member of Community Board 2.</p>",
-        role: "Staff",
-        image_url: "default.jpg",
-        profile_pic: File.open(File.join(Rails.root, 'app/assets/images/headshots/default.jpg')),
+        name: "Sal Albanese",
+        bio: "<p>Sal was a New York City public school teacher for eleven years. In 1982, at the urging of community residents, he ran for City Council and defeated a 21-year incumbent and Republican-Conservative Minority Leader. Sal won re-election four times, representing the people of southwestern Brooklyn until 1997 when he became a candidate for Mayor of New York City.</p><p>As a Council Member, Sal was a member of the Public Safety, Education, and Transportation committees. An expert on police issues, he successfully worked with community leaders to put more officers on patrol and improve community-police relations.</p><p>His other legislation and advocacy includes introducing the pioneering New York City Living Wage Bill; being a leading advocate for public school accountability and fighting to transform a struggling high school in his district into the successful High School of Telecommunications Arts and Technology; and being the original sponsor of a campaign finance reform bill that would permanently remove big money from the political process. Sal also helped pass one of the first bills in the nation that prohibited housing and employment discrimination based on sexual orientation.</p><p>For the past 19 years, Sal has worked in the private sector in the legal and financial fields. He received his B.A. in Education from CUNY’s York College, earned an M.A. in Health Science from NYU, and received his law degree from Brooklyn Law School in 1990.</p>",
+        # role: "",
+        image_url: "sal_albanese.png",
+        profile_pic: File.open(File.join(Rails.root, 'app/assets/images/headshots/sal_albanese.png')),
         order: 9
     },
     {
-        name: "Annetta Seecharran",
-        bio: "<p>Annetta Seecharran has a 25 years track record working to improve conditions for marginalized communities -- having led key initiatives benefiting immigrants and young people; and always drawing attention to emerging trends impacting vulnerable populations. She is currently the Executive Director of Chhaya Community Development Corporation, previously led South Asian Youth Action and has served as Director of Policy for United Neighborhood Houses.</p>",
-        role: "Staff",
-        image_url: "default.jpg",
-        profile_pic: File.open(File.join(Rails.root, 'app/assets/images/headshots/default.jpg')),
+        name: "Alison Hirsch",
+        bio: "<p>Alison has been working for 32BJ SEIU since 2007 and became Vice President in May 2018. In 2008, she served as Ohio State Director for the Change to Win/SEIU campaign to elect President Obama. Prior to joining 32BJ, Alison served as Chief of Staff to New York State Assemblyman Vito J. Lopez and as the Policy and Legislative Director for the New York League of Conservation Voters. Alison was raised in Baltimore, MD, and has a degree in Religion from Columbia University. She sits on the boards of Coro NY and Avodah, the Jewish social justice corps.</p>",
+        # role: "",
+        image_url: "alison_hirsch.png",
+        profile_pic: File.open(File.join(Rails.root, 'app/assets/images/headshots/alison_hirsch.png')),
         order: 10
     },
     {
-        name: "John Siegal",
-        bio: "<p>John Siegal is a partner at BakerHostetler where he handles litigations, arbitrations, and appeals for clients in the financial services, media, and real estate industries. Siegal’s public service experience includes working as an Assistant to Mayor David N. Dinkins and as a Capitol Hill staff aide to Senator (then Congressman) Charles E. Schumer.</p>",
-        role: "Staff",
-        image_url: "default.jpg",
-        profile_pic: File.open(File.join(Rails.root, 'app/assets/images/headshots/default.jpg')),
+        name: "Rev. Clinton Miller",
+        bio: "<p></p>",
+        # role: "",
+        # image_url: ".png",
+        # profile_pic: File.open(File.join(Rails.root, 'app/assets/images/headshots/.png')),
         order: 11
     },
     {
-        name: "Wendy Weiser",
-        bio: "<p>Wendy Weiser directs the Democracy Program at the Brennan Center for Justice at NYU Law. Her program focuses on voting rights and elections, money in politics and ethics, redistricting and representation, government dysfunction, rule of law, and fair courts. She founded and directed the program’s Voting Rights and Elections Project, directing litigation, research, and advocacy efforts to enhance political participation and prevent voter disenfranchisement across the country.</p>",
-        role: "Staff",
-        image_url: "default.jpg",
-        profile_pic: File.open(File.join(Rails.root, 'app/assets/images/headshots/default.jpg')),
+        name: "Sateesh Nori",
+        bio: "<p>Sateesh is the Attorney-in-Charge at the Queens Neighborhood Office of the Legal Aid Society, where he oversees a staff of 70 attorneys and paralegals who assist low-income residents of Queens with civil legal issues. Sateesh was previously involved with the Legal Aid Society in the Harlem Community Law Office as a Senior Staff Attorney and in the Brooklyn Neighborhood office as a Staff Attorney, dealing primarily with tenant issues. Sateesh also was Director of Housing Litigation at Bedford-Stuyvesant Community Legal Services, where he worked with a team to interview, advise, and represent low-income tenants in various forums.</p><p>Sateesh is currently a member of the Mayor’s Committee on City Marshals and served as a member of the Housing Court Advisory Council from 2015-2017. His writing on tenants’ legal rights, housing programs, and landlord best practices have been published in several legal journals. Sateesh is also an Adjunct Professor at New York University School of Law.</p><p>Sateesh received his law degree from New York University School of Law in 2001.</p>",
+        # role: "",
+        image_url: "sateesh_nori.png",
+        profile_pic: File.open(File.join(Rails.root, 'app/assets/images/headshots/sateesh_nori.png')),
         order: 12
-    }
+    },
+    {
+        name: "Dr. Merryl H. Tisch",
+        bio: "<p>Merryl, Vice Chair of the State University of New York, is one of the nation's leading voices on education. She served at the helm of New York State’s governing body for education from 2009 to 2016. As Chancellor of the New York State Board of Regents, Merryl was responsible for setting the state’s education policy and overseeing both public and private education throughout New York.</p><p>Merryl was a member of the Board of Regents for 20 years and held the position of Vice Chancellor from 2007 to 2009. Her policies were informed by years of experience in the fields of education, community service, and philanthropy, including her work as a first-grade teacher at New York City’s Ramaz School and the B’nai Jeshurun School.</p><p>Merryl serves as co-chairperson of the Metropolitan Council on Jewish Poverty, a leading social services agency, which has gained national recognition for its work in the areas of youth and family services, housing, poverty programs, and neighborhood preservation. In addition, Merryl  is on the board of the Metropolitan Museum of Art and acts as the Met’s representative on the Public Design Commission. Merryl also sits on the executive committees of The Washington Institute for Near East Policy and the Citizens Budget Commission. Furthermore, she serves on the board of The Trust for Cultural Resources of the City of New York, and the Graduate School of Education’s Board of Overseers at the University of Pennsylvania. Merryl founded the Tisch Cancer Institute at Mt. Sinai Hospital in 2008.</p><p>Merryl earned a B.A. from Barnard College, an M.A. in Education from New York University, and an Ed.D from Teacher’s College, Columbia University.</p>",
+        # role: "",
+        image_url: "merryl_h_tisch.png",
+        profile_pic: File.open(File.join(Rails.root, 'app/assets/images/headshots/merryl_h_tisch.png')),
+        order: 13
+    },
+    {
+        name: "James Vacca",
+        bio: "<p>Born and raised in the Bronx, James is a product of the NYC Public schools. He has a BA in Political Science from the State University of New York and a Masters Degree in Urban Studies from Queens College, CUNY. James served as District Manager of Bronx Community Board 10 from 1980 to 2005, becoming the youngest and one of the longest serving District Managers in the city. He also served as President of the Northeast Bronx Senior Citizen Center from 1975 to 2005. James was a New York City Councilman from 2006 through 2017.</p><p>James served as Chair of the Transportation Committee and Chair of the Technology Committee as well as Deputy Leader and a member of the Councils budget negotiation team. He was the prime sponsor of legislation dealing with human rights, algorithm transparency, transportation services for the disabled, tenant rights, and open data. James is currently a Distinguished Lecturer of Urban Studies at Queens College where he teaches courses on NYC government and public administration.</p>",
+        # role: "",
+        image_url: "james_vacca.png",
+        profile_pic: File.open(File.join(Rails.root, 'app/assets/images/headshots/james_vacca.png')),
+        order: 14
+    },
 ])
 
 Job.create([
