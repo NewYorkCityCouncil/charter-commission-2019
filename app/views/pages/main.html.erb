@@ -23,8 +23,8 @@
                 <a class="nav-link dropdown-item" href="/charter">About the Charter</a>
                 <div class="dropdown-divider"></div>
                 <a class="nav-link dropdown-item" href="/members">Meet the Commissioners</a>
-                <div class="dropdown-divider"></div>
-                <a class="nav-link dropdown-item" href="/staff">Staff</a>
+                <!--<div class="dropdown-divider"></div>
+                <a class="nav-link dropdown-item" href="/staff">Staff</a>-->
                 <div class="dropdown-divider"></div>
                 <a class="nav-link dropdown-item" href="/resources">Resources</a>
                 <div class="dropdown-divider"></div>
@@ -63,9 +63,10 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-12 col-lg-7">
-        <div class="marquee3k" style="background-color:#d11b1b;overflow:hidden;"  data-speed=".5"   data-pausable="true"> 
+        <div class="marquee3k" style="background-color:#D11B1B;overflow:hidden;" data-speed=".5" data-pausable="true"> 
           <p style="color:white;margin:5px 15px;"><small>First Public Meeting of the NYC Charter Commission 2019: July 16, 2018, 5 PM, City Hall <strong><%= link_to "Click here", show_hearing_path(:date_of_hearing => "2018-07-16 17:00:00 -0400") %></strong></small></p>
         </div>
+        <script>$(document).ready(function(){Marquee3k.init();});</script>
         <div id="home-image-carousel">
           <% if @hearings.length > 0 %>
             <div class="round-border">

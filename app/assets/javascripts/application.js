@@ -22,7 +22,6 @@ function iconChange(x) {
 };
 
 $(document).ready(function(){
-  Marquee3k.init()
   var place = 0;
   $("#lang-label-0").show().animate({opacity:1},500);
   setInterval(function(){
