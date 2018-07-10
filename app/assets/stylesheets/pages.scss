@@ -171,19 +171,25 @@ ul.navbar-nav {
 .home-image {
   background-size: cover;
   background-position: center;
-  border-radius:5px;
+  // border-radius:5px;
+  border-bottom-left-radius:5px;
+  border-bottom-right-radius:5px;
   height: 300px !important;
   margin-bottom: 30px;
   width: 100%;
 }
 
 .slick-list.draggable{
-  border-radius:5px;
+  // border-radius:5px;
+  border-bottom-left-radius:5px;
+  border-bottom-right-radius:5px;
 }
 
 #home-image-carousel {
-  border-radius:5px;
-  box-shadow: 2px 2px 10px #000;
+  // border-radius:5px;
+  border-bottom-left-radius:5px;
+  border-bottom-right-radius:5px;
+  box-shadow: 2px 4px 6px #000;
   height: 300px;
   margin-bottom: 20px;
 }
