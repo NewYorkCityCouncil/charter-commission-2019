@@ -30,6 +30,8 @@
                 <a class="nav-link dropdown-item" href="/resources">Resources</a>
                 <div class="dropdown-divider"></div>
                 <a class="nav-link dropdown-item" href="/jobs">Jobs</a>
+                <div class="dropdown-divider"></div>
+                <a class="nav-link dropdown-item" href="/faqs">FAQs</a>
               </div>
             </li>
             <li class="nav-item">
@@ -70,11 +72,17 @@
       <% @members.each do |member| %>
         <div class="col-lg-3 col-md-4 col-sm-6">
           <div class="image-container" style="background-image:url('<%=member.profile_pic.url%>')">
-            <div class="member-overlay overlay" data-toggle="modal" data-target="#commission-member-modal" data-image="<%=member.profile_pic.url%>" data-name="<%= member.name %>" data-role="<%= member.role %>" data-bio="<%= member.bio.to_s %>">
+            <div class="member-overlay overlay" data-toggle="modal" data-target="#commission-member-modal" data-image="<%=member.profile_pic.url%>" data-name="<%= member.name %>" data-role="<%= member.role.nil? ? member.role : " - #{member.role}" %>" data-bio="<%= member.bio.to_s %>">
               <div class="name-and-role">
-                <h5><%= member.name %></h5>
-                <p><em><%= member.role %></em></p>
-                <p style="text-decoration:underline;"><small>Click for bio</small></p>
+                <p class="center" style="line-height:12px;margin:0 10px;">
+                  <small>
+                    <strong>Appointed by <em><%= member.appointer %></em></strong>
+                    <!--<br><br>
+                    Formerly head of some committee.-->
+                  </small>
+                  <br><br>
+                  <span style="text-decoration:underline;"><small>Click for bio</small></span>
+                </p>
               </div>
             </div>
           </div>
@@ -97,11 +105,12 @@
       <div class="modal-content">
         <div class="modal-header">
           <h3 class="modal-title" id="member-name"></h3>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i></button>
         </div>
         <div class="modal-body" id="member-bio">
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          
         </div>
       </div>
     </div>
@@ -115,7 +124,7 @@
       });
 
       $(".member-overlay").click(function(){
-        $("#member-name").html($(this).attr("data-name")+" - <small><em>"+$(this).attr("data-role")+"</em></small>");
+        $("#member-name").html($(this).attr("data-name")+"<small><em>"+$(this).attr("data-role")+"</em></small>");
         // $("#member-pic").html("<img src='images/headshots/"+members[$(this).attr("data-contact")].pic+"'>");
         $("#member-bio").html($(this).attr("data-bio"));
       });

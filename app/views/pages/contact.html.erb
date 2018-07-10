@@ -30,6 +30,8 @@
                 <a class="nav-link dropdown-item" href="/resources">Resources</a>
                 <div class="dropdown-divider"></div>
                 <a class="nav-link dropdown-item" href="/jobs">Jobs</a>
+                <div class="dropdown-divider"></div>
+                <a class="nav-link dropdown-item" href="/faqs">FAQs</a>
               </div>
             </li>
             <li class="nav-item active">
@@ -78,7 +80,7 @@
         </div>
         <br><br>
         <div class="col-12">
-          <%= f.select(:borough, options_for_select(["Bronx","Brooklyn","Manhattan","Staten Island","Queen"]), {}, { class: "form-inputs"})%>
+          <%= f.select(:borough, options_for_select(["Bronx","Brooklyn","Manhattan","Staten Island","Queen"]), {prompt: "--Select a borough--"}, {required: true, class: "form-inputs"}) %>
         </div>
         <br><br>
         <div class="col-12">
@@ -87,7 +89,15 @@
           <%= f.text_field :phone, class: "not-required", placeholder: "Phone" %>
         </div>
         <div class="col-12">
-          <%= f.text_area :message, class: "comments", row: 10, placeholder: "Your ideas for the charter", required: true %>
+          <%= f.text_area :message, class: "comments", row: 10, placeholder: "Your ideas for the charter", required: true , maxlength: 2000 %>
+          <br><small><em>Character limit: <span id="contact-limit"></span></em></small>
+          <br><br>
+          <script>
+            $("#contact-limit").html("2000");
+            $("#comment_message").keyup(function(){
+              $("#contact-limit").html(2000 - $(this).val().length);
+            });
+          </script>
         </div>
         <div class="col-12">
           <%= f.file_field :comment_attachment %>

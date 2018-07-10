@@ -1,7 +1,10 @@
 branch-defaults:
   master:
-    environment: QaChartercommission-env-1
+    environment: QaChartercommission-env
 environment-defaults:
+  QaChartercommission-env:
+    branch: null
+    repository: null
   QaChartercommission-env-1:
     branch: null
     repository: null

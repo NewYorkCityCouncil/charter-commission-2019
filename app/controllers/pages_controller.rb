@@ -62,6 +62,7 @@ class PagesController < ApplicationController
           content = Content.new(type: 'text/html', value: '<p><b class="underline">Sender:</b></p><p>'+@new_comment.name+' (Reply To: <a href="mailto:'+@new_comment.email+'">'+@new_comment.email+'</a>)</p><p><b style="text-decouration:underline;">From</b>'+@new_comment.borough+'</p><p><b style="text-decouration:underline;">Message:</b></p><p>'+formatted_message+'</p>')
           mail = Mail.new(from, subject, to, content)
           # Adding a BCC because not every email goes through to Council email
+          # mail.personalizations[0]["bcc"] = [{"email"=>"charter2019nyc@gmail.com"}]
           mail.personalizations[0]["bcc"] = [{"email"=>"jc.nycc.122018@gmail.com"}]
           if !@new_comment.comment_attachment.file.nil?
             attachment = Attachment.new
@@ -130,6 +131,10 @@ class PagesController < ApplicationController
   def news_article
     @page = "News - #{params[:title]}"
     @news_article = News.find_by(:order => params[:order])
+  end
+
+  def faqs
+    @page = "Frequently Asked Quetsions"
   end
 
   private

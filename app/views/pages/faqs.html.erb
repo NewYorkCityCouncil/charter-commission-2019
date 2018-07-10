@@ -25,13 +25,13 @@
                 <div class="dropdown-divider"></div>
                 <a class="nav-link dropdown-item" href="/members">Meet the Commissioners</a>
                 <div class="dropdown-divider"></div>
-                <a class="nav-link dropdown-item disabled active-dropdown">Staff <span class="sr-only">(current)</span></a>
+                <a class="nav-link dropdown-item" href="/staff">Staff</a>
                 <div class="dropdown-divider"></div>
                 <a class="nav-link dropdown-item" href="/resources">Resources</a>
                 <div class="dropdown-divider"></div>
                 <a class="nav-link dropdown-item" href="/jobs">Jobs</a>
                 <div class="dropdown-divider"></div>
-                <a class="nav-link dropdown-item" href="/faqs">FAQs</a>
+                <a class="nav-link dropdown-item disabled active-dropdown">FAQs <span class="sr-only">(current)</span></a>
               </div>
             </li>
             <li class="nav-item">
@@ -64,54 +64,9 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h2 class="page-title">Staff</h2>
-      </div>
-    </div>
-    <div class="row">
-      <% @staff.each do |staff_member| %>
-        <div class="col-lg-3 col-md-4 col-sm-6">
-          <div class="image-container" style="background-image:url('/uploads/staff/profile_pic/<%=staff_member.profile_pic.url%>')">
-            <div class="staff-overlay overlay" data-toggle="modal" data-target="#commission-staff-modal" data-image="<%=staff_member.profile_pic.url%>" data-name="<%= staff_member.name %>" data-role="<%= staff_member.role %>" data-bio="<%= staff_member.bio.to_s %>">
-              <div class="name-and-role">
-                <h5><%= staff_member.name %></h5>
-                <p><em><%= staff_member.role %></em></p>
-                <p style="text-decoration:underline;"><small>Click for bio</small></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  </div>
-
-  <div class="modal fade" id="commission-staff-modal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 class="modal-title" id="staff-name"></h3>
-        </div>
-        <div class="modal-body" id="staff-bio">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
+        <h2 class="page-title">Frequently Asked Questions</h2>
       </div>
     </div>
   </div>
 
-  <script>
-    $(document).ready(function(){
-      $(".image-container .overlay").hover(function(){
-        $(this).animate({'opacity': '1'}, 250);
-      }, function(){
-        $(this).animate({'opacity': '0'}, 250);   
-      });
-
-      $(".staff-overlay").click(function(){
-        $("#staff-name").html($(this).attr("data-name")+" - <small><em>"+$(this).attr("data-role")+"</em></small>");
-        // $("#staff-pic").html("<img src='images/headshots/"+staffs[$(this).attr("data-contact")].pic+"'>");
-        $("#staff-bio").html($(this).attr("data-bio"));
-      });
-    });
-  </script>
-  <%= render partial: "footer" %>
+<%= render partial: "footer" %>

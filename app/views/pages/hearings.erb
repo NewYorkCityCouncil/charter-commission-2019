@@ -30,13 +30,15 @@
                 <a class="nav-link dropdown-item" href="/resources">Resources</a>
                 <div class="dropdown-divider"></div>
                 <a class="nav-link dropdown-item" href="/jobs">Jobs</a>
+                <div class="dropdown-divider"></div>
+                <a class="nav-link dropdown-item" href="/faqs">FAQs</a>
               </div>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/contact">Submit Your Ideas</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link disabled">Hearings & Meetings <span class="sr-only">(current</span></a>
+              <a class="nav-link disabled">Hearings & Meetings <span class="sr-only">(current)</span></a>
             </li>
             <!--<li class="nav-item dropdown active active-pointer">
               <a class="nav-link dropdown-toggle" id="contactDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -65,7 +67,7 @@
         <h2 class="page-title">Upcoming Hearings &amp; Meetings</h2>
         <% if @upcoming_hearings.length > 0 %>
           <% @upcoming_hearings.each do |hearing| %>
-            <p><%= link_to "#{hearing.location_of_hearing} - #{hearing.date_of_hearing.in_time_zone('Eastern Time (US & Canada)').strftime("%m/%d/%Y %I:%M %p %Z")}", show_hearing_path(hearing.date_of_hearing) %>
+            <p><%= link_to "#{hearing.location_of_hearing} #{hearing.date_of_hearing.in_time_zone('Eastern Time (US & Canada)').strftime("%B %d, %Y %l:%M %p")}", show_hearing_path(hearing.date_of_hearing) %>
           <% end %>
         <% else %>
           <p>The Commission will be holding hearings in all five boroughs. Stay tuned for more details.</p>
@@ -77,7 +79,7 @@
         <h2 class="page-title">Past Hearings &amp; Meetings</h2>
         <% if @past_hearings.length > 0 %>
           <% @past_hearings.each do |hearing| %>
-            <p><%= link_to "#{hearing.location_of_hearing} - #{hearing.date_of_hearing.in_time_zone('Eastern Time (US & Canada)').strftime("%m/%d/%Y %I:%M %p %Z")}", show_hearing_path(hearing.date_of_hearing) %>
+            <p><%= link_to "#{hearing.location_of_hearing} #{hearing.date_of_hearing.in_time_zone('Eastern Time (US & Canada)').strftime("%B %d, %Y %l:%M %p")}", show_hearing_path(hearing.date_of_hearing) %>
           <% end %>
         <% else %>
           <p>No hearings have been held yet.</p>
