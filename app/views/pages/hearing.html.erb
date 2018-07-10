@@ -70,7 +70,7 @@
         <h3><%= @hearing.location_of_hearing.html_safe %></h3>
         <hr>
         <p><%= @hearing.hearing_content.html_safe %><br></p>
-        <% if !@hearing.youtube_url.empty? || !@hearing.livestream_embed.empty? %>
+        <% if !@hearing.youtube_url.nil? || !@hearing.livestream_embed.nil? %>
           <h3 class="underline">Watch</h3>
           <%= @hearing.youtube_url.html_safe %>
         <% end %>
