@@ -5,6 +5,7 @@
 
 body {
   font-family: 'Open Sans',sans-serif;
+  min-height:auto !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -291,12 +292,15 @@ footer {
   background-color: #E6E6E6;
   border-top: 3px solid #CACACA;
   margin-top: 50px;
-  padding: 75px 0px;
+  padding: 25px 0px;
   p {
     font-size: .9em;
     a {
       color: #2F56A6;
     }
+  }
+  #footer-social{
+    text-align:center;
   }
   .social-media{
     background-color: #2F56A6;
@@ -342,6 +346,10 @@ footer {
   }
   #contact-form {
     width: 80%;
+  }
+  #footer-social{
+    margin-bottom:15px;
+    text-align:center;
   }
 }
 

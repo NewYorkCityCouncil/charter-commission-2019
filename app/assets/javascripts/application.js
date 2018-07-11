@@ -12,7 +12,7 @@
 //
 //= jquery
 //= require rails-ujs
-//= require turbolinks
+
 //= require_tree .
 //= require bootstrap
 
@@ -29,4 +29,14 @@ $(document).ready(function(){
     place === 6 ? place = 0 : place++;
     $("#lang-label-"+place).show().animate({opacity:1},500);
   },1500);
+
+  footerAdjust();
+
+  $(window).on("resize",function(){
+    footerAdjust();
+  });
+
+ function footerAdjust(){
+  $(".container").first().css({"padding-bottom":$(".container").last().height()+100+"px"});
+ }
 });
