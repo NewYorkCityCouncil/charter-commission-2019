@@ -234,7 +234,8 @@ Hearing.create([
         date_of_hearing:"2018-07-16T21:00",
         location_of_hearing:"City Hall",
         transcript_url:"",
-        hearing_content:"<p>The first meeting of the Charter Revision Commission will be held here.</p>",
+        hearing_content:"
+        <p class='underline center'><strong>New York City Charter Revision Commission 2019 Notice of Public Meeting</strong></p><p>Please be advised that the New York City Charter Revision Commission 2019 will hold a Public Meeting on Monday, July 16th, 2018, at 5:00 P.M., in Council Chambers at City Hall.</p><p>This meeting is open to the public but there will not be an opportunity to testify before the Commission at this meeting. There will be opportunities for testimony by members of the public at future Public Hearings of the Commission.</p><p>City Hall is accessible to individuals using wheelchairs or other mobility devices.</p>",
         address_1:"City Hall Park",
         address_2:"",
         city:"New York",
