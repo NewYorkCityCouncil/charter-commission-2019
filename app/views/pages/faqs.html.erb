@@ -21,8 +21,8 @@
                 About
               </a>
               <div class="nav-item dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="nav-link dropdown-item" href="/charter">About the Charter</a>
-                <div class="dropdown-divider"></div>
+                <!--<a class="nav-link dropdown-item" href="/charter">About the Charter</a>
+                <div class="dropdown-divider"></div>-->
                 <a class="nav-link dropdown-item" href="/members">Meet the Commissioners</a>
                 <!--<div class="dropdown-divider"></div>
                 <a class="nav-link dropdown-item" href="/staff">Staff</a>-->
@@ -63,7 +63,7 @@
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-12">
+      <div class="col-sm-12 col-lg-7">
         <h2 class="page-title">Frequently Asked Questions</h2>
         <div class="faq-container" id="accordion">
           <style>
@@ -150,6 +150,13 @@
             </div>
           </div>
         </div>
+        <br>
+      </div>
+      <div class="col-sm-12 col-lg-5">
+        <h2 class="page-title">Additional Information</h2>
+        <p style="padding: 12px 20px;">
+          <%= link_to "Local Law 91 (PDF)", asset_path("/pdfs/Local Law 91.pdf", skip_pipeline: true)%>
+        </p>
       </div>
     </div>
   </div>

@@ -194,9 +194,21 @@ ul.navbar-nav {
   height: 300px;
   margin-bottom: 20px;
 }
-
-#mobile-hearing-show {
-  display: none;
+#hearing-message{
+  background-color: rgba(0,0,0,.6);
+  border-top-left-radius: 75% 100%;
+  color: white;
+  float: right;
+  height: 100%;
+  padding: 15px;
+  position: relative;
+  text-align: center;
+  width: 65%;
+}
+#hearing-message div{
+  position: absolute;
+  bottom:20px;
+  right:20px;
 }
 
 .round-border{
@@ -285,6 +297,9 @@ h1.page-title,h2.page-title,h3.page-title,h4.page-title,h5.page-title,h6.page-ti
     vertical-align: middle;
   }
 }
+#hearing-map{
+  box-shadow: 2px 4px 6px #000;
+}
 
 /* Footer */
 
@@ -335,9 +350,7 @@ footer {
   #home-image-carousel {
     display: none;
   }
-  #mobile-hearing-show {
-    display: block;
-  }
+
   #visit-council {
     margin-top: 20px;
   }

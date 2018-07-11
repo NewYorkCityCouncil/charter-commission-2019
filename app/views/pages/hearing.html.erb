@@ -21,8 +21,8 @@
                 About
               </a>
               <div class="nav-item dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="nav-link dropdown-item" href="/charter">About the Charter</a>
-                <div class="dropdown-divider"></div>
+                <!--<a class="nav-link dropdown-item" href="/charter">About the Charter</a>
+                <div class="dropdown-divider"></div>-->
                 <a class="nav-link dropdown-item" href="/members">Meet the Commissioners</a>
                 <!--<div class="dropdown-divider"></div>
                 <a class="nav-link dropdown-item" href="/staff">Staff</a>-->
@@ -64,11 +64,11 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        
-        <br><br>
-        <h2><%= @hearing.date_of_hearing.strftime("%A, %B %d, %Y") %></h2>
+        <h2><%= @hearing.date_of_hearing.strftime("%A %B %d, %Y") %></h2>
         <h3><%= @hearing.location_of_hearing.html_safe %></h3>
         <hr>
+      </div>
+      <div class="col-sm-12 col-md-6">
         <p><%= @hearing.hearing_content.html_safe %><br></p>
         <% if !@hearing.youtube_url.nil? || !@hearing.livestream_embed.nil? %>
           <h3 class="underline">Watch</h3>
@@ -83,7 +83,7 @@
           </ul>
         <% end %>
       </div>
-      <div class="col-12">
+      <div class="col-sm-12 col-md-6">
         <%= @hearing.google_maps_url.html_safe %>
       </div>
     </div>
