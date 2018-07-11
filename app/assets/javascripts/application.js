@@ -37,6 +37,8 @@ $(document).ready(function(){
   });
 
  function footerAdjust(){
-  $(".container").first().css({"padding-bottom":$(".container").last().height()+100+"px"});
- }
+  if ($("body").height() < $(window).height()){
+    $(".container").first().css({"padding-bottom":$(".container").last().height()+100+"px"});
+  };
+ };
 });
