@@ -72,13 +72,26 @@
             .faq-container .btn-link{text-decoration: none;}
             .faq-container .btn-link:hover{text-decoration: none;}
             .faq-container .faq-answer{margin: 0 20px;}
+            .toggle-plus{display:inline-block; width:12px;}
+            .faq-question{cursor:pointer;}
           </style>
+          <script>
+            $(document).ready(function(){
+              $(".faq-question").click(function(){
+                $(this).children(".toggle-plus").toggleClass("answer-revealed");
+                if($(this).children(".toggle-plus").hasClass("answer-revealed")){
+                  $(this).children(".toggle-plus").html("-");
+                } else {
+                  $(this).children(".toggle-plus").html("+");
+                }
+                $(".faq-question").not(this).children(".toggle-plus").html("+").removeClass("answer-revealed");
+              });
+            });
+          </script>
           <div class="card">
             <div class="card-header" id="what-is-new-york-charter">
               <h5 class="mb-0">
-                <button class="btn btn-link" data-toggle="collapse" data-target="#faq-1" aria-expanded="true" aria-controls="faq-1">
-                  <p class="faq-question">+ What is the New York City Charter?</p>
-                </button>
+                <span class="faq-question" data-toggle="collapse" data-target="#faq-1" aria-expanded="true" aria-controls="faq-1"><span class="toggle-plus">+</span> What is the New York City Charter?</span>
               </h5>
             </div>
 
@@ -91,9 +104,7 @@
           <div class="card">
             <div class="card-header" id="what-is-charter-revision-commision">
               <h5 class="mb-0">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#faq-2" aria-expanded="false" aria-controls="faq-2">
-                  <p class="faq-question">+ What is a Charter Revision Commission?</p>
-                </button>
+                <span class="faq-question" data-toggle="collapse" data-target="#faq-2" aria-expanded="false" aria-controls="faq-2"><span class="toggle-plus">+</span> What is a Charter Revision Commission?</span>
               </h5>
             </div>
             <div id="faq-2" class="collapse" aria-labelledby="what-is-charter-revision-commision" data-parent="#accordion">
@@ -105,9 +116,7 @@
           <div class="card">
             <div class="card-header" id="when-will-commission-start">
               <h5 class="mb-0">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#faq-3" aria-expanded="false" aria-controls="faq-3">
-                  <p class="faq-question">+ When will Charter Commission 2019 begin its work?</p>
-                </button>
+                <span class="faq-question" data-toggle="collapse" data-target="#faq-3" aria-expanded="false" aria-controls="faq-3"><span class="toggle-plus">+</span> When will Charter Commission 2019 begin its work?</span>
               </h5>
             </div>
             <div id="faq-3" class="collapse" aria-labelledby="when-will-commission-start" data-parent="#accordion">
@@ -119,9 +128,7 @@
           <div class="card">
             <div class="card-header" id="why-was-commission-created">
               <h5 class="mb-0">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#faq-4" aria-expanded="false" aria-controls="faq-4">
-                  <p class="faq-question">+ Why was Charter Commission 2019 created?</p>
-                </button>
+                <span class="faq-question" data-toggle="collapse" data-target="#faq-4" aria-expanded="false" aria-controls="faq-4"><span class="toggle-plus">+</span> Why was Charter Commission 2019 created?</span>
               </h5>
             </div>
             <div id="faq-4" class="collapse" aria-labelledby="why-was-commission-created" data-parent="#accordion">
@@ -133,9 +140,7 @@
           <div class="card">
             <div class="card-header" id="how-to-get-involved">
               <h5 class="mb-0">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#faq-5" aria-expanded="false" aria-controls="faq-5">
-                  <p class="faq-question">+ How can you get involved?</p>
-                </button>
+                <span class="faq-question" data-toggle="collapse" data-target="#faq-5" aria-expanded="false" aria-controls="faq-5"><span class="toggle-plus">+</span> How can you get involved?</span>
               </h5>
             </div>
             <div id="faq-5" class="collapse" aria-labelledby="how-to-get-involved" data-parent="#accordion">
