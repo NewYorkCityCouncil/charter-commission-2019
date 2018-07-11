@@ -207,18 +207,6 @@ Job.create([
         order: 3
     },
     {
-        position: "Director of Communications",
-        number_of_positions: "1",
-        open_date: "05/10/2018",
-        close_date: "Until Filled",
-        duties_and_responsibilities: "<p><strong><em>This is a temporary position that is anticipated to end in November 2019.</em></strong></p><p>The New York City Charter creates the framework for City government, setting out the land use and budget processes, as well as the powers of elected officials.</p><p>The New York City Charter Revision Commission—made up of Members appointed by the Speaker of the City Council, the Mayor, all five Borough Presidents, the Public Advocate, and the Comptroller—will examine the entire Charter and recommend changes. The Commission is expected to submit ballot proposals for the November 2019 general election.</p>",
-        responsibilities: "<ul><li>Develop and execute a comprehensive communications strategy to publicize the work of the Commission, including an online presence.</li><li>Provide strategic communications guidance and assistance to Commission staff and Members.</li><li>Develop and execute strategic media campaigns to promote recommended changes to Charter and encourage their adoption.</li></ul>",
-        requirements: "<ul><li>At least five years of experience.</li><li>Superior communication and organizational abilities.</li><li>Strong press and social media skills.</li><li>Familiarity with the City’s budget, land use process, the balance of power between elected officials, or other structural issues.</li></ul>",
-        attention: "CRCDC",
-        council_url: "https://council.nyc.gov/jobs/director-of-communications/",
-        order: 4
-    },
-    {
         position: "Outreach Liaison",
         number_of_positions: "1",
         open_date: "05/10/2018",
@@ -228,7 +216,7 @@ Job.create([
         requirements: "<ul><li>Experience in public engagement, community outreach, or legislative affairs.</li><li>Community-minded, familiarity with local communities and groups.</li><li>Superior communication and organizational abilities.</li><li>Familiarity with the City’s budget, land use process, the balance of power between elected officials, or other structural issues.</li></ul>",
         attention: "CRCOL",
         council_url: "https://council.nyc.gov/jobs/outreach-liaison/",
-        order: 5
+        order: 4
     },
     {
         position: "Press Secretary",
@@ -240,7 +228,7 @@ Job.create([
         requirements: "<ul><li>At least two years of relevant experience.</li><li>Superior communication and organizational abilities.</li><li>Strong press and social media skills.</li><li>Familiarity with the City’s budget, land use process, the balance of power between elected officials, or other structural issues.</li></ul>",
         attention: "CRCPS",
         council_url: "https://council.nyc.gov/jobs/press-secretary/",
-        order: 6
+        order: 5
     }
 ])
 

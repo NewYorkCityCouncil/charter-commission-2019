@@ -63,24 +63,39 @@
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-12">
-        <h2 class="page-title">Upcoming Hearings &amp; Meetings</h2>
+      <div class="col-sm-12 col-md-6">
+        <h2 class="center page-title">Upcoming Hearings &amp; Meetings</h2>
         <% if @upcoming_hearings.length > 0 %>
-          <% @upcoming_hearings.each do |hearing| %>
-            <p><%= link_to "#{hearing.location_of_hearing} #{hearing.date_of_hearing.in_time_zone('Eastern Time (US & Canada)').strftime("%B %d, %Y %l:%M %p")}", show_hearing_path(hearing.date_of_hearing) %>
-          <% end %>
+          <table id="upcoming-hearings">
+            <tr>
+              <th class="center">Location</th><th class="center">Date and time</th>
+            </tr>
+            <% @upcoming_hearings.each do |hearing| %>
+              <tr onclick='location.href="<%= show_hearing_path(hearing.date_of_hearing) %>"'>
+                <td class="center"><%= hearing.location_of_hearing %></td>
+                <td class="center"><%= hearing.date_of_hearing.in_time_zone('Eastern Time (US & Canada)').strftime("%B %d, %Y %l:%M %p") %></td>
+              </tr>
+            <% end %>
+          </table>
         <% else %>
           <p>The Commission will be holding hearings in all five boroughs. Stay tuned for more details.</p>
         <% end %>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <h2 class="page-title">Past Hearings &amp; Meetings</h2>
-        <% if @past_hearings.length > 0 %>
-          <% @past_hearings.each do |hearing| %>
-            <p><%= link_to "#{hearing.location_of_hearing} #{hearing.date_of_hearing.in_time_zone('Eastern Time (US & Canada)').strftime("%B %d, %Y %l:%M %p")}", show_hearing_path(hearing.date_of_hearing) %>
-          <% end %>
+
+      <div class="col-sm-12 col-md-6">
+        <h2 class="center page-title">Past Hearings &amp; Meetings</h2>
+         <% if @past_hearings.length > 0 %>
+          <table id="past-hearings">
+            <tr>
+              <th class="center">Location</th><th class="center">Date and time</th>
+            </tr>
+            <% @past_hearings.each do |hearing| %>
+              <tr onclick='location.href="<%= show_hearing_path(hearing.date_of_hearing) %>"'>
+                <td class="center"><%= hearing.location_of_hearing %></td>
+                <td class="center"><%= hearing.date_of_hearing.in_time_zone('Eastern Time (US & Canada)').strftime("%B %d, %Y %l:%M %p") %></td>
+              </tr>
+            <% end %>
+          </table>
         <% else %>
           <p>No hearings have been held yet.</p>
         <% end %>

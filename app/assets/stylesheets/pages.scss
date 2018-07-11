@@ -297,8 +297,33 @@ h1.page-title,h2.page-title,h3.page-title,h4.page-title,h5.page-title,h6.page-ti
     vertical-align: middle;
   }
 }
+
+/* Hearing pages specific */
 #hearing-map{
   box-shadow: 2px 4px 6px #000;
+}
+#upcoming-hearings,#past-hearings{
+  margin: 0 auto 35px;
+  width:100%;
+  tr{
+    cursor:pointer;
+    th,td{
+      width:50%;
+    }
+  }
+  tr:not(:first-child):hover{
+    background-color:rgba(34, 138, 230,.2);
+  }
+  tr:nth-child(even){
+    background-color:#CACACA;
+  }
+  tr:nth-child(odd){
+    background-color:#F9F9F9;
+  }
+  tr:first-child{
+    background-color:#2F56A6;
+    color:white
+  }
 }
 
 /* Footer */
