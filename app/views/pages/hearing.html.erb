@@ -78,7 +78,7 @@
           <p class="underline"><strong>Downloadable Files</strong></p>
           <ul>
             <% @hearing.hearing_attachments.each do |attachment| %>
-              <li><a href="<%= attachment.url %>"><%= attachment.url.split("/").last.split("_").join(" ").split(".").first %> (<%= attachment.url.split(".").last.upcase %>)</a></li>
+              <li><a href="<%= attachment.url %>"><%= attachment.file.filename.split(".")[0].split("_").join(" ") %> (<%= attachment.file.filename.split(".")[1].upcase %>)</a></li>
             <% end%>
           </ul>
         <% end %>
