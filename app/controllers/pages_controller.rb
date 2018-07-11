@@ -143,7 +143,7 @@ class PagesController < ApplicationController
     end
 
     def meta_data
-      @meta_description = ""
+      @meta_description = "The New York City Charter is the city's constitution, creating the framework for our government. The 2019 Commission has a broad mandate to conduct a top-to-bottom review and will bring its recommendations to the public in November 2019."
       @meta_image_url = ""
       @meta_site_title = "Charter Revision Commission 2019"
     end
