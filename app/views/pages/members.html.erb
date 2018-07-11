@@ -74,11 +74,11 @@
           <div class="image-container" style="background-image:url('<%=member.profile_pic.url%>')">
             <div class="member-overlay overlay" data-toggle="modal" data-target="#commission-member-modal" data-image="<%=member.profile_pic.url%>" data-name="<%= member.name %>" data-role="<%= member.role.nil? ? member.role : " - #{member.role}" %>" data-bio="<%= member.bio.to_s %>">
               <div class="name-and-role">
-                <p class="center" style="line-height:12px;margin:0 10px;">
+                <p class="center" style="line-height:12px;margin:0 15px;">
                   <small>
                     <strong>Appointed by <em><%= member.appointer %></em></strong>
-                    <!--<br><br>
-                    Formerly head of some committee.-->
+                    <br><br>
+                    <%= member.background %>
                   </small>
                   <br><br>
                   <span style="text-decoration:underline;"><small>Click for bio</small></span>

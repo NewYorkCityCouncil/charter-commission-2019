@@ -258,7 +258,7 @@ class AdminsController < ApplicationController
     end
 
     def member_params
-      params.require(:member).permit(:name,:appointer,:role,:bio,:image_url,:order,:profile_pic)
+      params.require(:member).permit(:name,:appointer,:background,:role,:bio,:image_url,:order,:profile_pic)
     end
 
     def find_job
