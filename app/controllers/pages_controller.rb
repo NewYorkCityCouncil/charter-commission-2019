@@ -11,6 +11,7 @@ class PagesController < ApplicationController
     @page = "Home"
     #Hearings happening today
     @hearings = Hearing.where("date_of_hearing > ? AND date_of_hearing < ?", Time.now.beginning_of_day(), Time.now.end_of_day())
+    @nextHearing = Hearing.where("date_of_hearing < ? AND date_of_hearing > ?",Time.now.end_of_day() + 5.days, Time.now).order(:date_of_hearing => "asc").first
   end
 
   def charter
@@ -55,15 +56,15 @@ class PagesController < ApplicationController
           flash[:status] = "Thanks for your comment!"
           @new_comment.save
           from = Email.new(email: 'no-reply@charter2019.nyc.gov')
-          to = Email.new(email: 'jchei@council.nyc.gov')
-          # to = Email.new(email: 'proposals@charter2019.gnyc')
+          # to = Email.new(email: 'jchei@council.nyc.gov')
+          to = Email.new(email: 'proposals@charter2019.nyc')
           subject = 'New message from Charter Revision Site'
           formatted_message = @new_comment.message.split("\r\n").join("</p><p>")
           content = Content.new(type: 'text/html', value: '<p><b class="underline">Sender:</b></p><p>'+@new_comment.name+' (Reply To: <a href="mailto:'+@new_comment.email+'">'+@new_comment.email+'</a>)</p><p><b style="text-decouration:underline;">From</b>'+@new_comment.borough+'</p><p><b style="text-decouration:underline;">Message:</b></p><p>'+formatted_message+'</p>')
           mail = Mail.new(from, subject, to, content)
           # Adding a BCC because not every email goes through to Council email
-          # mail.personalizations[0]["bcc"] = [{"email"=>"charter2019nyc@gmail.com"}]
-          mail.personalizations[0]["bcc"] = [{"email"=>"jc.nycc.122018@gmail.com"}]
+          mail.personalizations[0]["bcc"] = [{"email"=>"charter2019nyc@gmail.com"}]
+          # mail.personalizations[0]["bcc"] = [{"email"=>"jc.nycc.122018@gmail.com"}]
           if !@new_comment.comment_attachment.file.nil?
             attachment = Attachment.new
             attachment.content = Base64.strict_encode64(File.open(@new_comment.comment_attachment.current_path,'rb').read)
