@@ -55,7 +55,7 @@ class PagesController < ApplicationController
         if verify_recaptcha
           flash[:status] = "Thanks for your comment!"
           @new_comment.save
-          from = Email.new(email: 'no-reply@charter2019.nyc')
+          from = Email.new(email: 'no-reply@charter2019.nyc.gov')
           # to = Email.new(email: 'jchei@council.nyc.gov')
           to = Email.new(email: 'proposals@charter2019.nyc')
           subject = 'New message from Charter Revision Site'
