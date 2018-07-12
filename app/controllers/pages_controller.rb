@@ -14,6 +14,10 @@ class PagesController < ApplicationController
     @nextHearing = Hearing.where("date_of_hearing < ? AND date_of_hearing > ?",Time.now.end_of_day() + 5.days, Time.now).order(:date_of_hearing => "asc").first
   end
 
+  def livestream
+    @page = "Livestream Meeting"
+  end
+
   def charter
     @page = "About"
   end
