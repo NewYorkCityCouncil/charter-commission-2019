@@ -31,7 +31,7 @@
         <% if !@comment.comment_attachment.file.nil? %>
           <p>
             <%= f.label :comment_attachment %><br>
-            <a href=<%= @comment.comment_attachment.url %>> <%= @comment.comment_attachment_identifier %> </a>
+            <a href=<%= @comment.comment_attachment.url %> download="<%=@comment.name.split(" ").join("_")%>-<%=@comment.created_at.to_s.split(" ")[0].split("-").join("")%><%=@comment.created_at.to_s.split(" ")[1].split(":").join("")%>"> <%=@comment.comment_attachment.file.filename%> </a>
           </p>
         <% end %>
         

@@ -56,21 +56,25 @@ class PagesController < ApplicationController
           flash[:status] = "Thanks for your comment!"
           @new_comment.save
           from = Email.new(email: 'no-reply@charter2019.nyc.gov')
-          # to = Email.new(email: 'jchei@council.nyc.gov')
-          to = Email.new(email: 'proposals@charter2019.nyc')
+          to = Email.new(email: 'jchei@council.nyc.gov')
+          # to = Email.new(email: 'proposals@charter2019.nyc')
           subject = 'New message from Charter Revision Site'
           formatted_message = @new_comment.message.split("\r\n").join("</p><p>")
-          content = Content.new(type: 'text/html', value: '<p><b class="underline">Sender:</b></p><p>'+@new_comment.name+' (Reply To: <a href="mailto:'+@new_comment.email+'">'+@new_comment.email+'</a>)</p><p><b style="text-decouration:underline;">From</b>'+@new_comment.borough+'</p><p><b style="text-decouration:underline;">Message:</b></p><p>'+formatted_message+'</p>')
+          if !@new_comment.comment_attachment.file.nil?
+            content = Content.new(type: 'text/html', value: '<p><b class="underline">Sender:</b></p><p>'+@new_comment.name+' (Reply To: <a href="mailto:'+@new_comment.email+'">'+@new_comment.email+'</a>)</p><p><b style="text-decouration:underline;">From:</b>'+@new_comment.borough+'</p><p><b style="text-decouration:underline;">Uploaded file:</b> <a href="'+ @new_comment.comment_attachment.url+'">Download here</a></p><p><b style="text-decouration:underline;">Message:</b></p><p>'+formatted_message+'</p>')
+          else
+            content = Content.new(type: 'text/html', value: '<p><b class="underline">Sender:</b></p><p>'+@new_comment.name+' (Reply To: <a href="mailto:'+@new_comment.email+'">'+@new_comment.email+'</a>)</p><p><b style="text-decouration:underline;">From:</b>'+@new_comment.borough+'</p><p><b style="text-decouration:underline;">Uploaded file:</b> Nothing was attached!</p><p><b style="text-decouration:underline>;">Message:</b></p><p>'+formatted_message+'</p>')
+          end
           mail = Mail.new(from, subject, to, content)
           # Adding a BCC because not every email goes through to Council email
-          mail.personalizations[0]["bcc"] = [{"email"=>"charter2019nyc@gmail.com"}]
-          # mail.personalizations[0]["bcc"] = [{"email"=>"jc.nycc.122018@gmail.com"}]
-          if !@new_comment.comment_attachment.file.nil?
-            attachment = Attachment.new
-            attachment.content = Base64.strict_encode64(File.open(@new_comment.comment_attachment.current_path,'rb').read)
-            attachment.filename = @new_comment.comment_attachment_identifier
-            mail.attachments.push(attachment)
-          end
+          # mail.personalizations[0]["bcc"] = [{"email"=>"charter2019nyc@gmail.com"}]
+          mail.personalizations[0]["bcc"] = [{"email"=>"jc.nycc.122018@gmail.com"}]
+          # if !@new_comment.comment_attachment.file.nil?
+          #   attachment = Attachment.new
+          #   attachment.content = Base64.strict_encode64(File.open(@new_comment.comment_attachment.current_path,'rb').read)
+          #   attachment.filename = @new_comment.comment_attachment_identifier
+          #   mail.attachments.push(attachment)
+          # end
           sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
           response = sg.client.mail._('send').post(request_body: mail.to_json)
           puts response.status_code
