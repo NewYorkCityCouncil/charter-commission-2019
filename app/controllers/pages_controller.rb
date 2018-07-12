@@ -55,9 +55,9 @@ class PagesController < ApplicationController
         if verify_recaptcha
           flash[:status] = "Thanks for your comment!"
           @new_comment.save
-          from = Email.new(email: 'no-reply@charter2019.nyc.gov')
-          to = Email.new(email: 'jchei@council.nyc.gov')
-          # to = Email.new(email: 'proposals@charter2019.nyc')
+          from = Email.new(email: 'no-reply@charter2019.nyc')
+          # to = Email.new(email: 'jchei@council.nyc.gov')
+          to = Email.new(email: 'proposals@charter2019.nyc')
           subject = 'New message from Charter Revision Site'
           formatted_message = @new_comment.message.split("\r\n").join("</p><p>")
           if !@new_comment.comment_attachment.file.nil?
@@ -67,8 +67,8 @@ class PagesController < ApplicationController
           end
           mail = Mail.new(from, subject, to, content)
           # Adding a BCC because not every email goes through to Council email
-          # mail.personalizations[0]["bcc"] = [{"email"=>"charter2019nyc@gmail.com"}]
-          mail.personalizations[0]["bcc"] = [{"email"=>"jc.nycc.122018@gmail.com"}]
+          mail.personalizations[0]["bcc"] = [{"email"=>"charter2019nyc@gmail.com"}]
+          # mail.personalizations[0]["bcc"] = [{"email"=>"jc.nycc.122018@gmail.com"}]
           # if !@new_comment.comment_attachment.file.nil?
           #   attachment = Attachment.new
           #   attachment.content = Base64.strict_encode64(File.open(@new_comment.comment_attachment.current_path,'rb').read)
