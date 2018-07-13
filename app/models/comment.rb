@@ -1,7 +1,7 @@
 class Comment < ApplicationRecord
   validates :name, presence: true
   validates :email, presence: true
-  validates :message, presence: true, length: { maximum: 2000 }
+  validates :message, presence: true, length: { maximum: 5000 }
   validates :address, absence: true
   validates :cell, absence: true
   validates :phone, absence: true

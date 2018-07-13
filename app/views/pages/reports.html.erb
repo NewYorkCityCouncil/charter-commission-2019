@@ -28,8 +28,8 @@
                 <a class="nav-link dropdown-item" href="/staff">Staff</a>-->
                 <div class="dropdown-divider"></div>
                 <a class="nav-link dropdown-item" href="/resources">Resources</a>
-                <div class="dropdown-divider"></div>
-                <a class="nav-link dropdown-item" href="/jobs">Jobs</a>
+                <!--<div class="dropdown-divider"></div>
+                <a class="nav-link dropdown-item" href="/jobs">Jobs</a>-->
                 <div class="dropdown-divider"></div>
                 <a class="nav-link dropdown-item" href="/faqs">FAQs</a>
               </div>
@@ -63,26 +63,26 @@
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-12">
+      <div class="col-12 center">
         <h2 class="page-title">Reports</h2>
-         <div style="margin-left:30px">
-          <% if @reports.length > 0 %>
-            <% @reports.each do |report| %>
-              <p>
-                <%= link_to report.title, show_report_path(report.id) %><br>
-                <% if report.report_attachments.length > 0 %>
-                  <ul>
-                    <% report.report_attachments.each do |attachment| %>
-                      <li><a href="<%= attachment.url %>"><%= attachment.url.split("/").last.split("_").join(" ").split(".").first %></a></li>
-                    <% end %>
-                  </ul>
-                <% end %>
-              </p>
-            <% end %>
-          <% else %>
-            <p>The Commission is committed to transparency. Once we get to work, we’ll post all the materials from our hearings on this page.</p>
+        <div>
+        <% if @reports.length > 0 %>
+          <% @reports.each do |report| %>
+            <p>
+              <%= link_to report.title, show_report_path(report.id) %><br>
+              <% if report.report_attachments.length > 0 %>
+                <ul>
+                  <% report.report_attachments.each do |attachment| %>
+                    <li><a href="<%= attachment.url %>"><%= attachment.url.split("/").last.split("_").join(" ").split(".").first %></a></li>
+                  <% end %>
+                </ul>
+              <% end %>
+            </p>
           <% end %>
-        </div>
+        <% else %>
+          <h4><br>Coming soon!</h4>
+        <% end %>
+      </div>
       </div>
     </div>
   </div>

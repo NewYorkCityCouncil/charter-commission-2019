@@ -134,7 +134,7 @@ class PagesController < ApplicationController
     @page = "News"
     @all_news = News.all
     @press_releases = News.where(:news_type => "press_release").order(:order => "asc")
-    @newsletters = News.where(:news_type => "news_letter").order(:order => "asc")
+    @news_articles = News.where(:news_type => "news_article").order(:order => "asc")
   end
 
   def news_article

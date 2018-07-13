@@ -28,8 +28,8 @@
                 <a class="nav-link dropdown-item" href="/staff">Staff</a>-->
                 <div class="dropdown-divider"></div>
                 <a class="nav-link dropdown-item disabled active-dropdown">Resources <span class="sr-only">(current)</span></a>
-                <div class="dropdown-divider"></div>
-                <a class="nav-link dropdown-item" href="/jobs">Jobs</a>
+                <!--<div class="dropdown-divider"></div>
+                <a class="nav-link dropdown-item" href="/jobs">Jobs</a>-->
                 <div class="dropdown-divider"></div>
                 <a class="nav-link dropdown-item" href="/faqs">FAQs</a>
               </div>
@@ -63,8 +63,11 @@
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-12">
+      <div class="col-12 center">
         <h2 class="page-title">Resources</h2>
+        <ul>
+          <li style="list-style: none;">Guide for Chart Commissions <em>6e</em> (<%= link_to "Download the PDF", asset_path("/pdfs/National_Civic_League-Guide_Charter_Commissions.pdf", skip_pipeline: true)%>)</li>
+        </ul>
       </div>
     </div>
   </div>

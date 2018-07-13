@@ -28,8 +28,8 @@
                 <a class="nav-link dropdown-item" href="/staff">Staff</a>-->
                 <div class="dropdown-divider"></div>
                 <a class="nav-link dropdown-item" href="/resources">Resources</a>
-                <div class="dropdown-divider"></div>
-                <a class="nav-link dropdown-item" href="/jobs">Jobs</a>
+               <!-- <div class="dropdown-divider"></div>
+                <a class="nav-link dropdown-item" href="/jobs">Jobs</a>-->
                 <div class="dropdown-divider"></div>
                 <a class="nav-link dropdown-item" href="/faqs">FAQs</a>
               </div>
@@ -63,10 +63,10 @@
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-12">
+      <div class="col-12 center">
         <h2 class="page-title">Tell Us What You Think!</h2>
-        <p>What do you think works and doesn't work about New York City government? What is your vision for our city for the next 30 years?</p>
-        <div id="status" class="center"><%=@status%></div>
+        <p>What do you think works and doesn't work about New York City government?<br>What is your vision for our city for the next 30 years?</p>
+        <div id="status"><%=@status%></div>
       </div>
     </div>
     <div class="row">
@@ -89,7 +89,7 @@
           <%= f.text_field :phone, class: "not-required", placeholder: "Phone" %>
         </div>
         <div class="col-12">
-          <%= f.text_area :message, class: "comments", row: 10, placeholder: "Your ideas for the charter", required: true , maxlength: 2000 %>
+          <%= f.text_area :message, class: "comments", row: 10, placeholder: "Your ideas for the charter", required: true , maxlength: 5000 %>
           <br><small><em>Character limit: <span id="contact-limit"></span></em></small>
           <br><br>
           <script>
