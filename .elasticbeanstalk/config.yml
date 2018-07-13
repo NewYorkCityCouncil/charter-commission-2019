@@ -1,7 +1,10 @@
 branch-defaults:
   master:
-    environment: QaChartercommission-env-1
+    environment: ProductionChartercommission-env
 environment-defaults:
+  ProductionChartercommission-env:
+    branch: null
+    repository: null
   QaChartercommission-env:
     branch: null
     repository: null
@@ -9,7 +12,7 @@ environment-defaults:
     branch: null
     repository: null
 global:
-  application_name: qa-chartercommission
+  application_name: Production-CharterCommission
   branch: null
   default_ec2_keyname: jchei-nycc-aws
   default_platform: Ruby 2.3 (Puma)
