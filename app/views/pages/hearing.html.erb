@@ -83,9 +83,11 @@
           </ul>
         <% end %>
       </div>
-      <div class="col-sm-12 col-md-6">
-        <%= @hearing.google_maps_url.html_safe %>
-      </div>
+      <% if !@hearing.google_maps_url.nil? %>
+        <div class="col-sm-12 col-md-6">
+          <div id="hearing-map"><%= @hearing.google_maps_url.html_safe %></div>
+        </div>
+      <% end %>
     </div>
     <% if !@hearing.livestream_embed.nil? && @hearing.date_of_hearing <= Time.now && @hearing.date_of_hearing >= Time.now - 4.hours%>
       <div id="livestream" class="row" style="margin-top:20px;">

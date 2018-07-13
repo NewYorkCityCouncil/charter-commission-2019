@@ -301,6 +301,10 @@ h1.page-title,h2.page-title,h3.page-title,h4.page-title,h5.page-title,h6.page-ti
 /* Hearing pages specific */
 #hearing-map{
   box-shadow: 2px 4px 6px #000;
+  height:450px;
+  iframe{
+    width:100%;
+  }
 }
 #upcoming-hearings,#past-hearings{
   margin: 0 auto 35px;

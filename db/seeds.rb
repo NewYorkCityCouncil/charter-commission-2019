@@ -237,14 +237,14 @@ Hearing.create([
         date_of_hearing:"2018-07-16T21:00",
         location_of_hearing:"City Hall",
         transcript_url:"",
-        hearing_content:"<p class='underline center'><strong>New York City Charter Revision Commission 2019 Notice of Public Meeting</strong></p><p>Please be advised that the New York City Charter Revision Commission 2019 will hold a Public Meeting on Monday, July 16th, 2018, at 5:00 P.M., in Council Chambers at City Hall.</p><p>This meeting is open to the public but there will not be an opportunity to testify before the Commission at this meeting. There will be opportunities for testimony by members of the public at future Public Hearings of the Commission.</p><p>City Hall is accessible to individuals using wheelchairs or other mobility devices.</p>",
+        hearing_content:"<p class='underline center'><strong>New York City Charter Revision Commission 2019<br>Notice of Public Meeting</strong></p><p>Please be advised that the New York City Charter Revision Commission 2019 will hold a Public Meeting on <strong>Monday, July 16th, 2018, at 5:00 P.M.</strong>, in the <strong>Council Chambers at City Hall.</strong></p><p>This meeting is open to the public but there will not be an opportunity to testify before the Commission at this meeting. There will be opportunities for testimony by members of the public at future Public Hearings of the Commission.</p><p>City Hall is accessible to individuals using wheelchairs or other mobility devices.</p>",
         address_1:"City Hall Park",
         address_2:"",
         city:"New York",
         zip_code: 10007,
         youtube_url:"",
         livestream_embed:"",
-        google_maps_url:'<div id="hearing-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2065650116883!2d-74.00892438456194!3d40.7134689793317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7f1e88758d210007!2sNew+York+City+Hall!5e0!3m2!1sen!2sus!4v1529950512781" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></div>'
+        google_maps_url:'<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2065650116883!2d-74.00892438456194!3d40.7134689793317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7f1e88758d210007!2sNew+York+City+Hall!5e0!3m2!1sen!2sus!4v1529950512781" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>'
     }
 ])
 
