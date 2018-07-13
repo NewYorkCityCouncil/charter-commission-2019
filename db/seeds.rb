@@ -243,7 +243,7 @@ Hearing.create([
         city:"New York",
         zip_code: 10007,
         youtube_url:"",
-        livestream_embed:"",
+        livestream_embed:"Click <a href='/livestream'><strong>here</strong></a> to watch the meeting when it starts.",
         google_maps_url:'<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2065650116883!2d-74.00892438456194!3d40.7134689793317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7f1e88758d210007!2sNew+York+City+Hall!5e0!3m2!1sen!2sus!4v1529950512781" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>'
     }
 ])
