@@ -376,8 +376,20 @@ footer {
 }
 
 @media only screen and (max-width: 767px) {
+ 
+  .home-image, 
   #home-image-carousel {
-    display: none;
+    height:200px !important;
+  }
+  #hearing-message {
+    padding: 5px;
+    div{
+      bottom: 5px;
+      right: 10px;
+      h2 {
+        font-size:1.3rem;
+      }
+    }
   }
 
   #visit-council {
@@ -401,5 +413,8 @@ footer {
   }
   #contact-form {
     width: 100%;
+  }
+  #hearing-message {
+    width:60%;
   }
 }
