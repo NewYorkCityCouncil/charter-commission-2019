@@ -147,7 +147,7 @@ class PagesController < ApplicationController
   end
 
   def sitemap
-    @static_pages = ['','members','resources','faqs','contacts','hearings','news','reports']
+    @static_pages = ['','members','resources','faqs','contacts','hearings','news','reports','livestream']
 
     @hearings = Hearing.all
     @news = News.all
