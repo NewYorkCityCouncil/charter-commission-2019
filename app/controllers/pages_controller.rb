@@ -146,6 +146,17 @@ class PagesController < ApplicationController
     @page = "Frequently Asked Quetsions"
   end
 
+  def sitemap
+    @static_pages = ['','members','resources','faqs','contacts','hearings','news','reports']
+
+    @hearings = Hearing.all
+    @news = News.all
+
+    respond_to do |format|
+      format.xml
+    end
+  end
+
   private
     def message_params
       params.require(:comment).permit(:email,:name,:message,:borough,:comment_attachment)

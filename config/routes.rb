@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     omniauthable: 'users/omniauthable' 
   }
 
+  get "/sitemap.xml" => "pages#sitemap", :format => "xml", :as => :sitemap
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'pages#main' 
   get '/livestream', to: 'pages#livestream'
