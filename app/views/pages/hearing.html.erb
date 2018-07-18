@@ -77,10 +77,6 @@
               <p class="center"><%= @hearing.livestream_embed.html_safe %></p>
             </div>
           <% end%>
-          <% if !@hearing.youtube_url.nil? %>
-            <h4 class="center underline">Watch it on YouTube!</h4>
-            <p class="center"><%= @hearing.youtube_url.html_safe %></p>
-          <% end %>
         </p>
         <% if @hearing.hearing_attachments.length > 0 %>
           <p class="underline"><strong>Downloadable Files</strong></p>
@@ -97,6 +93,15 @@
         </div>
       <% end %>
     </div>
+    <% if !@hearing.youtube_url.nil? %>
+      <div class="row">
+        <div class="col-sm-12 col-lg-6 offset-lg-3 col-md-8 offset-md-2">
+          <br>
+          <h4 class="center underline">Watch it on YouTube!</h4>
+          <p class="center"><%= @hearing.youtube_url.html_safe %></p>
+        </div>
+      </div>
+    <% end %>
   </div>
 
 <%= render partial: "footer" %>
