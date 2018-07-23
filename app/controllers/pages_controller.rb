@@ -110,6 +110,11 @@ class PagesController < ApplicationController
     @page = @hearing.date_of_hearing.strftime("%A, %B %d, %Y")
   end
 
+  def minutes
+    @hearing = Hearing.find_by(:date_of_hearing => params[:date_of_hearing].to_datetime)
+    @page = "#{@hearing.date_of_hearing.strftime("%A, %B %d, %Y")} Minutes"
+  end
+
   def kiosk
     @page = "Upcoming Hearings"
     @hearings = Hearing.where("date_of_hearing > ?", Time.now).order(date_of_hearing: :asc)

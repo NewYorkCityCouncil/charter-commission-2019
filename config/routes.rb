@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   get '/hearings', to: 'pages#hearings'
   # get '/archived', to: 'pages#archived'
   get '/hearings/:date_of_hearing', to: 'pages#hearing', as: "show_hearing"
+  get '/hearings/:date_of_hearing/minutes', to: 'pages#minutes', as: "show_hearing_minutes"
 
   get '/reports', to: 'pages#reports'
   get '/reports/:id', to: 'pages#report', as: "show_report"

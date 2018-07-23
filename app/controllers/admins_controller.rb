@@ -274,7 +274,7 @@ class AdminsController < ApplicationController
     end
 
     def hearing_params
-      params.require(:hearing).permit(:date_of_hearing,:location_of_hearing,:address_1,:address_2,:city,:zip_code,:google_maps_url,:transcript_url,:youtube_url,:livestream_embed,:hearing_content,{hearing_attachments: []})
+      params.require(:hearing).permit(:date_of_hearing,:location_of_hearing,:address_1,:address_2,:city,:zip_code,:google_maps_url,:transcript_url,:youtube_url,:livestream_embed,:hearing_content,:minutes,{hearing_attachments: []})
     end
 
     def find_news

@@ -16,7 +16,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/">Home</a>
             </li>
-            <li class="nav-item active-pointer dropdown">
+            <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 About
               </a>
@@ -37,15 +37,15 @@
             <li class="nav-item">
               <a class="nav-link" href="/contact">Submit Your Ideas</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/hearings">Hearings & Meetings</a>
+            <li class="nav-item active">
+              <a class="nav-link disabled">Hearings & Meetings <span class="sr-only">(current)</span></a>
             </li>
-            <!--<li class="nav-item active dropdown">
+            <!--<li class="nav-item dropdown active active-pointer">
               <a class="nav-link dropdown-toggle" id="contactDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Hearings <span class="sr-only">(current)</span>
+                Hearings
               </a>
               <div class="nav-item dropdown-menu" aria-labelledby="contactDropdown">
-                <a class="nav-link dropdown-item" href="/upcoming">Upcoming Hearings & Meetings</a>
+                <a class="nav-link dropdown-item disabled active-dropdown">Upcoming Hearings & Meetings<span class="sr-only">(current)</span></a>
                 <div class="dropdown-divider"></div>
                 <a class="nav-link dropdown-item" href="/archived">Past Hearings & Meetings</a>
               </div>
@@ -63,48 +63,11 @@
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-12">
-        <h2><%= @hearing.date_of_hearing.strftime("%A %B %d, %Y") %></h2>
-        <h3><%= @hearing.location_of_hearing.html_safe %></h3>
-        <hr>
+      <div class="col-sm-12">
+        <p><%= link_to "Back to meeting", show_hearing_path(@hearing.date_of_hearing) %></p>
+        <%= @hearing.minutes.html_safe %>
       </div>
-      <div class="col-sm-12 col-md-6">
-        <%= @hearing.hearing_content.html_safe %><br>
-        <% if !@hearing.livestream_embed.nil? && @hearing.date_of_hearing <= Time.now.end_of_day && @hearing.date_of_hearing >= Time.now.beginning_of_day%>
-          <div id="livestream">
-            <h4 class="center underline">Livestream</h4>
-            <p class="center"><%= @hearing.livestream_embed.html_safe %></p>
-          </div>
-        <% end %>
-
-        <% if !@hearing.minutes.nil? %>
-          <p><%= link_to "View the minutes in HTML", show_hearing_minutes_path(@hearing.date_of_hearing)%></p>
-        <% end %>
-
-        <% if @hearing.hearing_attachments.length > 0 %>
-          <p class="underline"><strong>Downloadable Files</strong></p>
-          <ul>
-            <% @hearing.hearing_attachments.each do |attachment| %>
-              <li><a href="<%= attachment.url %>"><%= attachment.file.filename.split(".")[0].split("_").join(" ") %> (<%= attachment.file.filename.split(".")[1].upcase %>)</a></li>
-            <% end%>
-          </ul>
-        <% end %>
-      </div>
-      <% if !@hearing.google_maps_url.nil? %>
-        <div class="col-sm-12 col-md-6">
-          <div id="hearing-map"><%= @hearing.google_maps_url.html_safe %></div>
-        </div>
-      <% end %>
     </div>
-    <% if !@hearing.youtube_url.nil? %>
-      <div class="row">
-        <div class="col-sm-12 col-lg-6 offset-lg-3 col-md-8 offset-md-2">
-          <br>
-          <h4 class="center underline">Watch it on YouTube!</h4>
-          <p class="center"><%= @hearing.youtube_url.html_safe %></p>
-        </div>
-      </div>
-    <% end %>
   </div>
 
-<%= render partial: "footer" %>
+  <%= render partial: "footer" %>

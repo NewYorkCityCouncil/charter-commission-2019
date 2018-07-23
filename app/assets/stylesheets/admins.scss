@@ -3,3 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 input:not([type='file']),textarea,.full-width,{width:100%;}
 textarea{height:300px;resize:none;}
+.minutes-paragraph{
+  line-height:30px;
+  text-align:justify;
+  text-indent:25px;
+}

@@ -64,6 +64,11 @@
         </p>
 
         <p>
+          <%= f.label :minutes %><br>
+          <%= f.text_area :minutes, placeholder: "Please use HTML tags. Paragraphs use 'minutes-paragraph' class" %>
+        </p>
+
+        <p>
           <%= f.label :hearing_attachments %><br>
           <%= f.file_field :hearing_attachments, multiple: true %>
         </p>
