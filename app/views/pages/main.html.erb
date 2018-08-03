@@ -1,75 +1,15 @@
 <%= render partial: "header-banner" %>
-  <div class="row" style="margin:0">
-    <div id="banner" class="col-12">
-      <nav class="navbar navbar-expand-md" style="padding: 0;">
-        <button id="hamburger-toggler" class="navbar-toggler"  onclick="iconChange(this)" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span id="hamburger-text">Menu</span>
-          <span id="hamburger" class="navbar-toggler-icon">
-            <div class="bars bar1"></div>
-            <div class="bars bar2"></div>
-            <div class="bars bar3"></div>
-          </span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link disabled">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                About
-              </a>
-              <div class="nav-item dropdown-menu" aria-labelledby="navbarDropdown">
-                <!--<a class="nav-link dropdown-item" href="/charter">About the Charter</a>
-                <div class="dropdown-divider"></div>-->
-                <a class="nav-link dropdown-item" href="/members">Meet the Commissioners</a>
-                <!--<div class="dropdown-divider"></div>
-                <a class="nav-link dropdown-item" href="/staff">Staff</a>-->
-                <div class="dropdown-divider"></div>
-                <a class="nav-link dropdown-item" href="/resources">Resources</a>
-                <!--<div class="dropdown-divider"></div>
-                <a class="nav-link dropdown-item" href="/jobs">Jobs</a>-->
-                <div class="dropdown-divider"></div>
-                <a class="nav-link dropdown-item" href="/faqs">FAQs</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/contact">Submit Your Ideas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/hearings">Hearings & Meetings</a>
-            </li>            
-            <!--<li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" id="contactDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Hearings
-              </a>
-              <div class="nav-item dropdown-menu" aria-labelledby="contactDropdown">
-                <a class="nav-link dropdown-item" href="/upcoming">Upcoming Hearings & Meetings</a>
-                <div class="dropdown-divider"></div>
-                <a class="nav-link dropdown-item" href="/archived">Past Hearings & Meetings</a>
-              </div>
-            </li>-->
-            <li class="nav-item">
-              <a class="nav-link" href="/news">News</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/reports">Reports</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-  </div>
-  <div class="container">
+
+  <div class="container" role="main">
     <div class="row">
       <div class="col-sm-12 col-lg-7">
-        <div class="marquee3k" style="background-color:#D11B1B;box-shadow: 2px 4.5px 6px #000;overflow:hidden;" data-speed=".5" data-pausable="true"> 
+        <div class="marquee3k" style="background-color:#D11B1B;box-shadow: 2px 4.5px 6px #000;overflow:hidden;" data-speed=".5" data-pausable="true" aria-hidden="true"> 
           <% if !@nextHearing.nil? %>
             <p style="color:white;margin:5px 15px;"><small>First Public Meeting of the NYC Charter Commission 2019: <%= @nextHearing.date_of_hearing.in_time_zone('Eastern Time (US & Canada)').strftime("%B %d, %Y, %l:%M %p") %>, <%= @nextHearing.location_of_hearing %> <strong><%= link_to "Click here", show_hearing_path(:date_of_hearing => @nextHearing.date_of_hearing) %></strong></small></p>
           <% end %>
         </div>
         <script>$(document).ready(function(){Marquee3k.init();});</script>
-        <div id="home-image-carousel">
+        <div id="home-image-carousel" aria-hidden="true">
           <% if @hearings.length > 0 %>
             <div class="home-image" style='background-image: url(<%=image_url("misc/meeting_header.jpg")%>);'>
               <div id="hearing-message">
@@ -106,7 +46,7 @@
           The 2019 Commission — made up of members appointed by the Mayor, the Speaker of the City Council, all five Borough Presidents, the Public Advocate, and the Comptroller — has a broad mandate to conduct a top-to-bottom review and will bring its recommendations to the public in November 2019.
         </p>
       </div>
-      <div class="col-sm-12 col-lg-4 offset-lg-1">
+      <div class="col-sm-12 col-lg-4 offset-lg-1" aria-hidden="true">
         <div class="round-border sidebar">
           <div id="twitter-container" class="round-border" style="border:1px solid #CACACA;height:500px;overflow:scroll;">
             <a class="twitter-timeline" href="https://twitter.com/charter2019NYC">Tweets by Independent Charter Commission</a>

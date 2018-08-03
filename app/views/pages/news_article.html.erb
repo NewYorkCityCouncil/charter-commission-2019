@@ -1,67 +1,6 @@
 <%= render partial: "header-banner" %>
 
-  <div class="row" style="margin:0">
-    <div id="banner" class="col-12">
-      <nav class="navbar navbar-expand-md" style="padding: 0;">
-        <button id="hamburger-toggler" class="navbar-toggler"  onclick="iconChange(this)" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span id="hamburger-text">Menu</span>
-          <span id="hamburger" class="navbar-toggler-icon">
-            <div class="bars bar1"></div>
-            <div class="bars bar2"></div>
-            <div class="bars bar3"></div>
-          </span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="/">Home</a>
-            </li>
-            <li class="nav-item active-pointer dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                About
-              </a>
-              <div class="nav-item dropdown-menu" aria-labelledby="navbarDropdown">
-                <!--<a class="nav-link dropdown-item" href="/charter">About the Charter</a>
-                <div class="dropdown-divider"></div>-->
-                <a class="nav-link dropdown-item" href="/members">Meet the Commissioners</a>
-                <!--<div class="dropdown-divider"></div>
-                <a class="nav-link dropdown-item" href="/staff">Staff</a>-->
-                <div class="dropdown-divider"></div>
-                <a class="nav-link dropdown-item" href="/resources">Resources</a>
-                <!--<div class="dropdown-divider"></div>
-                <a class="nav-link dropdown-item" href="/jobs">Jobs</a>-->
-                <div class="dropdown-divider"></div>
-                <a class="nav-link dropdown-item" href="/faqs">FAQs</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/contact">Submit Your Ideas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/hearings">Hearings & Meetings</a>
-            </li>
-            <!--<li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" id="contactDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Hearings
-              </a>
-              <div class="nav-item dropdown-menu" aria-labelledby="contactDropdown">
-                <a class="nav-link dropdown-item" href="/upcoming">Upcoming Hearings & Meetings</a>
-                <div class="dropdown-divider"></div>
-                <a class="nav-link dropdown-item" href="/archived">Past Hearings & Meetings</a>
-              </div>
-            </li>-->
-            <li class="nav-item active">
-              <a class="nav-link" href="/news">News <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/reports">Reports</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-  </div>
-  <div class="container">
+  <div class="container" role="main">
     <div class="row">
       <div class="col-12">
         <span><%= link_to "Back", news_path %></span>

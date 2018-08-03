@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   skip_before_action :verify_authenticity_token
-  before_action :meta_data  
+  before_action :meta_data 
+  after_action :show_action 
   include Recaptcha::ClientHelper
   include Recaptcha::Verify
   require 'sendgrid-ruby'
@@ -163,6 +164,10 @@ class PagesController < ApplicationController
   end
 
   private
+    def show_action
+      puts params["action"]
+    end
+    
     def message_params
       params.require(:comment).permit(:email,:name,:message,:borough,:comment_attachment)
     end
