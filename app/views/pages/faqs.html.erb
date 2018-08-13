@@ -12,7 +12,7 @@
             .faq-container .btn-link:hover{text-decoration: none;}
             .faq-container .faq-answer{margin: 0 20px;}
             .toggle-plus{display:inline-block; width:12px;}
-            .faq-question{cursor:pointer;}
+            .faq-question{background:none;border:none;cursor:pointer;outline:none !important;}
           </style>
           <script>
             $(document).ready(function(){
@@ -27,10 +27,30 @@
               });
             });
           </script>
+          <div id="accordion">
+            <%# <div class="card">
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    Collapsible Group Item #1
+                  </button>
+                </h5>
+              </div> %>
+
+              <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+              </div>
+            </div>
+
           <div class="card">
             <div class="card-header" id="what-is-new-york-charter">
-              <h5 class="mb-0">
-                <span class="faq-question" data-toggle="collapse" data-target="#faq-1" aria-expanded="true" aria-controls="faq-1"><span class="toggle-plus">+</span> What is the New York City Charter?</span>
+              <h5 class="mb-0" aria-role="button">
+                <button class="faq-question" data-toggle="collapse" data-target="#faq-1" aria-expanded="false" aria-controls="faq-1">
+                  <span class="toggle-plus" aria-hidden="true">+</span> 
+                  What is the New York City Charter?
+                </button>
               </h5>
             </div>
 
@@ -43,7 +63,10 @@
           <div class="card">
             <div class="card-header" id="what-is-charter-revision-commision">
               <h5 class="mb-0">
-                <span class="faq-question" data-toggle="collapse" data-target="#faq-2" aria-expanded="false" aria-controls="faq-2"><span class="toggle-plus">+</span> What is a Charter Revision Commission?</span>
+                <button class="faq-question" data-toggle="collapse" data-target="#faq-2" aria-expanded="false" aria-controls="faq-2">
+                  <span class="toggle-plus" aria-hidden="true">+</span> 
+                  What is a Charter Revision Commission?</s
+            /button>
               </h5>
             </div>
             <div id="faq-2" class="collapse" aria-labelledby="what-is-charter-revision-commision" data-parent="#accordion">
@@ -55,7 +78,10 @@
           <div class="card">
             <div class="card-header" id="when-will-commission-start">
               <h5 class="mb-0">
-                <span class="faq-question" data-toggle="collapse" data-target="#faq-3" aria-expanded="false" aria-controls="faq-3"><span class="toggle-plus">+</span> When will Charter Commission 2019 begin its work?</span>
+                <button class="faq-question" data-toggle="collapse" data-target="#faq-3" aria-expanded="false" aria-controls="faq-3">
+                  <span class="toggle-plus" aria-hidden="true">+</span> 
+                  When will Charter Commission 2019 begin its w
+                o/buttonspan>
               </h5>
             </div>
             <div id="faq-3" class="collapse" aria-labelledby="when-will-commission-start" data-parent="#accordion">
@@ -67,7 +93,10 @@
           <div class="card">
             <div class="card-header" id="why-was-commission-created">
               <h5 class="mb-0">
-                <span class="faq-question" data-toggle="collapse" data-target="#faq-4" aria-expanded="false" aria-controls="faq-4"><span class="toggle-plus">+</span> Why was Charter Commission 2019 created?</span>
+                <button class="faq-question" data-toggle="collapse" data-target="#faq-4" aria-expanded="false" aria-controls="faq-4">
+                  <span class="toggle-plus" aria-hidden="true">+</span> 
+                  Why was Charter Commission 2019 created?</s
+            /button>
               </h5>
             </div>
             <div id="faq-4" class="collapse" aria-labelledby="why-was-commission-created" data-parent="#accordion">
@@ -79,7 +108,10 @@
           <div class="card">
             <div class="card-header" id="how-to-get-involved">
               <h5 class="mb-0">
-                <span class="faq-question" data-toggle="collapse" data-target="#faq-5" aria-expanded="false" aria-controls="faq-5"><span class="toggle-plus">+</span> How can you get involved?</span>
+                <button class="faq-question" data-toggle="collapse" data-target="#faq-5" aria-expanded="false" aria-controls="faq-5">
+                  <span class="toggle-plus" aria-hidden="true">+</span> 
+                  How can you get involved?</s
+            /button>
               </h5>
             </div>
             <div id="faq-5" class="collapse" aria-labelledby="how-to-get-involved" data-parent="#accordion">

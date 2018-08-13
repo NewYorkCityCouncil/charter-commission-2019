@@ -9,7 +9,7 @@
       </div>
     </div>
     <div class="row">
-      <%= form_for @new_comment, url: send_comment_path(@new_comment), html: { method: :post, class: "row", role: "form", id: "contact-form"} do |f| %>
+      <%= form_for @new_comment, url: send_comment_path(@new_comment), html: { method: :post, class: "row", "aria-label": "form",role: "form", id: "contact-form"} do |f| %>
         <div class="col-12">
           <%= f.text_field :name, class: "form-inputs", placeholder: "Full Name (Required)", required: true %>
         </div>
