@@ -8,6 +8,19 @@
             <p style="color:white;margin:5px 15px;"><small>First Public Meeting of the NYC Charter Commission 2019: <%= @nextHearing.date_of_hearing.in_time_zone('Eastern Time (US & Canada)').strftime("%B %d, %Y, %l:%M %p") %>, <%= @nextHearing.location_of_hearing %> <strong><%= link_to "Click here", show_hearing_path(:date_of_hearing => @nextHearing.date_of_hearing) %></strong></small></p>
           <% end %>
         </div>
+        <div class="col-sm-12">
+          <style>#upcoming-sept{width:80%;}@media only screen and (max-width: 575px) {#upcoming-sept{width:100%;}}</style>
+          <h2 class="center underline">September 2018 Hearings</h2>
+          <p class="center">All hearings will begin at 6pm and venue details coming soon!</p>
+          <table id="upcoming-sept" style="margin:0 auto;">
+            <tr style="color:white;background-color:#AEBDE2;text-transform: uppercase;"><td style="padding-left:10px;width:50%">Bronx</td><td style="padding-right:10px;text-align:right;">Sept. 12th</td></tr>
+            <tr style="text-transform: uppercase;"><td style="padding-left:10px;width:50%">Brooklyn </td><td style="padding-right:10px;text-align:right;">Sept. 17th</td></tr>
+            <tr style="color:white;background-color:#AEBDE2;text-transform: uppercase;"><td style="padding-left:10px;width:50%">Queens</td><td style="padding-right:10px;text-align:right;">Sept. 20th</td></tr>
+            <tr style="text-transform: uppercase;"><td style="padding-left:10px;width:50%">Staten Island </td><td style="padding-right:10px;text-align:right;">Sept. 24th</td></tr>
+            <tr style="color:white;background-color:#AEBDE2;text-transform: uppercase;"><td style="padding-left:10px;width:50%">Manhattan</td><td style="padding-right:10px;text-align:right;">Sept. 27th</td></tr>
+          </table>
+          <br>
+        </div>
         <script>$(document).ready(function(){Marquee3k.init();});</script>
         <div id="home-image-carousel" aria-hidden="true">
           <% if @hearings.length > 0 %>
