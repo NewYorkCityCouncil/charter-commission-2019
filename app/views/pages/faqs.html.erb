@@ -28,105 +28,92 @@
             });
           </script>
           <div id="accordion">
-            <%# <div class="card">
-              <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                  <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                    Collapsible Group Item #1
+            <div class="card">
+              <div class="card-header" id="what-is-new-york-charter">
+                <h5 class="mb-0" aria-role="button">
+                  <button class="faq-question" data-toggle="collapse" data-target="#faq-1" aria-expanded="false" aria-controls="faq-1">
+                    <span class="toggle-plus" aria-hidden="true">+</span> 
+                    What is the New York City Charter?
                   </button>
                 </h5>
-              </div> %>
+              </div>
 
-              <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+              <div id="faq-1" class="collapse" aria-labelledby="what-is-new-york-charter" data-parent="#accordion">
                 <div class="card-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  <p class="faq-answer">The New York City Charter serves as our local constitution, creating a structure for City government. The Charter establishes the key institutions of City government and defines the authority and responsibilities of City agencies and elected officials. Significant chapters in the Charter outline the budget, planning, zoning, contracting, collective bargaining, and land use processes for the City.</p>
                 </div>
               </div>
             </div>
-
-          <div class="card">
-            <div class="card-header" id="what-is-new-york-charter">
-              <h5 class="mb-0" aria-role="button">
-                <button class="faq-question" data-toggle="collapse" data-target="#faq-1" aria-expanded="false" aria-controls="faq-1">
-                  <span class="toggle-plus" aria-hidden="true">+</span> 
-                  What is the New York City Charter?
-                </button>
-              </h5>
+            <div class="card">
+              <div class="card-header" id="what-is-charter-revision-commision">
+                <h5 class="mb-0">
+                  <button class="faq-question" data-toggle="collapse" data-target="#faq-2" aria-expanded="false" aria-controls="faq-2">
+                    <span class="toggle-plus" aria-hidden="true">+</span> 
+                    What is a Charter Revision Commission?
+                  </button>
+                </h5>
+              </div>
+              <div id="faq-2" class="collapse" aria-labelledby="what-is-charter-revision-commision" data-parent="#accordion">
+                <div class="card-body">
+                  <p class="faq-answer">A Charter Revision Commission, authorized by New York State law, prepares a draft of proposed revisions to the Charter. This draft is then submitted to city voters for approval. The New York City Council passed Local Law 91 of 2018 establishing the Charter Revision Commission 2019, which will carry out a comprehensive review of the Charter. The Charter Revision Commission 2019 consists of 15 appointed "Commissioners."</p>
+                </div>
+              </div>
             </div>
-
-            <div id="faq-1" class="collapse" aria-labelledby="what-is-new-york-charter" data-parent="#accordion">
-              <div class="card-body">
-                <p class="faq-answer">The New York City Charter serves as our local constitution, creating a structure for City government. The Charter establishes the key institutions of City government and defines the authority and responsibilities of City agencies and elected officials. Significant chapters in the Charter outline the budget, planning, zoning, contracting, collective bargaining, and land use processes for the City.</p>
+            <div class="card">
+              <div class="card-header" id="when-will-commission-start">
+                <h5 class="mb-0">
+                  <button class="faq-question" data-toggle="collapse" data-target="#faq-3" aria-expanded="false" aria-controls="faq-3">
+                    <span class="toggle-plus" aria-hidden="true">+</span> 
+                    When will Charter Commission 2019 begin its work?
+                  </button>
+                </h5>
+              </div>
+              <div id="faq-3" class="collapse" aria-labelledby="when-will-commission-start" data-parent="#accordion">
+                <div class="card-body">
+                  <p class="faq-answer">The Charter Revision Commission 2019 will hold a series of public meetings and hearings throughout the five boroughs beginning summer 2018. The Commission will submit a draft of a new or revised Charter to voters for approval in November 2019.</p>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="why-was-commission-created">
+                <h5 class="mb-0">
+                  <button class="faq-question" data-toggle="collapse" data-target="#faq-4" aria-expanded="false" aria-controls="faq-4">
+                    <span class="toggle-plus" aria-hidden="true">+</span> 
+                    Why was Charter Commission 2019 created?
+                  </button>
+                </h5>
+              </div>
+              <div id="faq-4" class="collapse" aria-labelledby="why-was-commission-created" data-parent="#accordion">
+                <div class="card-body">
+                  <p class="faq-answer">The last Charter Revision Commission to fully overhaul the city's government concluded its work nearly 30 years ago. Charter Commission 2019 has a broad mandate to conduct a top-to-bottom review of the Charter. It's time for a fresh look.</p>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="how-to-get-involved">
+                <h5 class="mb-0">
+                  <button class="faq-question" data-toggle="collapse" data-target="#faq-5" aria-expanded="false" aria-controls="faq-5">
+                    <span class="toggle-plus" aria-hidden="true">+</span> 
+                    How can you get involved?
+                  </button>
+                </h5>
+              </div>
+              <div id="faq-5" class="collapse" aria-labelledby="how-to-get-involved" data-parent="#accordion">
+                <div class="card-body">
+                  <p class="faq-answer">It is vital that we hear from you. At the meetings and hearings you can learn more about the issues and share your suggestions and ideas. You can also submit your ideas <%= link_to "here", contact_path %>.</p>
+                </div>
               </div>
             </div>
           </div>
-          <div class="card">
-            <div class="card-header" id="what-is-charter-revision-commision">
-              <h5 class="mb-0">
-                <button class="faq-question" data-toggle="collapse" data-target="#faq-2" aria-expanded="false" aria-controls="faq-2">
-                  <span class="toggle-plus" aria-hidden="true">+</span> 
-                  What is a Charter Revision Commission?</s
-            /button>
-              </h5>
-            </div>
-            <div id="faq-2" class="collapse" aria-labelledby="what-is-charter-revision-commision" data-parent="#accordion">
-              <div class="card-body">
-                <p class="faq-answer">A Charter Revision Commission, authorized by New York State law, prepares a draft of proposed revisions to the Charter. This draft is then submitted to city voters for approval. The New York City Council passed Local Law 91 of 2018 establishing the Charter Revision Commission 2019, which will carry out a comprehensive review of the Charter. The Charter Revision Commission 2019 consists of 15 appointed "Commissioners."</p>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header" id="when-will-commission-start">
-              <h5 class="mb-0">
-                <button class="faq-question" data-toggle="collapse" data-target="#faq-3" aria-expanded="false" aria-controls="faq-3">
-                  <span class="toggle-plus" aria-hidden="true">+</span> 
-                  When will Charter Commission 2019 begin its w
-                o/buttonspan>
-              </h5>
-            </div>
-            <div id="faq-3" class="collapse" aria-labelledby="when-will-commission-start" data-parent="#accordion">
-              <div class="card-body">
-                <p class="faq-answer">The Charter Revision Commission 2019 will hold a series of public meetings and hearings throughout the five boroughs beginning summer 2018. The Commission will submit a draft of a new or revised Charter to voters for approval in November 2019.</p>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header" id="why-was-commission-created">
-              <h5 class="mb-0">
-                <button class="faq-question" data-toggle="collapse" data-target="#faq-4" aria-expanded="false" aria-controls="faq-4">
-                  <span class="toggle-plus" aria-hidden="true">+</span> 
-                  Why was Charter Commission 2019 created?</s
-            /button>
-              </h5>
-            </div>
-            <div id="faq-4" class="collapse" aria-labelledby="why-was-commission-created" data-parent="#accordion">
-              <div class="card-body">
-                <p class="faq-answer">The last Charter Revision Commission to fully overhaul the city's government concluded its work nearly 30 years ago. Charter Commission 2019 has a broad mandate to conduct a top-to-bottom review of the Charter. It's time for a fresh look.</p>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header" id="how-to-get-involved">
-              <h5 class="mb-0">
-                <button class="faq-question" data-toggle="collapse" data-target="#faq-5" aria-expanded="false" aria-controls="faq-5">
-                  <span class="toggle-plus" aria-hidden="true">+</span> 
-                  How can you get involved?</s
-            /button>
-              </h5>
-            </div>
-            <div id="faq-5" class="collapse" aria-labelledby="how-to-get-involved" data-parent="#accordion">
-              <div class="card-body">
-                <p class="faq-answer">It is vital that we hear from you. At the meetings and hearings you can learn more about the issues and share your suggestions and ideas. You can also submit your ideas <%= link_to "here", contact_path %>.</p>
-              </div>
-            </div>
-          </div>
+          <br>
         </div>
-        <br>
       </div>
       <div class="col-sm-12 col-lg-5">
         <h2 class="page-title">Additional Information</h2>
         <ul>
           <li>Local Law 91 (established the Charter Revision Commission 2019)<br><%= link_to "Download the PDF", asset_path("/pdfs/Local Law 91.pdf", skip_pipeline: true)%></li>
+          <br>
+          <li>NYC Charter Revision Commission 2019 Pamphlet<br><%= link_to "Download the PDF", asset_path("/pdfs/Charter_Pamphlet.pdf", skip_pipeline: true)%></li>
         </ul>
       </div>
     </div>
