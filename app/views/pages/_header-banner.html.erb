@@ -20,130 +20,118 @@
   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </div>
 
-  <div class="row" style="margin:0">
-    <div id="banner" class="col-12">
-      <nav class="navbar navbar-expand-md" style="padding: 0;" role="navigation">
-        <button id="hamburger-toggler" class="navbar-toggler"  onclick="iconChange(this)" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span id="hamburger-text">Menu</span>
-          <span id="hamburger" class="navbar-toggler-icon">
-            <div class="bars bar1"></div>
-            <div class="bars bar2"></div>
-            <div class="bars bar3"></div>
-          </span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <% if params["action"] == "main"%>
-              <li class="nav-item active">
-                <a class="nav-link disabled">Home <span class="sr-only">(current)</span></a>
-              </li>
-            <% else %>
-              <li class="nav-item">
-                <%= link_to "Home", root_path, {"class":"nav-link"} %>
-              </li>
-            <% end %>
+<div class="row" style="margin:0">
+  <div id="banner" class="col-12">
+    <nav class="navbar navbar-expand-md" style="padding: 0;" role="navigation">
+      <button id="hamburger-toggler" class="navbar-toggler"  onclick="iconChange(this)" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span id="hamburger-text">Menu</span>
+        <span id="hamburger" class="navbar-toggler-icon">
+          <div class="bars bar1"></div>
+          <div class="bars bar2"></div>
+          <div class="bars bar3"></div>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <% if params["action"] == "main"%>
+            <li class="nav-item active">
+              <a class="nav-link disabled">Home <span class="sr-only">(current)</span></a>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to "Home", root_path, {"class":"nav-link"} %>
+            </li>
+          <% end %>
 
-            <% if ["members","resources","faqs"].include?(params["action"])%>
-              <li class="nav-item active active-pointer dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  About
-                </a>
-                <div class="nav-item dropdown-menu" aria-labelledby="navbarDropdown">
-                  <!--<a class="nav-link dropdown-item" href="/charter">About the Charter</a>
-                  <div class="dropdown-divider"></div>-->
-                  <% if params["action"] == "members" %>
-                    <a class="nav-link dropdown-item disabled active-dropdown">Meet the Commissioners <span class="sr-only">(current)</span></a>
-                  <% else %>
-                    <%= link_to "Meet the Commissioners", members_path, {"class":"nav-link dropdown-item"} %>
-                  <% end %>
-                  <!--<div class="dropdown-divider"></div>
-                  <a class="nav-link dropdown-item" href="/staff">Staff</a>-->
-                  <div class="dropdown-divider"></div>
-                  <% if params["action"] == "resources" %>
-                    <a class="nav-link dropdown-item disabled active-dropdown">Resources <span class="sr-only">(current)</span></a>
-                  <% else %>
-                    <%= link_to "Resources", resources_path, {"class":"nav-link dropdown-item"} %>
-                  <% end %>
-                  <!--<div class="dropdown-divider"></div>
-                  <a class="nav-link dropdown-item" href="/jobs">Jobs</a>-->
-                  <div class="dropdown-divider"></div>
-                  <% if params["action"] == "faqs" %>
-                    <a class="nav-link dropdown-item disabled active-dropdown">FAQs <span class="sr-only">(current)</span></a>
-                  <% else %>
-                    <%= link_to "FAQs", faqs_path, {"class":"nav-link dropdown-item"} %>
-                  <% end %>
-                </div>
-              </li>
-            <% else %>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  About
-                </a>
-                <div class="nav-item dropdown-menu" aria-labelledby="navbarDropdown">
-                  <!--<a class="nav-link dropdown-item" href="/charter">About the Charter</a>
-                  <div class="dropdown-divider"></div>-->
+          <% if ["members","resources","faqs"].include?(params["action"])%>
+            <li class="nav-item active active-pointer dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                About
+              </a>
+              <div class="nav-item dropdown-menu" aria-labelledby="navbarDropdown">
+                <% if params["action"] == "members" %>
+                  <a class="nav-link dropdown-item disabled active-dropdown">Meet the Commissioners <span class="sr-only">(current)</span></a>
+                <% else %>
                   <%= link_to "Meet the Commissioners", members_path, {"class":"nav-link dropdown-item"} %>
-                  <!--<div class="dropdown-divider"></div>
-                  <a class="nav-link dropdown-item" href="/staff">Staff</a>-->
-                  <div class="dropdown-divider"></div>
+                <% end %>
+                <div class="dropdown-divider"></div>
+                <% if params["action"] == "resources" %>
+                  <a class="nav-link dropdown-item disabled active-dropdown">Resources <span class="sr-only">(current)</span></a>
+                <% else %>
                   <%= link_to "Resources", resources_path, {"class":"nav-link dropdown-item"} %>
-                  <!-- <div class="dropdown-divider"></div>
-                  <a class="nav-link dropdown-item" href="/jobs">Jobs</a>-->
-                  <div class="dropdown-divider"></div>
+                <% end %>
+                <div class="dropdown-divider"></div>
+                <% if params["action"] == "faqs" %>
+                  <a class="nav-link dropdown-item disabled active-dropdown">FAQs <span class="sr-only">(current)</span></a>
+                <% else %>
                   <%= link_to "FAQs", faqs_path, {"class":"nav-link dropdown-item"} %>
-                </div>
-              </li>
-            <% end %>
+                <% end %>
+              </div>
+            </li>
+          <% else %>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                About
+              </a>
+              <div class="nav-item dropdown-menu" aria-labelledby="navbarDropdown">
+                <%= link_to "Meet the Commissioners", members_path, {"class":"nav-link dropdown-item"} %>
+                <div class="dropdown-divider"></div>
+                <%= link_to "Resources", resources_path, {"class":"nav-link dropdown-item"} %>
+                <div class="dropdown-divider"></div>
+                <%= link_to "FAQs", faqs_path, {"class":"nav-link dropdown-item"} %>
+              </div>
+            </li>
+          <% end %>
 
-            <% if params["action"] == "contact" %>
+          <% if params["action"] == "contact" %>
+            <li class="nav-item active">
+              <a class="nav-link disabled">Submit Your Ideas <span class="sr-only">(current)</span></a>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to "Submit Your Ideas", contact_path, {"class":"nav-link"} %>
+            </li>
+          <% end %>
+        
+          <% if params["action"] == "hearings" || params["action"] == "minutes" %>
+            <li class="nav-item active">
+              <a class="nav-link disabled">Hearings & Meetings <span class="sr-only">(current)</span></a>
+            </li>
+          <% elsif params["action"] == "hearing" %>
+            <li class="nav-item active">
+              <a class="nav-link">Hearings & Meetings <span class="sr-only">(current)</span></a>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to "Hearings & Meetings", hearings_path, {"class":"nav-link"} %>
+            </li>
+          <% end %>         
+            
+          <% if params["action"] == "news" %>
+            <li class="nav-item active">
+              <a class="nav-link disabled">News <span class="sr-only">(current)</span></a>
+            </li>
+          <% elsif params["action"] == "news_article" %>
               <li class="nav-item active">
-                <a class="nav-link disabled">Submit Your Ideas <span class="sr-only">(current)</span></a>
-              </li>
-            <% else %>
-              <li class="nav-item">
-                <%= link_to "Submit Your Ideas", contact_path, {"class":"nav-link"} %>
-              </li>
-            <% end %>
-          
-            <% if params["action"] == "hearings" || params["action"] == "minutes" %>
-              <li class="nav-item active">
-                <a class="nav-link disabled">Hearings & Meetings <span class="sr-only">(current)</span></a>
-              </li>
-            <% elsif params["action"] == "hearing" %>
-              <li class="nav-item active">
-                <a class="nav-link">Hearings & Meetings <span class="sr-only">(current)</span></a>
-              </li>
-            <% else %>
-              <li class="nav-item">
-                <%= link_to "Hearings & Meetings", hearings_path, {"class":"nav-link"} %>
-              </li>
-            <% end %>         
-              
-            <% if params["action"] == "news" %>
-              <li class="nav-item active">
-                <a class="nav-link disabled">News <span class="sr-only">(current)</span></a>
-              </li>
-            <% elsif params["action"] == "news_article" %>
-               <li class="nav-item active">
-                <a class="nav-link">News <span class="sr-only">(current)</span></a>
-              </li>
-            <% else %>
-              <li class="nav-item">
-                <%= link_to "News", news_path, {"class":"nav-link"} %>
-              </li>
-            <% end %>
-   
-            <% if params["action"] == "reports" %>
-              <li class="nav-item active">
-                <a class="nav-link disabled">Reports <span class="sr-only">(current)</span></a>
-              </li>
-            <% else %>
-              <li class="nav-item">
-                <%= link_to "Reports", reports_path, {"class":"nav-link"} %>
-              </li>
-            <% end %>
-          </ul>
-        </div>
-      </nav>
-    </div>
+              <a class="nav-link">News <span class="sr-only">(current)</span></a>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to "News", news_path, {"class":"nav-link"} %>
+            </li>
+          <% end %>
+
+          <% if params["action"] == "reports" %>
+            <li class="nav-item active">
+              <a class="nav-link disabled">Reports <span class="sr-only">(current)</span></a>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to "Reports", reports_path, {"class":"nav-link"} %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
   </div>
+</div>
