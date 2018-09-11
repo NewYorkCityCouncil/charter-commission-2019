@@ -34,8 +34,8 @@
                   <p>
                     <%= @hearings[0].location_of_hearing %> @
                     <%= @hearings[0].date_of_hearing.in_time_zone('Eastern Time (US & Canada)').strftime("%l:%M %p") %>
-                    <%# <br> %>
-                    <%#= link_to "Stream it live!", livestream_path %>
+                    <br>
+                    <%= link_to "Stream it live!", "https://www.youtube.com/channel/UCMRiyUa-4C3qH01YzZX4j7w/live" %>
                   </p>
                   </div>
                 </div>
