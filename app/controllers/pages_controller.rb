@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   skip_before_action :verify_authenticity_token
-  before_action :meta_data 
+  before_action :meta_data, :next_hearing
   after_action :show_action 
   include Recaptcha::ClientHelper
   include Recaptcha::Verify
@@ -12,7 +12,6 @@ class PagesController < ApplicationController
     @page = "Home"
     #Hearings happening today
     @hearings = Hearing.where("date_of_hearing > ? AND date_of_hearing < ?", Time.now.beginning_of_day(), Time.now.end_of_day())
-    @nextHearing = Hearing.where("date_of_hearing < ? AND date_of_hearing > ?",Time.now.end_of_day() + 5.days, Time.now).order(:date_of_hearing => "asc").first
   end
 
   def livestream
@@ -176,5 +175,9 @@ class PagesController < ApplicationController
       @meta_description = "The New York City Charter is the city's constitution, creating the framework for our government. The 2019 Commission has a broad mandate to conduct a top-to-bottom review and will bring its recommendations to the public in November 2019."
       @meta_image_url = ""
       @meta_site_title = "Charter Revision Commission 2019"
+    end
+
+    def next_hearing
+      @nextHearing = Hearing.where("date_of_hearing < ? AND date_of_hearing > ?",Time.now.end_of_day() + 5.days, Time.now).order(:date_of_hearing => "asc").first
     end
 end
