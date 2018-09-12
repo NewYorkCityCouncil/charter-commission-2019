@@ -31,7 +31,7 @@
     <nav class="navbar navbar-expand-md" style="padding: 0;" role="navigation">
       <% if @hearings_today.length > 0 && DateTime.now >= (@hearings_today[0].date_of_hearing - 5.minutes) &&  DateTime.now <= (@hearings_today[0].date_of_hearing + 2.hours + 30.minutes)%>
         <div id="live">
-          <span id="record"><%= icon('fas', 'circle') %></span> <span><a href="https://youtu.be/6zpzeMzG0bI" target="_blank">LIVE</a></span>
+          <span id="record"><%= icon('fas', 'circle') %></span> <span><a href="https://www.youtube.com/channel/UCMRiyUa-4C3qH01YzZX4j7w/live" target="_blank">LIVE</a></span>
         </div>
       <% end %>
       <button id="hamburger-toggler" class="navbar-toggler"  onclick="iconChange(this)" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,7 +45,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <% if @hearings_today.length > 0 && DateTime.now >= (@hearings_today[0].date_of_hearing - 5.minutes) &&  DateTime.now <= (@hearings_today[0].date_of_hearing + 2.hours + 30.minutes)%>
           <div id="live">
-            <span id="record"><%= icon('fas', 'circle') %></span> <span><a href="https://youtu.be/6zpzeMzG0bI" target="_blank">LIVE</a></span>
+            <span id="record"><%= icon('fas', 'circle') %></span> <span><a href="https://www.youtube.com/channel/UCMRiyUa-4C3qH01YzZX4j7w/live" target="_blank">LIVE</a></span>
           </div>
         <% end %>
         <ul class="navbar-nav">
