@@ -19,12 +19,6 @@
           <br>
         </div>
       <div class="col-sm-12 col-lg-7">
-        <!-- <div class="marquee3k" style="background-color:#D11B1B;box-shadow: 2px 4.5px 6px #000;overflow:hidden;" data-speed=".5" data-pausable="true" aria-hidden="true">  -->
-          <%# if !@nextHearing.nil? %>
-            <!-- <p style="color:white;margin:5px 15px;"><small>The Next Public Meeting of the NYC Charter Commission 2019: <%= @nextHearing.date_of_hearing.in_time_zone('Eastern Time (US & Canada)').strftime("%B %d, %Y, %l:%M %p") %>, <%= @nextHearing.location_of_hearing %> <strong><%= link_to "Click here", show_hearing_path(:date_of_hearing => @nextHearing.date_of_hearing) %></strong></small></p> -->
-          <%# end %>
-        <!-- </div> -->
-        <!-- <script>$(document).ready(function(){Marquee3k.init();});</script> -->
         <div id="home-image-carousel" aria-hidden="true">
           <% if @hearings.length > 0 %>
             <div class="home-image" style='background-image: url(<%=image_url("misc/meeting_header.jpg")%>);'>
