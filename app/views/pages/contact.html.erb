@@ -28,7 +28,7 @@
           <%= f.text_field :phone, class: "not-required", placeholder: "Phone" %>
         </div>
         <div class="col-12">
-          <%= f.text_area :message, class: "comments", row: 10, placeholder: "Your ideas for the charter", required: true , maxlength: 5000 %>
+          <%= f.text_area :message, class: "comments", row: 10, placeholder: "Tell us your ideas for the charter!", required: true , maxlength: 5000 %>
           <br><small><em>Character limit: <span id="contact-limit"></span></em></small>
           <br><br>
           <script>
@@ -39,6 +39,8 @@
           </script>
         </div>
         <div class="col-12">
+          <label>File Attachment:</label>
+          <br>
           <%= f.file_field :comment_attachment %>
           <br><small><em>Max 7 MB</em></small>
         </div>

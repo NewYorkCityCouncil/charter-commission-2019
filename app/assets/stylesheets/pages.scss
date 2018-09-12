@@ -1,8 +1,22 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-/* Universal */
 
+/* OVER-RIDING BOOTSTRAPS CONTAINER CLASS MEDIA QUERIES */
+@media (min-width: 1200px){
+  .container {max-width: 100% !important;}
+}
+@media (min-width: 992px){
+  .container {max-width: 100% !important;}
+}
+@media (min-width: 768px){
+  .container {max-width: 100% !important;}
+}
+@media (min-width: 576px){
+  .container {max-width: 100% !important;}
+}
+
+/* Universal */
 body {
   font-family: 'Open Sans',sans-serif;
   min-height:auto !important;
@@ -10,6 +24,14 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: Georgia,Times,"Times New Roman",serif;
+}
+
+.oj-font{
+  color:#F28C56;
+}
+
+.oj-bg{
+  background-color:#F28C56;
 }
 
 .center {
@@ -36,6 +58,28 @@ h1, h2, h3, h4, h5, h6 {
 #seal {
   min-width: 150px;
   width: 13%;
+}
+
+#live{
+  color:white;
+  left: 15px;
+  position: absolute;
+  a{
+    color:white;
+    &:hover{color:white;}
+    &:visited{color:white;}
+  }
+}
+
+#record{
+  animation:blinkingText 3s infinite;
+}
+@keyframes blinkingText{
+  0%{color: rgba(200, 0, 0, 0.8);}
+  25%{color: rgba(128, 128, 128, .8);}
+  50%{color: rgba(200, 0, 0, .8);}
+  75%{color: rgba(128, 128, 128, .8);}
+  100%{color: rgba(200, 0, 0, .8);}
 }
 
 /*Google translate */
@@ -218,7 +262,14 @@ ul.navbar-nav {
   background-color:#E6E6E6;
   padding:5px;
 }
-
+#contact-btn{
+  background-color:#F28C56;
+  color:white;
+  font-size:30px;
+  margin:20px auto;
+  text-decoration:none;
+  &:hover{background-color:#d87d4d}
+}
 #commissioner-pic img {
   width: 100%;
 }
@@ -372,10 +423,15 @@ footer {
     height: auto;
     margin-top: 5px;
   }
+  #contact-btn{
+    font-size:25px;
+  }
 }
 
 @media only screen and (max-width: 767px) {
- 
+  #contact-btn{
+    font-size:20px;
+  }
   .home-image, 
   #home-image-carousel {
     height:200px !important;

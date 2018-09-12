@@ -10,8 +10,6 @@ class PagesController < ApplicationController
 
   def main
     @page = "Home"
-    #Hearings happening today
-    @hearings = Hearing.where("date_of_hearing > ? AND date_of_hearing < ?", Time.now.beginning_of_day(), Time.now.end_of_day())
   end
 
   def livestream
@@ -117,12 +115,12 @@ class PagesController < ApplicationController
 
   def kiosk
     @page = "Upcoming Hearings"
-    @hearings = Hearing.where("date_of_hearing > ?", Time.now).order(date_of_hearing: :asc)
+    _today= Hearing.where("date_of_hearing > ?", Time.now).order(date_of_hearing: :asc)
   end
 
   # def archived
   #   @page = "Archived Hearings"
-  #   @hearings = Hearing.where("date_of_hearing < ?", Time.now).order(date_of_hearing: :asc)
+  #   _today= Hearing.where("date_of_hearing < ?", Time.now).order(date_of_hearing: :asc)
   # end
 
   def reports
@@ -154,7 +152,7 @@ class PagesController < ApplicationController
   def sitemap
     @static_pages = ['','members','resources','faqs','contact','hearings','news','reports','livestream']
 
-    @hearings = Hearing.all
+    _today= Hearing.all
     @news = News.all
 
     respond_to do |format|
@@ -178,6 +176,7 @@ class PagesController < ApplicationController
     end
 
     def next_hearing
+      @hearings_today = Hearing.where("date_of_hearing > ? AND date_of_hearing < ?", Time.now.beginning_of_day(), Time.now.end_of_day())
       @nextHearing = Hearing.where("date_of_hearing < ? AND date_of_hearing > ?",Time.now.end_of_day() + 5.days, Time.now).order(:date_of_hearing => "asc").first
     end
 end

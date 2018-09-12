@@ -5,6 +5,11 @@
       <div class="col-sm-12">
         <iframe width="100%" style="max-height:500px; min-height:315px; height:35vw" src="https://www.youtube.com/embed/oy9vvLz1448" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
       </div>
+      <div class="center col-12">
+        <div class="">
+          <%= link_to "Have suggestions? Click here!", contact_path, {:id =>"contact-btn" ,:class=>'col-offset-md-3 col-md-6 col-sm-12 btn'}%>
+        </div>
+      </div>
       <div class="col-sm-12">
           <style>#upcoming-sept{width:100%;}#upcoming-sept tr{font-size:25px;letter-spacing:13px;}@media only screen and (max-width: 991px) {#upcoming-sept tr{font-size:20px;}}@media only screen and (max-width: 767px) {#upcoming-sept tr{font-size:12px;letter-spacing:5px;}}</style>
           <h2 class="center underline">September 2018 Hearings</h2>
@@ -20,14 +25,14 @@
         </div>
       <div class="col-sm-12 col-lg-7">
         <div id="home-image-carousel" aria-hidden="true">
-          <% if @hearings.length > 0 %>
+          <% if @hearings_today.length > 0 %>
             <div class="home-image" style='background-image: url(<%=image_url("misc/meeting_header.jpg")%>);'>
               <div id="hearing-message">
                 <div>
                   <h2>There's a public<br>meeting today!</h2>
                   <p>
-                    <%= @hearings[0].location_of_hearing %> @
-                    <%= @hearings[0].date_of_hearing.in_time_zone('Eastern Time (US & Canada)').strftime("%l:%M %p") %>
+                    <%= @hearings_today[0].location_of_hearing %> @
+                    <%= @hearings_today[0].date_of_hearing.in_time_zone('Eastern Time (US & Canada)').strftime("%l:%M %p") %>
                     <br>
                     <%= link_to "Stream it live!", "https://www.youtube.com/channel/UCMRiyUa-4C3qH01YzZX4j7w/live" %>
                   </p>
