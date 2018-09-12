@@ -29,7 +29,7 @@
 <div class="row" style="margin:0">
   <div id="banner" class="col-12">
     <nav class="navbar navbar-expand-md" style="padding: 0;" role="navigation">
-      <% if @hearings_today.length > 0 %>
+      <% if @hearings_today.length > 0 && DateTime.now >= (@hearings_today[0].date_of_hearing - 5.minutes) &&  DateTime.now <= (@hearings_today[0].date_of_hearing + 2.hours + 30.minutes)%>
         <div id="live">
           <span id="record"><%= icon('fas', 'circle') %></span> <span><a href="https://youtu.be/6zpzeMzG0bI" target="_blank">LIVE</a></span>
         </div>
@@ -43,7 +43,7 @@
         </span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <% if @hearings_today.length > 0 %>
+        <% if @hearings_today.length > 0 && DateTime.now >= (@hearings_today[0].date_of_hearing - 5.minutes) &&  DateTime.now <= (@hearings_today[0].date_of_hearing + 2.hours + 30.minutes)%>
           <div id="live">
             <span id="record"><%= icon('fas', 'circle') %></span> <span><a href="https://youtu.be/6zpzeMzG0bI" target="_blank">LIVE</a></span>
           </div>
