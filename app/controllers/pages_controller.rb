@@ -115,12 +115,12 @@ class PagesController < ApplicationController
   end
 
   def hearing
-    @hearing = Hearing.find_by(:date_of_hearing => params[:date_of_hearing].to_datetime)
+    @hearing = Hearing.find_by(:id => params[:id])
     @page = @hearing.date_of_hearing.strftime("%A, %B %d, %Y")
   end
 
   def minutes
-    @hearing = Hearing.find_by(:date_of_hearing => params[:date_of_hearing].to_datetime)
+    @hearing = Hearing.find_by(:id => params[:id])
     @page = "#{@hearing.date_of_hearing.strftime("%A, %B %d, %Y")} Minutes"
   end
 

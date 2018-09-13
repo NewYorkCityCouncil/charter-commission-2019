@@ -11,7 +11,7 @@
             <ul>
               <% @press_releases.each do |press_release| %>
                 <li>
-                  <%= link_to press_release.title, show_news_path(press_release.order,press_release.title) %><br>
+                  <%= link_to press_release.title, show_news_path(press_release.id,press_release.order) %><br>
                   <small><%= press_release.publication_date %></small>
                   <% if press_release.news_attachments.length > 0 %>
                     <ul>

@@ -29,14 +29,14 @@ Rails.application.routes.draw do
 
   get '/hearings', to: 'pages#hearings'
   # get '/archived', to: 'pages#archived'
-  get '/hearings/:date_of_hearing', to: 'pages#hearing', as: "show_hearing"
-  get '/hearings/:date_of_hearing/minutes', to: 'pages#minutes', as: "show_hearing_minutes"
+  get '/hearings/:id', to: 'pages#hearing', as: "show_hearing"
+  get '/hearings/:id/minutes', to: 'pages#minutes', as: "show_hearing_minutes"
 
   get '/reports', to: 'pages#reports'
   get '/reports/:id', to: 'pages#report', as: "show_report"
 
   get '/news', to: 'pages#news'
-  get '/news/:order/:title', to: 'pages#news_article', as: "show_news"
+  get '/news/:id/:order', to: 'pages#news_article', as: "show_news"
 
   get '/kiosk', to: 'pages#kiosk'
 
