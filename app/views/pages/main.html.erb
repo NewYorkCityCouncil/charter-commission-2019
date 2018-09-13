@@ -1,5 +1,32 @@
 <%= render partial: "header-banner" %>
 
+    <%# if cookies[:subscribed].nil? && cookies[:declined].nil? %>
+      <!-- <div id="subscribeModal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Subscribe!</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p class="center">Subscribe to our mailing list!</p>
+              <form id="subscribe-form" name="subscribe" method="POST" action="subscribe">
+                <div class="row">
+                  <div class="col-md-6 col-sm-12" style="margin-bottom:15px;"><input type="text" class="form-control" name="first_name" placeholder="First Name" required></div>
+                  <div class="col-md-6 col-sm-12" style="margin-bottom:15px;"><input type="text" class="form-control" name="last_name" placeholder="Last Name" required></div>
+                  <div class="col-12" style="margin-bottom:15px;"><input type="email" class="form-control" name="email" placeholder="Email Address" required></div>
+                  <div class="col-md-6 col-sm-12" style="margin-bottom:15px;"><input class="btn btn-success" id="subscribe-btn" type="submit" value="SUBSCRIBE" name="approve"></div>
+                  <div class="col-md-6 col-sm-12"><input class="btn btn-danger" id="decline-btn" type="submit" value="NO, THANKS" name="decline"></div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    <%# end %>
+
   <div class="container" role="main">
     <div class="row">
       <div class="col-sm-12">

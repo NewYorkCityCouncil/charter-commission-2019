@@ -49,6 +49,25 @@ class PagesController < ApplicationController
     @status = flash[:status].nil? ? flash[:status] : flash[:status].html_safe
     @new_comment = Comment.new
   end
+
+  # def subscribe
+  #   if params.has_key?("decline")
+  #     puts "You declined"
+  #     # cookies[:declined] = { :value => true, :expires => 1.week.from_new}
+  #   elsif params.has_key?("approve")
+  #     puts "You are subscribed"
+  #     # cookies[:subscribed] = { :value => true, :expires => 1.year.from_now }
+  #     # CREATE NEW ENTRY IN SUBSCRIBE DATABASE
+  #   end
+  # end
+
+  # def unsubscribe
+  #   puts "You are unsubscribed"
+  #   # DELETE ENTRY IN DATABASE
+  #   # Subscription.where("email_address = ?", #{insert email address})[0].destroy
+  # end
+
+  # # NEED METHOD FOR CSV EXPORT OF EMAIL ADDRESSES
   
   def submit_comment
     @new_comment = Comment.new(message_params)
@@ -58,7 +77,6 @@ class PagesController < ApplicationController
           flash[:status] = "Thanks for your comment!"
           @new_comment.save
           from = Email.new(email: 'no-reply@charter2019.nyc.gov')
-          # to = Email.new(email: 'jchei@council.nyc.gov')
           to = Email.new(email: 'proposals@charter2019.nyc')
           subject = 'New message from Charter Revision Site'
           formatted_message = @new_comment.message.split("\r\n").join("</p><p>")
@@ -70,13 +88,6 @@ class PagesController < ApplicationController
           mail = Mail.new(from, subject, to, content)
           # Adding a BCC because not every email goes through to Council email
           mail.personalizations[0]["bcc"] = [{"email"=>"charter2019nyc@gmail.com"}]
-          # mail.personalizations[0]["bcc"] = [{"email"=>"jc.nycc.122018@gmail.com"}]
-          # if !@new_comment.comment_attachment.file.nil?
-          #   attachment = Attachment.new
-          #   attachment.content = Base64.strict_encode64(File.open(@new_comment.comment_attachment.current_path,'rb').read)
-          #   attachment.filename = @new_comment.comment_attachment_identifier
-          #   mail.attachments.push(attachment)
-          # end
           sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
           response = sg.client.mail._('send').post(request_body: mail.to_json)
           puts response.status_code

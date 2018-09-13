@@ -9,7 +9,7 @@
     <%= image_tag("misc/charter_logo_final.png", id: "seal", alt: "NYC Charter Commission logo") %>
     <p class="charter geo">Charter Revision Commission 2019</p>
   </div>
-  <div style="position:fixed; top: 38px; right: 0; z-index:2;" id="google_translate_element" aria-hidden="true">
+  <div style="position:fixed; <%= !@nextHearing.nil? ? 'top: 38px;': 'top: 0;' %> right: 0; z-index:2;" id="google_translate_element" aria-hidden="true">
     <span class="lang-label" id="lang-label-0">English</span>
     <span class="lang-label" id="lang-label-1">Español</span>
     <span class="lang-label" id="lang-label-2">Italiano</span>

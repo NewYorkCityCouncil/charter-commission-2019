@@ -23,7 +23,10 @@ Rails.application.routes.draw do
 
   get '/contact', to: 'pages#contact'
   post '/contact', to: 'pages#submit_comment', as: "send_comment"
-  
+
+  # post '/subscribe', to: 'pages#subscribe'
+  # post '/unsubscribe', to: 'pages#unsubscribe'
+
   get '/hearings', to: 'pages#hearings'
   # get '/archived', to: 'pages#archived'
   get '/hearings/:date_of_hearing', to: 'pages#hearing', as: "show_hearing"
