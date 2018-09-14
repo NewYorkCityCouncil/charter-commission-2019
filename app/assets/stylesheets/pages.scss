@@ -77,11 +77,14 @@ h1, h2, h3, h4, h5, h6 {
     &:hover{color:white;}
     &:visited{color:white;}
   }
+  #record{
+    animation:blinkingText 3s infinite;
+  }
+  #offline{
+    color:rgba(128, 128, 128, .8);
+  }
 }
 
-#record{
-  animation:blinkingText 3s infinite;
-}
 @keyframes blinkingText{
   0%{color: rgba(200, 0, 0, 0.8);}
   25%{color: rgba(128, 128, 128, .8);}

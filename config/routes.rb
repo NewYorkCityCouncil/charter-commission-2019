@@ -13,11 +13,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'pages#main' 
   get '/livestream', to: 'pages#livestream'
-  # get '/charter', to: 'pages#charter'
   get '/jobs', to: 'pages#jobs'
   get '/jobs/:position', to: 'pages#job', as: "show_job"
   get '/members', to: 'pages#members'
-  # get '/staff', to: 'pages#staff'
   get '/resources', to: 'pages#resources'
   get '/faqs', to: 'pages#faqs'
 
@@ -28,7 +26,6 @@ Rails.application.routes.draw do
   # post '/unsubscribe', to: 'pages#unsubscribe'
 
   get '/hearings', to: 'pages#hearings'
-  # get '/archived', to: 'pages#archived'
   get '/hearings/:id', to: 'pages#hearing', as: "show_hearing"
   get '/hearings/:id/minutes', to: 'pages#minutes', as: "show_hearing_minutes"
 

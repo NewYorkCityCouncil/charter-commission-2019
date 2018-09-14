@@ -29,11 +29,13 @@
 <div class="row" style="margin:0">
   <div id="banner" class="col-12">
     <nav class="navbar navbar-expand-md" style="padding: 0;" role="navigation">
-      <% if @hearings_today.length > 0 && DateTime.now >= (@hearings_today[0].date_of_hearing - 5.minutes) &&  DateTime.now <= (@hearings_today[0].date_of_hearing + 2.hours + 30.minutes)%>
-        <div id="live">
+      <div id="live">
+        <% if @hearings_today.length > 0 && DateTime.now >= (@hearings_today[0].date_of_hearing - 5.minutes) &&  DateTime.now <= (@hearings_today[0].date_of_hearing + 3.hours + 30.minutes)%>
           <span id="record"><%= icon('fas', 'circle') %></span> <span><a href="https://www.youtube.com/channel/UCMRiyUa-4C3qH01YzZX4j7w/live" target="_blank">LIVE</a></span>
-        </div>
-      <% end %>
+        <% else %>
+          <span id="offline"><%= icon('fas', 'circle') %></span> <span>OFFLINE</span>
+        <% end %>
+      </div>
       <button id="hamburger-toggler" class="navbar-toggler"  onclick="iconChange(this)" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span id="hamburger-text">Menu</span>
         <span id="hamburger" class="navbar-toggler-icon">
@@ -43,11 +45,6 @@
         </span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <% if @hearings_today.length > 0 && DateTime.now >= (@hearings_today[0].date_of_hearing - 5.minutes) &&  DateTime.now <= (@hearings_today[0].date_of_hearing + 2.hours + 30.minutes)%>
-          <div id="live">
-            <span id="record"><%= icon('fas', 'circle') %></span> <span><a href="https://www.youtube.com/channel/UCMRiyUa-4C3qH01YzZX4j7w/live" target="_blank">LIVE</a></span>
-          </div>
-        <% end %>
         <ul class="navbar-nav">
           <% if params["action"] == "main"%>
             <li class="nav-item active">
