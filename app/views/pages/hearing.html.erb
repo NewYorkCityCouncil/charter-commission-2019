@@ -18,7 +18,7 @@
         <% end %>
 
         <% if !@hearing.minutes.nil? %>
-          <p><%= link_to "View the minutes in HTML", show_hearing_minutes_path(@hearing.date_of_hearing)%></p>
+          <p><%= link_to "View the minutes in HTML", show_hearing_minutes_path(@hearing.id)%></p>
         <% end %>
 
         <% if @hearing.hearing_attachments.length > 0 %>

@@ -3,7 +3,7 @@
   <div class="container" role="main">
     <div class="row">
       <div class="col-sm-12">
-        <p><%= link_to "Back to meeting", show_hearing_path(@hearing.date_of_hearing) %></p>
+        <p><%= link_to "Back to meeting", show_hearing_path(@hearing.id) %></p>
         <%= @hearing.minutes.html_safe %>
       </div>
     </div>
