@@ -31,10 +31,11 @@
     <nav class="navbar navbar-expand-md" style="padding: 0;" role="navigation">
       <div id="live">
         <% if @hearings_today.length > 0 && DateTime.now >= (@hearings_today[0].date_of_hearing - 5.minutes) &&  DateTime.now <= (@hearings_today[0].date_of_hearing + 3.hours + 30.minutes)%>
-          <span id="record"><%= icon('fas', 'circle') %></span> <span><a href="https://www.youtube.com/channel/UCMRiyUa-4C3qH01YzZX4j7w/live" target="_blank">LIVE</a></span>
+          <span id="record"><%= icon('fas', 'circle') %></span>
         <% else %>
-          <span id="offline"><%= icon('fas', 'circle') %></span> <span>OFFLINE</span>
+          <span id="offline"><%= icon('fas', 'circle') %></span>
         <% end %>
+        <span><a href="https://www.youtube.com/channel/UCMRiyUa-4C3qH01YzZX4j7w/live" target="_blank">LIVE</a></span>
       </div>
       <button id="hamburger-toggler" class="navbar-toggler"  onclick="iconChange(this)" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span id="hamburger-text">Menu</span>
