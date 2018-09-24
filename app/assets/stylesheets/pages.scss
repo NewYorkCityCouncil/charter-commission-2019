@@ -15,15 +15,26 @@
 @media (min-width: 576px){
   .container {max-width: 100% !important;}
 }
+@font-face {
+  font-family: 'GlacialIndifference-Regular';
+  src: font-url("GlacialIndifference-Regular.otf") format('opentype');
+}
+@font-face {
+  font-family: 'GlacialIndifference-Bold';
+  src: font-url("GlacialIndifference-Bold.otf") format('opentype');
+}
 
 /* Universal */
 body {
-  font-family: 'Open Sans',sans-serif;
+  font-family: 'GlacialIndifference-Regular' !important;
   min-height:auto !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: Georgia,Times,"Times New Roman",serif;
+  font-family: 'Montserrat', sans-serif !important;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  // font-family: Georgia,Times,"Times New Roman",serif;
 }
 
 .oj-font{
@@ -59,7 +70,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .geo {
   color: #2F56A6;
-  font-family: Georgia,Times,"Times New Roman",serif;
+  font-family: 'Montserrat', sans-serif;
+  // font-family: Georgia,Times,"Times New Roman",serif;
   font-size: 1.8em;
 }
 
@@ -226,9 +238,9 @@ ul.navbar-nav {
 
 .home-image {
   background-size: cover;
-  background-position: center;
+  background-repeat: no-repeat;
   border-radius:5px;
-  height: 300px !important;
+  height: 450px !important;
   margin-bottom: 30px;
   width: 100%;
 }
@@ -241,7 +253,7 @@ ul.navbar-nav {
 #home-image-carousel {
   border-radius:5px;
   // box-shadow: 2px 4px 6px #000;
-  height: 300px;
+  height: 450px;
   margin-bottom: 20px;
 }
 #hearing-message{
@@ -272,7 +284,7 @@ ul.navbar-nav {
 #contact-btn{
   background-color:#F48C50;
   color:white;
-  font-size:30px;
+  font-size:24px;
   margin:20px auto;
   text-decoration:none;
   &:hover{background-color:#d87d4d}
@@ -431,17 +443,20 @@ footer {
     margin-top: 5px;
   }
   #contact-btn{
-    font-size:25px;
+    font-size:20px;
   }
 }
 
 @media only screen and (max-width: 767px) {
+  #upcoming-sept h3{
+    font-size:17px;
+  }
   #contact-btn{
-    font-size:20px;
+    font-size:18px;
   }
   .home-image, 
   #home-image-carousel {
-    height:200px !important;
+    height:400px !important;
   }
   #hearing-message {
     padding: 5px;
@@ -470,6 +485,13 @@ footer {
 }
 
 @media only screen and (max-width: 575px) {
+  #upcoming-sept h3{
+    font-size:12px;
+  }
+  .home-image, 
+  #home-image-carousel {
+    height:300px !important;
+  }
   ul.navbar-nav .nav-item {
     padding: 0px;
   }
