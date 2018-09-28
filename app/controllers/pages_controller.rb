@@ -110,8 +110,8 @@ class PagesController < ApplicationController
 
   def hearings
     @page = "Hearings and Meetings"
-    @upcoming_hearings = Hearing.where("date_of_hearing > ?", Time.now).order(date_of_hearing: :asc)
-    @past_hearings = Hearing.where("date_of_hearing < ?", Time.now).order(date_of_hearing: :asc)
+    @upcoming_hearings = Hearing.where("date_of_hearing > ?", Time.now.in_time_zone("America/New_York")).order(date_of_hearing: :asc)
+    @past_hearings = Hearing.where("date_of_hearing < ?", Time.now.in_time_zone("America/New_York")).order(date_of_hearing: :asc)
   end
 
   def hearing
@@ -126,7 +126,7 @@ class PagesController < ApplicationController
 
   def kiosk
     @page = "Upcoming Hearings"
-    _today= Hearing.where("date_of_hearing > ?", Time.now).order(date_of_hearing: :asc)
+    _today= Hearing.where("date_of_hearing > ?", Time.now.in_time_zone("America/New_York")).order(date_of_hearing: :asc)
   end
 
   # def archived
@@ -187,7 +187,7 @@ class PagesController < ApplicationController
     end
 
     def next_hearing
-      @hearings_today = Hearing.where("date_of_hearing > ? AND date_of_hearing < ?", Time.now.beginning_of_day(), Time.now.end_of_day())
-      @nextHearing = Hearing.where("date_of_hearing < ? AND date_of_hearing > ?",Time.now.end_of_day() + 5.days, Time.now).order(:date_of_hearing => "asc").first
+      @hearings_today = Hearing.where("date_of_hearing > ? AND date_of_hearing < ?", Time.now.in_time_zone("America/New_York").beginning_of_day(), Time.now.in_time_zone("America/New_York").end_of_day())
+      @nextHearing = Hearing.where("date_of_hearing < ? AND date_of_hearing > ?",Time.now.in_time_zone("America/New_York").end_of_day() + 5.days, Time.now.in_time_zone("America/New_York")).order(:date_of_hearing => "asc").first
     end
 end
