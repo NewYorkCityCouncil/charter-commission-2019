@@ -37,6 +37,7 @@
           <h3><%= link_to "Have suggestions?<br />Click here!".html_safe, contact_path, {:id =>"contact-btn" ,:class=>'col-offset-md-3 col-md-6 col-sm-12 btn'}%></h3>
         </div>
       </div>
+      <% if false %>
         <div class="col-sm-12">
           <style>#upcoming-sept{width:100%;}#upcoming-sept tr{font-size:25px;letter-spacing:13px;}@media only screen and (max-width: 991px) {#upcoming-sept tr{font-size:20px;}}@media only screen and (max-width: 767px) {#upcoming-sept tr{font-size:12px;letter-spacing:5px;}}</style>
           <h2 class="center underline">September 2018 Hearings</h2>
@@ -50,6 +51,7 @@
           </table>
           <br>
         </div>
+      <% end%>
       <div class="col-sm-12 col-lg-7">
         <div id="home-image-carousel" aria-hidden="true">
           <% if @hearings_today.length > 0 %>
