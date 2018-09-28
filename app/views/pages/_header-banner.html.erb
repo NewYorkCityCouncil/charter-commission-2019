@@ -30,7 +30,7 @@
   <div id="banner" class="col-12">
     <nav class="navbar navbar-expand-md" style="padding: 0;" role="navigation">
       <div id="live">
-        <% if @hearings_today.length > 0 && DateTime.now >= (@hearings_today[0].date_of_hearing - 5.minutes) &&  DateTime.now <= (@hearings_today[0].date_of_hearing + 3.hours + 30.minutes)%>
+        <% if @hearings_today.length > 0 && DateTime.now.in_time_zone("America/New_York") >= (@hearings_today[0].date_of_hearing - 5.minutes) &&  DateTime.now.in_time_zone("America/New_York") <= (@hearings_today[0].date_of_hearing + 4.hours)%>
           <span id="record"><%= icon('fas', 'circle') %></span>
         <% else %>
           <span id="offline"><%= icon('fas', 'circle') %></span>

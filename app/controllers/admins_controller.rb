@@ -43,7 +43,7 @@ class AdminsController < ApplicationController
     @comments = Comment.all
 
     respond_to do |format|
-      format.csv { send_data @comments.to_csv, filename: "comments_#{Time.now.strftime("%m-%d-%Y_%I:%M:%S %Z")}.csv" }
+      format.csv { send_data @comments.to_csv, filename: "comments_#{Time.now.in_time_zone("America/New_York").strftime("%m-%d-%Y_%I:%M:%S %Z")}.csv" }
     end
   end
 
