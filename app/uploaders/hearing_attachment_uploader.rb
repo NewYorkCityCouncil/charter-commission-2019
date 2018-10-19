@@ -50,6 +50,6 @@ class HearingAttachmentUploader < CarrierWave::Uploader::Base
   #   "something.jpg" if original_filename
   # end
   def size_range
-    0..20.megabytes
+    0..100.megabytes
   end
 end
