@@ -6,7 +6,7 @@ class AdminsController < ApplicationController
   before_action :find_hearing, only: [:hearing,:update_hearing, :delete_hearing]
   before_action :find_news, only: [:news,:update_news, :delete_news]
   before_action :find_report, only: [:report,:update_report, :delete_report]
-  before_action :authenticate_user!, :set_time_zone, :block_foreign_hosts,:page_title
+  before_action :authenticate_user!, :set_time_zone, :page_title
 
   def index
   end
@@ -230,7 +230,7 @@ class AdminsController < ApplicationController
     end
 
     def block_foreign_hosts
-      # if ["205.247.140.193","66.65.23.247","127.0.0.1"].include?(request.remote_ip) then return false else redirect_to root_path end
+      if ["205.247.140.193","66.65.23.247","127.0.0.1"].include?(request.remote_ip) then return false else redirect_to root_path end
     end
 
     def set_time_zone

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Users::ConfirmationsController < Devise::ConfirmationsController
-  before_action :block_foreign_hosts
+  # before_action :block_foreign_hosts
   # GET /resource/confirmation/new
   # def new
   #   super

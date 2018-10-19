@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Users::PasswordsController < Devise::PasswordsController
-  before_action :block_foreign_hosts
+  # before_action :block_foreign_hosts
   # GET /resource/password/new
   # def new
   #   super

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-  before_action :block_foreign_hosts
+  # before_action :block_foreign_hosts
   # You should configure your model like this:
   # devise :omniauthable, omniauth_providers: [:twitter]
 

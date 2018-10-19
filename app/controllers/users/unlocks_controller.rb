@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Users::UnlocksController < Devise::UnlocksController
-  before_action :block_foreign_hosts
+  # before_action :block_foreign_hosts
   # GET /resource/unlock/new
   # def new
   #   super
