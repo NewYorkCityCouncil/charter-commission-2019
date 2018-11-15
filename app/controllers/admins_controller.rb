@@ -23,7 +23,8 @@ class AdminsController < ApplicationController
 
   # Comments, Feedback, and Messages
   def all_messages
-    @comments = Comment.all.order(created_at: :asc)
+    # @comments = Comment.all.order(created_at: :asc)
+    @comments = Comment.all.order(created_at: :asc).paginate(:page => params[:page], :per_page => 20)
   end
 
   def message

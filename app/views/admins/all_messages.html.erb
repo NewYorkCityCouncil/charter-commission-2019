@@ -17,6 +17,9 @@
   </div>
   <div class="row">
     <div class="col-12">
+      <%= will_paginate @comments, renderer: BootstrapPagination::Rails %>
+    </div>
+    <div class="col-12">
       <table style="width:100%;" cellpadding=5>
         <tr>
           <td style="vertical-align:top;width:30%;"><b style="text-decoration:underline;">Sender</b></td>
@@ -47,6 +50,11 @@
           </tr>
         <% end %>
       </table>
+      <script>
+        $(".pagination span").addClass("page-link")
+        $(".pagination li").addClass("page-item")
+        $(".pagination li a").addClass("page-link")
+      </script>
     </div>
   </div>
 </div>
