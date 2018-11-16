@@ -60,7 +60,8 @@
             </li>
           <% end %>
 
-          <% if ["members","resources","faqs"].include?(params["action"])%>
+          <%# if ["members","resources","faqs"].include?(params["action"])%>
+          <% if ["members","faqs"].include?(params["action"])%>
             <li class="nav-item active active-pointer dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 About
@@ -71,12 +72,12 @@
                 <% else %>
                   <%= link_to "Meet the Commissioners", members_path, {"class":"nav-link dropdown-item"} %>
                 <% end %>
-                <div class="dropdown-divider"></div>
-                <% if params["action"] == "resources" %>
-                  <a class="nav-link dropdown-item disabled active-dropdown">Resources <span class="sr-only">(current)</span></a>
-                <% else %>
-                  <%= link_to "Resources", resources_path, {"class":"nav-link dropdown-item"} %>
-                <% end %>
+                <!-- <div class="dropdown-divider"></div> -->
+                <%# if params["action"] == "resources" %>
+                  <!-- <a class="nav-link dropdown-item disabled active-dropdown">Resources <span class="sr-only">(current)</span></a> -->
+                <%# else %>
+                  <%#= link_to "Resources", resources_path, {"class":"nav-link dropdown-item"} %>
+                <%# end %>
                 <div class="dropdown-divider"></div>
                 <% if params["action"] == "faqs" %>
                   <a class="nav-link dropdown-item disabled active-dropdown">FAQs <span class="sr-only">(current)</span></a>
@@ -92,8 +93,8 @@
               </a>
               <div class="nav-item dropdown-menu" aria-labelledby="navbarDropdown">
                 <%= link_to "Meet the Commissioners", members_path, {"class":"nav-link dropdown-item"} %>
-                <div class="dropdown-divider"></div>
-                <%= link_to "Resources", resources_path, {"class":"nav-link dropdown-item"} %>
+                <!-- <div class="dropdown-divider"></div> -->
+                <%#= link_to "Resources", resources_path, {"class":"nav-link dropdown-item"} %>
                 <div class="dropdown-divider"></div>
                 <%= link_to "FAQs", faqs_path, {"class":"nav-link dropdown-item"} %>
               </div>
@@ -138,15 +139,18 @@
             </li>
           <% end %>
 
-          <% if params["action"] == "reports" %>
+          <% if params["action"] == "resources" %>
             <li class="nav-item active">
-              <a class="nav-link disabled">Reports <span class="sr-only">(current)</span></a>
+              <a class="nav-link disabled">Resources <span class="sr-only">(current)</span></a>
             </li>
           <% else %>
             <li class="nav-item">
-              <%= link_to "Reports", reports_path, {"class":"nav-link"} %>
+              <%= link_to "Resources", resources_path, {"class":"nav-link"} %>
             </li>
           <% end %>
+          <li class="nav-item">
+            <%= link_to "Videos", "https://www.youtube.com/channel/UCMRiyUa-4C3qH01YzZX4j7w", {"class":"nav-link", target: :_blank } %>
+          </li>
         </ul>
       </div>
     </nav>
