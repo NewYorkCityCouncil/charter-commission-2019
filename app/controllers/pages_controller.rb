@@ -20,6 +20,10 @@ class PagesController < ApplicationController
     @page = "About"
   end
 
+  def requests
+    @page = "Record Requests"
+  end
+
   def jobs
     @page = "Jobs"
     @jobs = Job.all.order(:order => "asc")

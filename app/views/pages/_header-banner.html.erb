@@ -60,8 +60,7 @@
             </li>
           <% end %>
 
-          <%# if ["members","resources","faqs"].include?(params["action"])%>
-          <% if ["members","faqs"].include?(params["action"])%>
+          <% if ["members","faqs","requests"].include?(params["action"])%>
             <li class="nav-item active active-pointer dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 About
@@ -84,6 +83,12 @@
                 <% else %>
                   <%= link_to "FAQs", faqs_path, {"class":"nav-link dropdown-item"} %>
                 <% end %>
+                <div class="dropdown-divider"></div>
+                <% if params["action"] == "requests" %>
+                  <a class="nav-link dropdown-item disabled active-dropdown">Record Requests <span class="sr-only">(current)</span></a>
+                <% else %>
+                  <%= link_to "Record Requests", requests_path, {"class":"nav-link dropdown-item"} %>
+                <% end %>
               </div>
             </li>
           <% else %>
@@ -97,6 +102,8 @@
                 <%#= link_to "Resources", resources_path, {"class":"nav-link dropdown-item"} %>
                 <div class="dropdown-divider"></div>
                 <%= link_to "FAQs", faqs_path, {"class":"nav-link dropdown-item"} %>
+                <div class="dropdown-divider"></div>
+                <%= link_to "Record Requests", requests_path, {"class":"nav-link dropdown-item"} %>
               </div>
             </li>
           <% end %>
