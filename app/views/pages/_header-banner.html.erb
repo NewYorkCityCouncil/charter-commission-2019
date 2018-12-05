@@ -60,9 +60,9 @@
             </li>
           <% end %>
 
-          <% if ["members","faqs","requests"].include?(params["action"])%>
+          <% if ["members","faqs","requests","about"].include?(params["action"])%>
             <li class="nav-item active active-pointer dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="/about" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                 About
               </a>
               <div class="nav-item dropdown-menu" aria-labelledby="navbarDropdown">
@@ -93,7 +93,7 @@
             </li>
           <% else %>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="/about" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                 About
               </a>
               <div class="nav-item dropdown-menu" aria-labelledby="navbarDropdown">

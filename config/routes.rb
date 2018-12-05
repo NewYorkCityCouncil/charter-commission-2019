@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get '/jobs', to: 'pages#jobs'
   get '/jobs/:position', to: 'pages#job', as: "show_job"
   get '/members', to: 'pages#members'
+  get '/about', to: 'pages#about'
   get '/resources', to: 'pages#resources'
   get '/faqs', to: 'pages#faqs'
   get '/requests', to: 'pages#requests'

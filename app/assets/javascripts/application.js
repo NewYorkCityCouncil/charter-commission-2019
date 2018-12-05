@@ -42,19 +42,25 @@ $(document).ready(function(){
     };
   };
 
-  // setTimeout(function(){
-  // $('#subscribeModal').modal('show');
-  // },3000);
-  // $("#subscribe-form").submit(function(){
-  //   console.log("submitted")
-  //   debugger
-  // })
-  // $("#subscribe-btn").click(function(){
-  //   // VALIDATE THE FORM
-  //   // CHANGE MESSAGE THEN HIDE MODAL
-  //   // $('#subscribeModal').modal('hide');
-  // });
-  // $("#decline-btn").click(function(){
-  //   // $('#subscribeModal').modal('hide');
-  // });
+  $("#navbarDropdown").parent().mouseover(function(){
+    $(this).addClass("show");
+    $(this).children().last().addClass("show");
+    $(this).attr("aria-expanded",true);
+  });
+  $("#navbarDropdown").parent().mouseout(function(){
+    $(this).removeClass("show");
+    $(this).children().last().removeClass("show");
+    $(this).attr("aria-expanded",false);
+  });
+
+  $("#navbarDropdown").parent().children().last().mouseover(function(){
+    $(this).parent().addClass("show");
+    $(this).parent().children().last().addClass("show");
+    $(this).attr("aria-expanded",true);
+  });
+  $("#navbarDropdown").parent().children().last().mouseout(function(){
+    $(this).parent().removeClass("show");
+    $(this).parent().children().last().removeClass("show");
+    $(this).attr("aria-expanded",false);
+  });
 });

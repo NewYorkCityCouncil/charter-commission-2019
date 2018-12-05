@@ -16,7 +16,7 @@ class PagesController < ApplicationController
     @page = "Livestream Meeting"
   end
 
-  def charter
+  def about
     @page = "About"
   end
 
