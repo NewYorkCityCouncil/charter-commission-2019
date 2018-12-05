@@ -3,7 +3,9 @@
   <div class="container" role="main">
     <div class="row">
       <div class="col-12 center">
-      <img style="max-width: 1000px; width:100%;" src="<%= image_url("misc/Pamphlet-page-1.jpg") %>">
+      <%= link_to asset_path("/pdfs/Pamphlet%20Redo%20Page-1.pdf", skip_pipeline: true), target: :_blank do %>
+        <%= image_tag("misc/Pamphlet-page-1.jpg", options={:style => "max-width:1000px; width: 100%;"}) %>
+      <% end %>
       </div>
     </div>
   </div>
