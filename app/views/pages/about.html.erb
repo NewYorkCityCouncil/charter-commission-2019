@@ -3,9 +3,16 @@
   <div class="container" role="main">
     <div class="row">
       <div class="col-12 center">
-      <%= link_to asset_path("/pdfs/Pamphlet%20Redo%20Page-1.pdf", skip_pipeline: true), target: :_blank do %>
-        <%= image_tag("misc/Pamphlet-page-1.jpg", options={:style => "max-width:1000px; width: 100%;"}) %>
-      <% end %>
+        <%= link_to asset_path("/pdfs/Pamphlet%20Redo%20Page-1.pdf", skip_pipeline: true), target: :_blank do %>
+          <%= image_tag("misc/Pamphlet-page-1.jpg", options={:style => "max-width:1000px; width: 100%;"}) %>
+        <% end %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 center">
+        <%= link_to "Meet the Commissioners", members_path, {:class => "about-link col-sm-12 col-md-3 center btn btn-info"} %>
+        <%= link_to "FAQs", faqs_path, {:class => "about-link col-sm-12 col-md-3 center btn btn-info"} %>
+        <%= link_to "Record Requests", requests_path, {:class => "about-link col-sm-12 col-md-3 center btn btn-info"} %>
       </div>
     </div>
   </div>
