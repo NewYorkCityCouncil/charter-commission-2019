@@ -63,7 +63,11 @@
                     <%= @hearings_today[0].location_of_hearing %> @
                     <%= @hearings_today[0].date_of_hearing.in_time_zone('Eastern Time (US & Canada)').strftime("%l:%M %p") %>
                     <br>
-                    <%= link_to "Stream it live!", "https://www.youtube.com/channel/UCMRiyUa-4C3qH01YzZX4j7w/live" %>
+                    <% if @hearings_today[0].location_of_hearing.include?("City Hall")%>
+                      <%= link_to "Stream it live!", livestream_path %>
+                    <% else %>
+                      <%= link_to "Stream it live!", "https://www.youtube.com/channel/UCMRiyUa-4C3qH01YzZX4j7w/live" %>
+                    <% end%>
                   </p>
                   </div>
                 </div>
