@@ -12,8 +12,12 @@
         <%= @hearing.hearing_content.html_safe %><br>
         <% if !@hearing.livestream_embed.nil? && @hearing.date_of_hearing <= Time.now.in_time_zone("America/New_York").end_of_day && @hearing.date_of_hearing >= Time.now.in_time_zone("America/New_York").beginning_of_day%>
           <div id="livestream">
-            <h4 class="center underline">Livestream</h4>
-            <p class="center"><%= @hearing.livestream_embed.html_safe %></p>
+            <% if @hearing.location_of_hearing.include?("City Hall") && Time.now.in_time_zone("America/New_York").hour >= 18 %>
+              <%= link_to "Stream it live!", livestream_path %>
+            <% else %>
+              <h4 class="center underline">Livestream</h4>
+              <p class="center"><%= @hearing.livestream_embed.html_safe %></p>
+            <% end %>
           </div>
         <% end %>
 
