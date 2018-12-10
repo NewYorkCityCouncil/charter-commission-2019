@@ -33,13 +33,19 @@
   <div id="banner" class="col-12">
     <nav class="navbar navbar-expand-md" style="padding: 0;" role="navigation">
       <div id="live">
-        <% if @hearings_today.length > 0 && DateTime.now.in_time_zone("America/New_York") >= (@hearings_today[0].date_of_hearing - 5.minutes) &&  DateTime.now.in_time_zone("America/New_York") <= (@hearings_today[0].date_of_hearing + 4.hours)%>
-          <span id="record"><%= icon('fas', 'circle') %></span>
+        <% if @hearings_today.length > 0 %>
+          <% if DateTime.now.in_time_zone("America/New_York") >= (@hearings_today[0].date_of_hearing - 5.minutes) &&  DateTime.now.in_time_zone("America/New_York") <= (@hearings_today[0].date_of_hearing + 4.hours)%>
+            <span id="record"><%= icon('fas', 'circle') %></span>
+          <% else %>
+            <span id="offline"><%= icon('fas', 'circle') %></span>
+          <% end %>
+
           <% if @hearings_today[0].location_of_hearing.include?("City Hall") %>
             <span><%= link_to "LIVE", livestream_path %></span>
           <% else %>
             <span><a href="https://www.youtube.com/channel/UCMRiyUa-4C3qH01YzZX4j7w/live" target="_blank">LIVE</a></span>
           <% end %>
+          
         <% else %>
           <span id="offline"><%= icon('fas', 'circle') %></span>
           <span><a href="https://www.youtube.com/channel/UCMRiyUa-4C3qH01YzZX4j7w/live" target="_blank">LIVE</a></span>
