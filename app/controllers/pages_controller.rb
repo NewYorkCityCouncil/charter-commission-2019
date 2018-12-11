@@ -114,8 +114,8 @@ class PagesController < ApplicationController
 
   def hearings
     @page = "Hearings and Meetings"
-    @upcoming_hearings = Hearing.where("date_of_hearing > ?", Time.now.in_time_zone("America/New_York")).order(date_of_hearing: :asc)
-    @past_hearings = Hearing.where("date_of_hearing < ?", Time.now.in_time_zone("America/New_York")).order(date_of_hearing: :asc)
+    @upcoming_hearings = Hearing.where("date_of_hearing > ?", Time.now.in_time_zone("America/New_York").beginning_of_day).order(date_of_hearing: :asc)
+    @past_hearings = Hearing.where("date_of_hearing < ?", Time.now.in_time_zone("America/New_York").beginning_of_day).order(date_of_hearing: :desc)
   end
 
   def hearing
