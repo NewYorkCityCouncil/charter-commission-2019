@@ -10,7 +10,11 @@
         </style>
         <div id="livestream-container">
           <% if @hearings_today.length > 0 %>
-            <iframe src="https://councilnyc.viebit.com/live/?v=f04a2b84-6077-488f-80eb-0b714d18417e&amp;s=false" frameborder="0" scrolling="no" seamless="" allowfullscreen=""></iframe>
+            <% if @hearings_today[0].location_of_hearing.include?("https://councilnyc.viebit.com/live")%>
+              <iframe width="100%" height="450" src="https://councilnyc.viebit.com/live/?v=f04a2b84-6077-488f-80eb-0b714d18417e&amp;s=false" frameborder="0" scrolling="no" seamless="" allowfullscreen=""></iframe>
+            <% else %>
+              <iframe width="100%" height="450" src="https://www.youtube.com/embed/2yDCdhSOTx4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <% end%>
           <% end %>
         </div>
       </div>
