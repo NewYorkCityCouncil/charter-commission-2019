@@ -1,8 +1,7 @@
 <div class="row" style="margin:0">
   <div class="marquee3k" style="background-color:#D11B1B;box-shadow: 2px 4.5px 6px #000;margin-bottom:50px;overflow:hidden;position:fixed;z-index:10;" data-speed=".5" data-pausable="true" aria-hidden="true"> 
     <% if !@nextHearing.nil? %>
-      <p style="color:white;margin:5px 15px;"><small>UPDATE: TONIGHT’S EXPERT FORUM ON ELECTIONS HAS BEEN POSTPONED! We will move ahead with our Governance forum on 2/25</small></p>
-      <!--<p style="color:white;margin:5px 15px;"><small>The Next Public Meeting of the NYC Charter Commission 2019: <%#= @nextHearing.date_of_hearing.in_time_zone('Eastern Time (US & Canada)').strftime("%B %d, %Y, %l:%M %p") %>, <%#= @nextHearing.address_1 %> <strong><%#= link_to "Click here", show_hearing_path(:id => @nextHearing.id) %></strong></small></p>-->
+      <p style="color:white;margin:5px 15px;"><small>The Next Public Meeting of the NYC Charter Commission 2019: <%= @nextHearing.date_of_hearing.in_time_zone('Eastern Time (US & Canada)').strftime("%B %d, %Y, %l:%M %p") %>, <%= @nextHearing.address_1 %> <strong><%= link_to "Click here", show_hearing_path(:id => @nextHearing.id) %></strong></small></p>-->
     <% end %>
   </div>
   <script>$(document).ready(function(){Marquee3k.init();});</script>
