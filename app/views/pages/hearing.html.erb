@@ -12,7 +12,7 @@
         <%= @hearing.hearing_content.html_safe %><br>
         <% if !@hearing.livestream_embed.nil? && @hearing.date_of_hearing.in_time_zone("America/New_York") < Time.now.in_time_zone("America/New_York") && @hearing.date_of_hearing.in_time_zone("America/New_York").end_of_day > Time.now.in_time_zone("America/New_York") %>
           <div id="livestream">
-            <% if @hearing.location_of_hearing.include?("City Hall") %>
+            <% if @hearing.livestream_embed.include?("https://councilnyc.viebit.com/live") %>
               <style>#livestream{margin-bottom:25px; font-size:1.2em; font-weight:bold;}</style>
               <%= link_to "Stream it live!", livestream_path %>
             <% else %>
